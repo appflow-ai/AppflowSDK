@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>project_id</key>
+	<string>b9944ba3-4d50-478c-8404-3d6af7045661</string>
+	<key>app_id</key>
+	<string>cff122a7-f2da-43db-8a9c-16be175ac8c9</string>
+	<key>package_name</key>
+	<string>ai.appflow.iossdkexample</string>
+	<key>token_type</key>
+	<string>bearer</string>
+	<key>access_token</key>
+	<string>eyJhbGciOiJSUzI1NiIsImtpZCI6IjAwMDEiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJiOTk0NGJhMy00ZDUwLTQ3OGMtODQwNC0zZDZhZjcwNDU2NjEiLCJpYXQiOjE2NDE1MjQ2MTYsImlzcyI6ImFwcGZsb3cuYWkiLCJzdWIiOiJjZmYxMjJhNy1mMmRhLTQzZGItOGE5Yy0xNmJlMTc1YWM4YzkiLCJ0eXBlIjoiYXBwIn0.MVBI2ADCSGEyXbAmm83tAhDE2VEwsjmdW0J_wiwca59eHro70D98hUlPM5ynuNmTsxOdu5tikXnxCP0fxRhBYdCw5KqQIK7P0uKFRFkBrDJe4WGAtiDEdYfxceljcc3GytfKLRwyyVVrImdV6gIdiieDAfO1NcXkXfD71o4YnRSoT22CQGx82bBaGKB33DabGCVYvTy-OjrWOKLNoi18Mrt0775T6RNV1xbxA2HIDi953d4JyGuaCwvWFGH2FjwApoVvlPGNHYGEMGdwqmROgkDUZUqog0CI9hqnOS7y5i0wSEMlZK55y5xu68mRELvzqy-REKae8xsYW43jMoUuiw</string>
+	<key>api_address</key>
+	<string>testapi.appflowapi.com:443</string>
+</dict>
+</plist>

@@ -1,0 +1,249 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppflowSDK
+import AdSupport
+import AppTrackingTransparency
+@_exported import AppflowSDK
+import AudioToolbox
+import SystemConfiguration.CaptiveNetwork
+import CoreTelephony
+import CrashReporter
+import Foundation
+import Founq_KeychainIDFA
+import GRPCClient
+import StoreKit
+import Swift
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import iAd
+public let SDKVersion: Swift.String
+public let kScreenViewName: Swift.String
+public let kPlacement: Swift.String
+public let kAdSource: Swift.String
+public let kFormat: Swift.String
+public let kEngagementTimeMsec: Swift.String
+public let kHomepage: Swift.String
+public let kNotFatalCrash: Swift.String
+public let kSetting: Swift.String
+public let kLockscreen: Swift.String
+public let kQuickClean: Swift.String
+public let kBoost: Swift.String
+public let kInstall: Swift.String
+public let kFaceBook: Swift.String
+public let kAdmob: Swift.String
+public let kMobpup: Swift.String
+public let kBanner: Swift.String
+public let kInterstitial: Swift.String
+public let maxCurrentNum: Swift.Int
+public let kTimerDuration: Swift.Int
+@_hasMissingDesignatedInitializers public class AppFlowIMPTopViewController {
+  public static func topViewContoller() -> UIKit.UIViewController?
+  public static func topViewController(root: UIKit.UIViewController) -> UIKit.UIViewController
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class IMProduct : ObjectiveC.NSObject {
+  @objc final public let id: Swift.String
+  @objc final public let product: StoreKit.SKProduct
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class IMEntitlement : ObjectiveC.NSObject, Swift.Codable {
+  @objc override dynamic public init()
+  @objc public func isActive() -> Swift.Bool
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public typealias SuccessBlock = (Any) -> Swift.Void
+public typealias FailedBlock = (Any) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IMRequestManager : ObjectiveC.NSObject {
+  public static let shared: AppflowSDK.IMRequestManager
+  public func uploadCacheData(with successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class IMGroup : ObjectiveC.NSObject {
+  @objc final public let id: Swift.String
+  @objc final public let products: [AppflowSDK.IMProduct]
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class Appflow : ObjectiveC.NSObject {
+  @objc public static let shared: AppflowSDK.Appflow
+  final public let purchases: AppflowSDK.IMPurchase
+  final public let analytics: AppflowSDK.IMAnalytics
+  @objc public func configure()
+  @objc public func setPurchasesLogs(enabled: Swift.Bool)
+  @objc public func setAnalyticsLogs(enabled: Swift.Bool)
+  @objc public func getProductGroup(_ completionHandler: AppflowSDK.ProductGroupsRequestCompletionHandler?)
+  @objc public func canMakePayment() -> Swift.Bool
+  @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.EntitlementList, Swift.Error?) -> Swift.Void)
+  @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.EntitlementList, Swift.Error?) -> Swift.Void)
+  @objc public func purchaseProduct(_ product: AppflowSDK.IMProduct, completion: @escaping AppflowSDK.ProductPurchaseCompletionHandler)
+  @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, params: [Swift.AnyHashable : Any]?)
+  @objc public func uploadBigDataWithType(eventName: Swift.String, params: [Swift.AnyHashable : Any]?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class AppflowWelcomePage : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var waitingTime: Swift.Double
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@objc public enum AttributionNetwork : Swift.UInt {
+  case adjust
+  case appsflyer
+  case branch
+  case appleSearchAds
+  case facebook
+  case custom
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+public typealias ProductGroupsRequestCompletionHandler = (_ groups: AppflowSDK.ProductGroups, _ error: Swift.Error?) -> Swift.Void
+public typealias ProductPurchaseCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ entitlement: AppflowSDK.EntitlementList, _ error: Swift.Error?, _ canceled: Swift.Bool) -> Swift.Void
+public typealias EntitlementList = [Swift.String : AppflowSDK.IMEntitlement]
+public typealias ProductGroups = [Swift.String : AppflowSDK.IMGroup]
+public typealias InitInfoRequestCompletionHandler = (_ initInfo: AppflowSDK.GetInitInfoResponse, _ error: Swift.Error?) -> Swift.Void
+public typealias updateAttributionRequestCompletionHandler = (_ getAttributionResponse: AppflowSDK.GetAttributionResponse?, _ error: Swift.Error?) -> Swift.Void
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class IMPurchase : ObjectiveC.NSObject {
+  @objc public static let shared: AppflowSDK.IMPurchase
+  @objc public func configureInitSDKWithAppFlowPlist()
+  @objc public func configure(_ appkey: Swift.String)
+  @objc public func configure(_ appKey: Swift.String, userId: Swift.String)
+  @objc public func getProductGroups(_ completionHandler: AppflowSDK.ProductGroupsRequestCompletionHandler?)
+  @objc public func canMakePayments() -> Swift.Bool
+  @objc public func purchaseProduct(_ product: AppflowSDK.IMProduct, completion: @escaping AppflowSDK.ProductPurchaseCompletionHandler)
+  @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.EntitlementList, Swift.Error?) -> Swift.Void)
+  @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.EntitlementList, Swift.Error?) -> Swift.Void)
+  @objc public func enableLog(_ isEnable: Swift.Bool)
+  @objc public func isSandbox() -> Swift.Bool
+  @objc public func invalidateCache()
+  @objc public func getSubscriberData(completion: ((AppflowSDK.Subscriber?, Swift.Error?) -> Swift.Void)?)
+  @objc public func showPayWallView()
+  @objc public func getUserIsActive() -> Swift.Bool
+  @objc public func uploadUserInfo(userId: Swift.String?, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc public func uploadUserInfo(completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class CrashReporter {
+  final public func startCrashReporter(completion: @escaping (Swift.String?, Swift.Error?) -> Swift.Void)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IMDeviceInfoManager : ObjectiveC.NSObject {
+  public static let shared: AppflowSDK.IMDeviceInfoManager
+  public func getCurrentMSimestamp() -> Foundation.TimeInterval
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class IMRequestCache {
+  public static let shared: AppflowSDK.IMRequestCache
+  public func allRequests(fromFmdbWihtClass cls: Swift.AnyClass, finishBlock: @escaping (_ requestArr: [Any]?) -> Swift.Void)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class IMAnalytics : ObjectiveC.NSObject {
+  public enum EventType : Swift.Int {
+    case firstOpen
+    case appStart
+    case screenView
+    case adsClick
+    case adsShow
+    case adsRequest
+    case inAppPurchase
+    case userEngagement
+    case nonFatalCrash
+    case fatalCrash
+    case viewPaywall
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum ParamScreenType : Swift.Int {
+    case paramScreenNono
+    case paramScreenHome
+    case paramScreenSet
+    case eParamScreenLock
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum ParamPlaceType : Swift.Int {
+    case paramPlaceNono
+    case paramPlaceClean
+    case paramPlaceBoost
+    case paramPlaceInstall
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum ParamAdSouceType : Swift.Int {
+    case paramAdSouceNono
+    case paramAdSouceFacebook
+    case paramAdSouceAdmob
+    case paramAdSouceMobpup
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum ParamFormatType : Swift.Int {
+    case paramFormatNono
+    case paramFormatBanner
+    case paramFormatInterstitial
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public func registerBigDataWitInfoPlist()
+  public func registerBigData(withAppKey appKey: Swift.String)
+  public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, params: [Swift.AnyHashable : Any]?)
+  public func uploadBigDataWithEvent(eventName: Swift.String?, params: [Swift.AnyHashable : Any]?)
+  public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, params: [Swift.AnyHashable : Any]?, successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  public func uploadBigDataWithEvent(eventName: Swift.String?, params: [Swift.AnyHashable : Any]?, successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, paramModel model: AppflowSDK.ParamModel?)
+  public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, paramModel model: AppflowSDK.ParamModel?, successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ParamModel : ObjectiveC.NSObject {
+  public var screenType: AppflowSDK.IMAnalytics.ParamScreenType
+  public var placeType: AppflowSDK.IMAnalytics.ParamPlaceType
+  public var adsouceType: AppflowSDK.IMAnalytics.ParamAdSouceType
+  public var formatType: AppflowSDK.IMAnalytics.ParamFormatType
+  public var otherData: [Swift.AnyHashable : Any]
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension AppflowSDK.AttributionNetwork : Swift.Equatable {}
+extension AppflowSDK.AttributionNetwork : Swift.Hashable {}
+extension AppflowSDK.AttributionNetwork : Swift.RawRepresentable {}
+extension AppflowSDK.IMAnalytics.EventType : Swift.Equatable {}
+extension AppflowSDK.IMAnalytics.EventType : Swift.Hashable {}
+extension AppflowSDK.IMAnalytics.EventType : Swift.RawRepresentable {}
+extension AppflowSDK.IMAnalytics.ParamScreenType : Swift.Equatable {}
+extension AppflowSDK.IMAnalytics.ParamScreenType : Swift.Hashable {}
+extension AppflowSDK.IMAnalytics.ParamScreenType : Swift.RawRepresentable {}
+extension AppflowSDK.IMAnalytics.ParamPlaceType : Swift.Equatable {}
+extension AppflowSDK.IMAnalytics.ParamPlaceType : Swift.Hashable {}
+extension AppflowSDK.IMAnalytics.ParamPlaceType : Swift.RawRepresentable {}
+extension AppflowSDK.IMAnalytics.ParamAdSouceType : Swift.Equatable {}
+extension AppflowSDK.IMAnalytics.ParamAdSouceType : Swift.Hashable {}
+extension AppflowSDK.IMAnalytics.ParamAdSouceType : Swift.RawRepresentable {}
+extension AppflowSDK.IMAnalytics.ParamFormatType : Swift.Equatable {}
+extension AppflowSDK.IMAnalytics.ParamFormatType : Swift.Hashable {}
+extension AppflowSDK.IMAnalytics.ParamFormatType : Swift.RawRepresentable {}
