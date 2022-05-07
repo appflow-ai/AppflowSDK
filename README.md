@@ -97,7 +97,7 @@ After obtaining `SKProduct`, you can obtain information related to in-app purcha
 ### Making purchase
 To start the purchase process call function purchaseProduct it will take `SKProduct` object as a parameter.
 ```
-Appflow.shared.purchaseSKProduct(selectedPlan) { (transaction, entitlement, error, isCanceled) in {
+Appflow.shared.purchaseSKProduct(product) { (transaction, entitlement, error, isCanceled) in {
 }
 ```
 Closure will return `SKPaymentTransaction`, entitlement dictionary, error if it occurred and bool to indicate if a user canceled the purchase process.
