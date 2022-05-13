@@ -270,7 +270,7 @@ Appflow.shared.analytics.uploadBigDataWithEvent(
 ## 5. Push notification
 ### a. Capabilities
 Please enable the Capabilities->Push Notifications option of Application Target
-### b. 在AppDelegate 中 request PushNotifications Permissions
+### b. Request PushNotifications Permissions in AppDelegate
 
 ```
 private func requestPushNotificationsPermissions() {
