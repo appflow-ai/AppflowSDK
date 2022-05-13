@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rGJ-ye-WrD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="YEV-26-Oop">
+            <objects>
+                <navigationController id="rGJ-ye-WrD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BOd-ug-E0o">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Fkb-KE-81W" kind="relationship" relationship="rootViewController" id="KBC-7a-aP0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRb-ov-DrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1629" y="-38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EVd-RJ-Ifx">
+            <objects>
+                <viewController id="Fkb-KE-81W" customClass="ViewController" customModule="AppflowExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zWv-3W-jvh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PgB-AW-zGA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="625"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKy-jd-FD7">
+                                <rect key="frame" x="341" y="713" width="73" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="r52-pe-4d8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="NextVC"/>
+                                <connections>
+                                    <action selector="nextVCTapped:" destination="Fkb-KE-81W" eventType="touchUpInside" id="zeX-7L-Lsj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRk-eX-XNb">
+                                <rect key="frame" x="0.0" y="713" width="75" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="RNk-pw-XuZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="payWall"/>
+                                <connections>
+                                    <action selector="paywallAction:" destination="Fkb-KE-81W" eventType="touchUpInside" id="jRt-af-qHx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVD-Cz-IDC">
+                                <rect key="frame" x="254" y="759" width="160" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="O9X-eM-Qpb"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="AttributionSimulation"/>
+                                <connections>
+                                    <action selector="attributionSimulation:" destination="Fkb-KE-81W" eventType="touchUpInside" id="X9n-0i-Iog"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZU-2q-dyp">
+                                <rect key="frame" x="0.0" y="759" width="123" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="JVg-Dg-DxH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="uploadUserInfo"/>
+                                <connections>
+                                    <action selector="uploadUserInfoAction:" destination="Fkb-KE-81W" eventType="touchUpInside" id="5Kz-7o-xaG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gKQ-My-hI7"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PgB-AW-zGA" firstAttribute="top" secondItem="gKQ-My-hI7" secondAttribute="top" id="2Tn-3q-LCO"/>
+                            <constraint firstItem="UVD-Cz-IDC" firstAttribute="top" secondItem="BKy-jd-FD7" secondAttribute="bottom" constant="15" id="349-ps-EAJ"/>
+                            <constraint firstItem="PgB-AW-zGA" firstAttribute="leading" secondItem="gKQ-My-hI7" secondAttribute="leading" id="3ae-nD-QDo"/>
+                            <constraint firstAttribute="trailing" secondItem="UVD-Cz-IDC" secondAttribute="trailing" id="4KH-5D-Fvi"/>
+                            <constraint firstItem="JRk-eX-XNb" firstAttribute="top" secondItem="BKy-jd-FD7" secondAttribute="top" id="4qb-pR-0F2"/>
+                            <constraint firstItem="BKy-jd-FD7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gKQ-My-hI7" secondAttribute="leading" symbolic="YES" id="AL2-xP-iUu"/>
+                            <constraint firstItem="gKQ-My-hI7" firstAttribute="trailing" secondItem="BKy-jd-FD7" secondAttribute="trailing" id="QOS-Fw-Nf0"/>
+                            <constraint firstItem="OZU-2q-dyp" firstAttribute="leading" secondItem="JRk-eX-XNb" secondAttribute="leading" id="QzJ-WR-kej"/>
+                            <constraint firstItem="gKQ-My-hI7" firstAttribute="bottom" secondItem="PgB-AW-zGA" secondAttribute="bottom" constant="100" id="TvH-Td-0Kg"/>
+                            <constraint firstItem="gKQ-My-hI7" firstAttribute="trailing" secondItem="PgB-AW-zGA" secondAttribute="trailing" id="YEc-ec-VeG"/>
+                            <constraint firstItem="JRk-eX-XNb" firstAttribute="leading" secondItem="gKQ-My-hI7" secondAttribute="leading" id="dFQ-Ba-3FU"/>
+                            <constraint firstItem="OZU-2q-dyp" firstAttribute="top" secondItem="UVD-Cz-IDC" secondAttribute="top" id="eVh-Dj-7eA"/>
+                            <constraint firstItem="BKy-jd-FD7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JRk-eX-XNb" secondAttribute="trailing" constant="8" symbolic="YES" id="jqh-FV-iTV"/>
+                            <constraint firstItem="PgB-AW-zGA" firstAttribute="bottom" secondItem="BKy-jd-FD7" secondAttribute="top" id="uav-tt-QFL"/>
+                            <constraint firstItem="UVD-Cz-IDC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OZU-2q-dyp" secondAttribute="trailing" constant="8" symbolic="YES" id="zo4-lH-KNF"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vAK-hr-2W0"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="paywallBtn" destination="JRk-eX-XNb" id="lSU-00-Po3"/>
+                        <outlet property="tableView" destination="PgB-AW-zGA" id="G3X-Li-fMA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SE-Tf-pPt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-907" y="-38"/>
+        </scene>
+    </scenes>
+</document>
