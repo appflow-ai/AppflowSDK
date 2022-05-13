@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>project_id</key>
+	<string>project_id001</string>
+	<key>app_id</key>
+	<string>app_id001</string>
+	<key>package_name</key>
+	<string>ai.appflow.iossdkexample</string>
+	<key>token_type</key>
+	<string>bearer</string>
+	<key>access_token</key>
+	<string>access_token001</string>
+</dict>
+</plist>

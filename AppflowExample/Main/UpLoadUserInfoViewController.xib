@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpLoadUserInfoViewController" customModule="appflow" customModuleProvider="target">
+            <connections>
+                <outlet property="ageTF" destination="nlG-1U-lu7" id="vHP-pj-2MG"/>
+                <outlet property="emailTF" destination="MW9-aY-7gR" id="7tA-sh-eG2"/>
+                <outlet property="extTF" destination="HEx-7Q-qyx" id="KQE-Pz-5hM"/>
+                <outlet property="phoneTF" destination="VAu-I0-Dju" id="z9w-XY-QQx"/>
+                <outlet property="usernameTF" destination="74M-ac-cNu" id="ZdB-YZ-LXH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="genderCol" destination="ce6-ql-cY2" collectionClass="NSMutableArray" id="fXK-Ep-w8T"/>
+                <outletCollection property="genderCol" destination="ewn-NG-fED" collectionClass="NSMutableArray" id="eb7-xD-4Yh"/>
+                <outletCollection property="genderCol" destination="cnC-He-3ga" collectionClass="NSMutableArray" id="iad-au-mO9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="phG-tk-MMP">
+                    <rect key="frame" x="24" y="104" width="366" height="260"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74M-ac-cNu">
+                            <rect key="frame" x="0.0" y="0.0" width="366" height="34"/>
+                            <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MW9-aY-7gR">
+                            <rect key="frame" x="0.0" y="46" width="366" height="34"/>
+                            <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAu-I0-Dju">
+                            <rect key="frame" x="0.0" y="92" width="366" height="34"/>
+                            <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-1U-lu7">
+                            <rect key="frame" x="0.0" y="138" width="366" height="34"/>
+                            <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ext" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HEx-7Q-qyx">
+                            <rect key="frame" x="0.0" y="184" width="366" height="34"/>
+                            <color key="textColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdP-J7-GAd">
+                            <rect key="frame" x="0.0" y="230" width="366" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NV-DU-jRf">
+                                    <rect key="frame" x="8" y="5" width="59" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce6-ql-cY2">
+                                    <rect key="frame" x="126" y="7.5" width="60" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="Rns-8e-MRo"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                    <state key="normal" title="female" image="uncheck">
+                                        <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="selected" image="check"/>
+                                    <connections>
+                                        <action selector="genderActoion:" destination="-1" eventType="touchUpInside" id="Pbq-Ps-3Bd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewn-NG-fED">
+                                    <rect key="frame" x="206" y="7.5" width="60" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="SRw-w1-kJp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                    <state key="normal" title="male" image="uncheck">
+                                        <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="selected" image="check"/>
+                                    <connections>
+                                        <action selector="genderActoion:" destination="-1" eventType="touchUpInside" id="yw0-Rp-oKC"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnC-He-3ga">
+                                    <rect key="frame" x="286" y="7.5" width="60" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="xXO-oJ-vij"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
+                                    <state key="normal" title="other" image="uncheck">
+                                        <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="selected" image="check"/>
+                                    <connections>
+                                        <action selector="genderActoion:" destination="-1" eventType="touchUpInside" id="VXA-3a-pF0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ce6-ql-cY2" firstAttribute="centerY" secondItem="FdP-J7-GAd" secondAttribute="centerY" id="6Hu-Kz-A4h"/>
+                                <constraint firstItem="ewn-NG-fED" firstAttribute="centerY" secondItem="FdP-J7-GAd" secondAttribute="centerY" id="CcP-FS-YO7"/>
+                                <constraint firstAttribute="trailing" secondItem="cnC-He-3ga" secondAttribute="trailing" constant="20" id="GYb-G7-PF2"/>
+                                <constraint firstItem="9NV-DU-jRf" firstAttribute="leading" secondItem="FdP-J7-GAd" secondAttribute="leading" constant="8" id="bf3-VD-MmL"/>
+                                <constraint firstItem="cnC-He-3ga" firstAttribute="centerY" secondItem="FdP-J7-GAd" secondAttribute="centerY" id="cpe-bB-kqj"/>
+                                <constraint firstItem="ewn-NG-fED" firstAttribute="leading" secondItem="ce6-ql-cY2" secondAttribute="trailing" constant="20" id="dyb-5i-vlg"/>
+                                <constraint firstAttribute="height" constant="30" id="jjZ-du-LkU"/>
+                                <constraint firstItem="9NV-DU-jRf" firstAttribute="centerY" secondItem="FdP-J7-GAd" secondAttribute="centerY" id="onj-pR-oef"/>
+                                <constraint firstItem="cnC-He-3ga" firstAttribute="leading" secondItem="ewn-NG-fED" secondAttribute="trailing" constant="20" id="wwa-ms-j2t"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-WE-XUm">
+                    <rect key="frame" x="24" y="394" width="366" height="48"/>
+                    <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Ab3-MI-0MF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="3Ii-Qv-1Wb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="phG-tk-MMP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3cd-v1-zsu"/>
+                <constraint firstItem="phG-tk-MMP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D6h-Wb-TQ8"/>
+                <constraint firstItem="GBF-WE-XUm" firstAttribute="top" secondItem="phG-tk-MMP" secondAttribute="bottom" constant="30" id="DS5-Ay-WzZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GBF-WE-XUm" secondAttribute="trailing" constant="24" id="Fw2-RT-mPT"/>
+                <constraint firstItem="GBF-WE-XUm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="eFi-iM-brk"/>
+                <constraint firstItem="phG-tk-MMP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="zlD-7X-wf6"/>
+            </constraints>
+            <point key="canvasLocation" x="-758" y="140"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="check" width="14" height="14"/>
+        <image name="uncheck" width="14" height="14"/>
+    </resources>
+</document>
