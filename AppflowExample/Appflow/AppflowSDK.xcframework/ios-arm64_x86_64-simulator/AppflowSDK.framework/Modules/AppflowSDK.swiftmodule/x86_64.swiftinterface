@@ -110,6 +110,7 @@ public typealias FailedBlock = (Any) -> Swift.Void
 }
 public typealias ProductGroupsRequestCompletionHandler = (_ groups: AppflowSDK.ProductGroups, _ error: Swift.Error?) -> Swift.Void
 public typealias ProductPurchaseCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ entitlement: AppflowSDK.EntitlementList, _ error: Swift.Error?, _ canceled: Swift.Bool) -> Swift.Void
+public typealias ProductRestoreCompletionHandler = (AppflowSDK.EntitlementList, Swift.Error?) -> Swift.Void
 public typealias EntitlementList = [Swift.String : AppflowSDK.IMEntitlement]
 public typealias ProductGroups = [Swift.String : AppflowSDK.IMGroup]
 public typealias InitInfoRequestCompletionHandler = (_ initInfo: AppflowSDK.GetInitInfoResponse?, _ error: Swift.Error?) -> Swift.Void

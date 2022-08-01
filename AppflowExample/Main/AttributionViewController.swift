@@ -58,33 +58,8 @@ class AttributionViewController: UIViewController {
     @IBAction func appleSearchAdsAction(_ sender: Any) {
         if #available(iOS 14.3, *) {
             if let attributionToken = try? AAAttribution.attributionToken() {
-                let request = NSMutableURLRequest(url: URL(string:"https://api-adservices.apple.com/api/v1/")!)
-                request.httpMethod = "POST"
-                request.setValue("text/plain", forHTTPHeaderField: "Content-Type")
-                request.httpBody = Data(attributionToken.utf8)
-                let task = URLSession.shared.dataTask(with: request as URLRequest) {[weak self] (data, _, error) in
-                    guard let `self` = self else { return }
-                    if let error = error {
-                        print(error)
-                        return
-                    }
-                    do {
-                       let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
-                        print("Search Ads attribution info:", result)
-                        //*** this upload apple search datas ***
-                        self.updateAppleSearchAdsAttribution(result)
-                        if let campaignId = result["campaignId"] as? Int {
-                        // Only send data to Amplitude if it is not mock data, in which case the campaign id would be the integer below
-                            if campaignId != 1234567890 {
-                                // Send data to your tracking tool, we use Amplitude, with the line of code below.
-                                // Amplitude.instance().logEvent("open_app_from_apple_search_ad, with EventProperties: result)
-                            }
-                        }
-                    } catch {
-                       print(error)
-                    }
-                }
-            task.resume()
+                let param = ["attributionToken": attributionToken]
+                Appflow.shared.updateAttribution(param, source: .appleSearchAds)
             }
         }else {
             ADClient.shared().requestAttributionDetails({ (attributionDetails, error) in
@@ -92,24 +67,7 @@ class AttributionViewController: UIViewController {
                     print("Search Ads error: \(error?.localizedDescription ?? "")")
                     return
                 }
-                for (version, adDictionary) in attributionDetails {
-                    print("Search Ads version:", version)
-                        if var attributionInfo = adDictionary as? Dictionary<String, Any> {
-                            //*** this upload apple search datas ***
-                            print("Search Ads attribution info:", attributionInfo)
-                            self.updateAppleSearchAdsAttribution(attributionInfo)
-                            if let campaignId = attributionInfo["iad-campaign-id"] as? String {
-
-                            // Only send data to Amplitude if it is not mock data, in which case the campaign id would be the string of numbers below
-                            if campaignId != "1234567890" {
-                                // Add campaignID attribute in order to have consistent property which which to segment users on all iOS versions
-                                attributionInfo["campaignId"] = campaignId
-                                // Send data to your tracking tool, we use Amplitude, with the line of code below.
-                                // Amplitude.instance().logEvent("open_app_from_apple_search_ad, with EventProperties: attributionInfo)
-                            }
-                        }
-                    }
-                }
+                Appflow.shared.updateAttribution(attributionDetails, source: .appleSearchAds)
             })
         }
     }
