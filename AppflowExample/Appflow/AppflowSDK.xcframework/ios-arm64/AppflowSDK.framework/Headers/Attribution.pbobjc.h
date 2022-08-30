@@ -65,6 +65,7 @@ typedef GPB_ENUM(GetAttributionRequest_FieldNumber) {
   GetAttributionRequest_FieldNumber_DeviceBrand = 16,
   GetAttributionRequest_FieldNumber_AdEventId = 17,
   GetAttributionRequest_FieldNumber_AcquisitionCampaign = 18,
+  GetAttributionRequest_FieldNumber_DeviceId = 19,
 };
 
 GPB_FINAL @interface GetAttributionRequest : GPBMessage
@@ -117,6 +118,14 @@ GPB_FINAL @interface GetAttributionRequest : GPBMessage
 @property(nonatomic, readwrite, copy, null_resettable) NSString *adEventId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *acquisitionCampaign;
+
+/**
+ * Our attribution data is from 3rd party platform and upload by developer.
+ * So the advertiser_id could not assure it is not blank.
+ * And the app_user_id can pass by developer, we could not use this as the unique id.
+ * So we need SDK upload the device_id.
+ **/
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @end
 

@@ -248,6 +248,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 /// \param completion uploadUserInfo to back
 ///
 - (void)uploadUserInfoWithUserId:(NSString * _Nullable)userId extraAttribute:(NSDictionary<NSString *, id> * _Nonnull)extraAttribute completion:(void (^ _Nullable)(BOOL, NSError * _Nullable))completion;
+- (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)loadPaywallToPurachaseWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
@@ -345,9 +346,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 /// \param completion uploadUserInfo to back
 ///
 - (void)uploadUserInfoWithUserId:(NSString * _Nullable)userId extraAttribute:(NSDictionary<NSString *, id> * _Nonnull)extraAttribute completion:(void (^ _Nullable)(BOOL, NSError * _Nullable))completion;
+- (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
+
 
 
 
@@ -620,6 +623,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 /// \param completion uploadUserInfo to back
 ///
 - (void)uploadUserInfoWithUserId:(NSString * _Nullable)userId extraAttribute:(NSDictionary<NSString *, id> * _Nonnull)extraAttribute completion:(void (^ _Nullable)(BOOL, NSError * _Nullable))completion;
+- (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)loadPaywallToPurachaseWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
@@ -717,9 +721,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 /// \param completion uploadUserInfo to back
 ///
 - (void)uploadUserInfoWithUserId:(NSString * _Nullable)userId extraAttribute:(NSDictionary<NSString *, id> * _Nonnull)extraAttribute completion:(void (^ _Nullable)(BOOL, NSError * _Nullable))completion;
+- (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
+
 
 
 
