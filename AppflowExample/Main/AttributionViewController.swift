@@ -10,6 +10,9 @@ import AppflowSDK
 import FBSDKCoreKit
 import AdServices
 import iAd
+import AppsFlyerLib
+import Adjust
+
 class AttributionViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -31,7 +34,7 @@ class AttributionViewController: UIViewController {
                           "install_time":getcurrentDate(),
                           "is_first_launch":"0",
         ]
-        Appflow.shared.updateAttribution(attibution, source: .appsflyer, networkUserId: "appsflyer_id")
+        Appflow.shared.updateAttribution(attibution, source: .appsflyer, networkUserId: AppsFlyerLib.shared().getAppsFlyerUID())
     }
     
     
@@ -41,13 +44,13 @@ class AttributionViewController: UIViewController {
                           "trackerName":"Organic",
                           "trackerToken":"0pfx3d3o",
         ]
-        Appflow.shared.updateAttribution(attibution, source: .adjust)
+        Appflow.shared.updateAttribution(attibution, source: .adjust, networkUserId: Adjust.adid())
     }
     
     @IBAction func branchSimulation(_ sender: Any) {
         let attibution = ["branch":"32c3e0cedee1fce1ed4ssa27af4bbe5e8e98",
                           "network":"Organic",]
-        Appflow.shared.updateAttribution(attibution, source: .branch)
+        Appflow.shared.updateAttribution(attibution, source: .branch, networkUserId: Appflow.shared.getAppUserId())
     }
     
     @IBAction func facebookSimulation(_ sender: Any) {
@@ -55,7 +58,8 @@ class AttributionViewController: UIViewController {
     }
     
     //reference: https://dev.to/pauladozsa/how-to-add-apple-search-ads-attribution-to-your-ios-app-4p2g
-    @IBAction func appleSearchAdsAction(_ sender: Any) {
+    //Pass the 'token' data, the backend requests and processes
+    @IBAction func appleSearchAdsHander(_ sender: Any){
         if #available(iOS 14.3, *) {
             if let attributionToken = try? AAAttribution.attributionToken() {
                 let param = ["attributionToken": attributionToken]

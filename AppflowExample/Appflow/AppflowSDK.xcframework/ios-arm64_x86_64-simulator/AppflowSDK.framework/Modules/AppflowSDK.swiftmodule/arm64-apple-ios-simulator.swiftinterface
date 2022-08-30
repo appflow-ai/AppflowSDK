@@ -1,8 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppflowSDK
-import AdSupport
-import AppTrackingTransparency
 @_exported import AppflowSDK
 import AudioToolbox
 import SystemConfiguration.CaptiveNetwork
@@ -82,6 +80,7 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.EntitlementList, Swift.Error?) -> Swift.Void)
   @objc public func uploadUserInfo()
   @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, Swift.Error?) -> Swift.Void)?)
+  @objc public func getAppUserId() -> Swift.String
   @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
@@ -131,6 +130,7 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
   @objc public func getPurchaseProductIds(_ completion: @escaping AppflowSDK.PruchaseGetProductIdsCompletionHander)
   @objc public func getUserIsActive() -> Swift.Bool
   @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, Swift.Error?) -> Swift.Void)?)
+  @objc public func getAppUserId() -> Swift.String
   @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc deinit

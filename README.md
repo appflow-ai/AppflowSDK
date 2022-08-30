@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.0
+Version：v1.0.2
 
 ## 1. SDK integration
 ##### AppflowSDK provides two integration methods for iOS developers to choose:
@@ -346,7 +346,8 @@ extension AppDelegate: AdjustDelegate {
     func adjustAttributionChanged(_ attribution: ADJAttribution?) {
         // Just pass Adjust attribution to Adapty SDK
         if let attribution = attribution?.dictionary() {
-            Appflow.shared.updateAttribution(attribution, source: .adjust)
+            //networkUserId:Adjust.adid()
+            Appflow.shared.updateAttribution(attribution, source: .adjust, networkUserId: Adjust.adid())
         }
     }
     
@@ -359,10 +360,11 @@ To upload Adjust attribution data, the developer accesses the Adjust SDK and rep
 ```
 //  MARK: branch init
 func branchInit(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-    Branch.getInstance().setIdentity("YOUR_USER_ID")
     Branch.getInstance().initSession(launchOptions: launchOptions) { (data, error) in
         if let data = data {
-                Appflow.shared.updateAttribution(data, source: .branch)
+            Appflow.shared.updateAttribution(data, source: .branch,networkUserId: Appflow.shared.getAppUserId())
+            //When Branch reports data, setIdentity must be set for data association.
+            Branch.getInstance().setIdentity(Appflow.shared.getAppUserId())
         }
     }
 
@@ -379,8 +381,24 @@ Appflow.shared.updateAttribution([:], source: .facebook,networkUserId:FBSDKCoreK
 ### Apple Search ads
 To upload Apple Search ads attribution data, refer to the following example,
 
+For the AdServices Framework
+
 ```
-Appflow.shared.updateAttribution(attribution, source: .appleSearchAds)
+if let attributionToken = try? AAAttribution.attributionToken() {
+    let attributionDetails = ["attributionToken": attributionToken]
+    Appflow.shared.updateAttribution(attributionDetails, source: .appleSearchAds)
+}
+```
+
+For the iAd Framework
+
+```
+ADClient.shared().requestAttributionDetails({ (attributionDetails, error) in
+    guard let attributionDetails = attributionDetails else {
+        return
+    }
+    Appflow.shared.updateAttribution(attributionDetails, source: .appleSearchAds)
+})
 ```
 
 ### Custom
