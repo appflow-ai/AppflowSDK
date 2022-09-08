@@ -60,11 +60,11 @@ class SkuListViewController: UIViewController {
 
     @IBAction func restoreAction(_ sender: Any) {
         self.showActivity()
-        Appflow.shared.restorePurchases {[weak self] entitlements, error in
+        Appflow.shared.restorePurchases {[weak self] subscriber, error in
             guard let `self` = self else { return  }
             self.hiddenActivity()
             if error == nil {
-                self.getEntitlementsToDeal(entitlements)
+                self.getIMSubscriberToDeal(subscriber)
             }
         }
     }
@@ -97,7 +97,7 @@ extension SkuListViewController: UITableViewDataSource,UITableViewDelegate {
         if let skProduct = self.skuDetailInfo?[product_id] {
             if Appflow.shared.canMakePayment() {
                 self.showActivity()
-                Appflow.shared.purchaseSKProduct(skProduct) {[weak self] transaction, entitlement, error, canceled in
+                Appflow.shared.purchaseSKProduct(skProduct) {[weak self] transaction, subscriber, error, canceled in
                     guard let `self` = self else { return }
                     self.hiddenActivity()
                     if canceled || error != nil {
@@ -115,22 +115,21 @@ extension SkuListViewController: UITableViewDataSource,UITableViewDelegate {
 
     }
     func checkStatus() {
-        Appflow.shared.hasActiveSubscription({ [weak self] entitlements, error in
+        Appflow.shared.hasActiveSubscription({ [weak self] subscriber, error in
             guard let `self` = self else { return }
             if error == nil {
-                self.getEntitlementsToDeal(entitlements)
+                self.getIMSubscriberToDeal(subscriber)
             }
         })
     }
-    func getEntitlementsToDeal(_ entitlements:EntitlementList) {
+    func getIMSubscriberToDeal(_ subscriber :IMSubscriber) {
         var status = "pro not active"
-        if entitlements.count > 0 , let entilement:IMEntitlement = entitlements.values.first {
-            if entilement.isActive() {
-                status = "pro active"
-            }
+        if subscriber.isActive {
+            status = "pro active"
         }
         self.statusLabel.text = "Subcription status: \(status)"
     }
+    
     func updateUserInfo() {
         Appflow.shared.uploadUserInfo()
     }
@@ -144,3 +143,4 @@ extension SkuListViewController: UITableViewDataSource,UITableViewDelegate {
         return textPrirce
     }
 }
+

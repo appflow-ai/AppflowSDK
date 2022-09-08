@@ -215,7 +215,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSString;
 @class SKProduct;
 @class SKPaymentTransaction;
-@class IMEntitlement;
+@class IMSubscriber;
 enum AttributionNetwork : NSUInteger;
 @class GetAttributionResponse;
 
@@ -228,10 +228,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (void)setAnalyticsLogsWithEnabled:(BOOL)enabled;
 - (void)getPurchaseProductIds:(void (^ _Nonnull)(NSArray<NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getSkuDetailsWithProductIds:(NSSet<NSString *> * _Nonnull)productIds completion:(void (^ _Nullable)(NSDictionary<NSString *, SKProduct *> * _Nullable, NSError * _Nullable))completion;
-- (void)purchaseSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable, BOOL))completion;
+- (void)purchaseSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, IMSubscriber * _Nonnull, NSError * _Nullable, BOOL))completion;
 - (BOOL)canMakePayment SWIFT_WARN_UNUSED_RESULT;
-- (void)hasActiveSubscription:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
-- (void)restorePurchases:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
+- (void)hasActiveSubscription:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
+- (void)restorePurchases:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
 - (void)uploadUserInfo;
 /// uploadUserInfo
 /// \param userId App current userID (optional)
@@ -275,8 +275,6 @@ typedef SWIFT_ENUM(NSUInteger, AttributionNetwork, open) {
 };
 
 
-
-
 SWIFT_CLASS("_TtC10AppflowSDK11IMAnalytics")
 @interface IMAnalytics : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -292,16 +290,15 @@ SWIFT_CLASS("_TtC10AppflowSDK19IMDeviceInfoManager")
 
 SWIFT_CLASS("_TtC10AppflowSDK13IMEntitlement")
 @interface IMEntitlement : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (BOOL)isActive SWIFT_WARN_UNUSED_RESULT;
-@end
-
-@class IMProduct;
-
-SWIFT_CLASS("_TtC10AppflowSDK7IMGroup")
-@interface IMGroup : NSObject
+/// product group id
 @property (nonatomic, readonly, copy) NSString * _Nonnull id;
-@property (nonatomic, readonly, copy) NSArray<IMProduct *> * _Nonnull products;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
+/// product subscription\purchase status,
+/// true: subscribed\purchased; false: unsubscribed\unpurchased
+@property (nonatomic, readonly) BOOL isActive;
+/// product Id
+@property (nonatomic, readonly, copy) NSString * _Nonnull productId;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -324,8 +321,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)configureInitSDKWithAppFlowPlist;
 - (void)getSkuDetailsWithProductIds:(NSSet<NSString *> * _Nonnull)productIds completion:(void (^ _Nullable)(NSDictionary<NSString *, SKProduct *> * _Nullable, NSError * _Nullable))completion;
-- (void)hasActiveSubscription:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
-- (void)restorePurchases:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
+- (void)hasActiveSubscription:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
+- (void)restorePurchases:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
 - (void)enableLog:(BOOL)isEnable;
 - (BOOL)isSandbox SWIFT_WARN_UNUSED_RESULT;
 - (void)invalidateCache;
@@ -354,9 +351,99 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 
 
 
-
 SWIFT_CLASS("_TtC10AppflowSDK16IMRequestManager")
 @interface IMRequestManager : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IMSubscription;
+
+SWIFT_CLASS("_TtC10AppflowSDK12IMSubscriber")
+@interface IMSubscriber : NSObject
+/// product id
+@property (nonatomic, readonly, copy) NSString * _Nonnull productId;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
+/// product subscription\purchase status,
+/// true: subscribed\purchased; false: unsubscribed\unpurchased
+@property (nonatomic, readonly) BOOL isActive;
+/// check entitlement for current status
+@property (nonatomic, copy) NSArray<IMEntitlement *> * _Nonnull imEntitlements;
+/// subscription details by product_id
+@property (nonatomic, copy) NSArray<IMSubscription *> * _Nonnull imSubscriptions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(int32_t, IMSubscriberStatus, open) {
+/// Not currently used
+/// The receipt is out of date or there is another purchase issue.
+/// *
+  IMSubscriberStatusIM_MISSING_PURCH_INFO = 0,
+/// The receipt is expired but the subscription is still in a billing-retry state.
+/// If grace period is enabled, this state excludes subscriptions in grace period.
+/// *
+  IMSubscriberStatusIM_EXPIRED_IN_RETRY = -1,
+/// The receipt is fully expired due to a billing issue.
+  IMSubscriberStatusIM_EXPIRED_FROM_BILLING = -2,
+/// The customer did not accept the price increase.
+  IMSubscriberStatusIM_FAIL_TO_ACCEPT_INCREASE = -3,
+/// The product is no longer available.
+  IMSubscriberStatusIM_PROD_NOT_AVAILABLE = -4,
+/// The customer intentionally cancelled the subscription.
+  IMSubscriberStatusIM_EXP_VOLUNTARILY = -5,
+/// The system canceled the subscription because the customer upgraded.
+  IMSubscriberStatusIM_Upgraded = -6,
+/// The customer received a refund due to a perceived issue with the app.
+  IMSubscriberStatusIM_ISSUE_REFUND = -7,
+/// The customer received a refund for the subscription.
+  IMSubscriberStatusIM_OTHER_REFUND = -8,
+/// The receipt is expired and have been paused
+  IMSubscriberStatusIM_EXPIRED_WITH_PAUSE = -9,
+/// The subscription is active and have been paused
+  IMSubscriberStatusIM_ACTIVE_BUT_PAUSE = 6,
+/// The subscription is active and auto-renew is on.
+  IMSubscriberStatusIM_ACTIVE_AUTO_REN_ON = 5,
+/// The subscription is active and auto-renew is off.
+  IMSubscriberStatusIM_ACTIVE_AUTO_REN_OFF = 4,
+/// The subscription is a non-renewing subscription.
+  IMSubscriberStatusIM_NON_REN_SUB = 3,
+/// The subscription is an off-platform subscription.
+  IMSubscriberStatusIM_OFF_PLATFORM_SUB = 2,
+/// The subscription expired, but is in grace period.
+  IMSubscriberStatusIM_EXPIRED_IN_GRACE = 1,
+};
+
+@class IMSubscriptionOriginalTransaction;
+
+SWIFT_CLASS("_TtC10AppflowSDK14IMSubscription")
+@interface IMSubscription : NSObject
+/// product Id
+@property (nonatomic, readonly, copy) NSString * _Nonnull productId;
+/// SubscriptionState_State
+@property (nonatomic, readonly) enum IMSubscriberStatus status;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
+/// Time to unsubscribe (millisecond)
+@property (nonatomic, readonly) int64_t cancelAt;
+/// The next subscription ID to switch: Product ID
+@property (nonatomic, readonly, copy) NSString * _Nonnull willRenewTo;
+/// Original transactions
+@property (nonatomic, copy) NSArray<IMSubscriptionOriginalTransaction *> * _Nonnull originalTransactions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10AppflowSDK33IMSubscriptionOriginalTransaction")
+@interface IMSubscriptionOriginalTransaction : NSObject
+/// Original order note
+@property (nonatomic, readonly, copy) NSString * _Nonnull originalTxid;
+/// Time to start the subscription (millisecond)
+@property (nonatomic, readonly) int64_t startAt;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -590,7 +677,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSString;
 @class SKProduct;
 @class SKPaymentTransaction;
-@class IMEntitlement;
+@class IMSubscriber;
 enum AttributionNetwork : NSUInteger;
 @class GetAttributionResponse;
 
@@ -603,10 +690,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (void)setAnalyticsLogsWithEnabled:(BOOL)enabled;
 - (void)getPurchaseProductIds:(void (^ _Nonnull)(NSArray<NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getSkuDetailsWithProductIds:(NSSet<NSString *> * _Nonnull)productIds completion:(void (^ _Nullable)(NSDictionary<NSString *, SKProduct *> * _Nullable, NSError * _Nullable))completion;
-- (void)purchaseSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable, BOOL))completion;
+- (void)purchaseSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, IMSubscriber * _Nonnull, NSError * _Nullable, BOOL))completion;
 - (BOOL)canMakePayment SWIFT_WARN_UNUSED_RESULT;
-- (void)hasActiveSubscription:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
-- (void)restorePurchases:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
+- (void)hasActiveSubscription:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
+- (void)restorePurchases:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
 - (void)uploadUserInfo;
 /// uploadUserInfo
 /// \param userId App current userID (optional)
@@ -650,8 +737,6 @@ typedef SWIFT_ENUM(NSUInteger, AttributionNetwork, open) {
 };
 
 
-
-
 SWIFT_CLASS("_TtC10AppflowSDK11IMAnalytics")
 @interface IMAnalytics : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -667,16 +752,15 @@ SWIFT_CLASS("_TtC10AppflowSDK19IMDeviceInfoManager")
 
 SWIFT_CLASS("_TtC10AppflowSDK13IMEntitlement")
 @interface IMEntitlement : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (BOOL)isActive SWIFT_WARN_UNUSED_RESULT;
-@end
-
-@class IMProduct;
-
-SWIFT_CLASS("_TtC10AppflowSDK7IMGroup")
-@interface IMGroup : NSObject
+/// product group id
 @property (nonatomic, readonly, copy) NSString * _Nonnull id;
-@property (nonatomic, readonly, copy) NSArray<IMProduct *> * _Nonnull products;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
+/// product subscription\purchase status,
+/// true: subscribed\purchased; false: unsubscribed\unpurchased
+@property (nonatomic, readonly) BOOL isActive;
+/// product Id
+@property (nonatomic, readonly, copy) NSString * _Nonnull productId;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -699,8 +783,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)configureInitSDKWithAppFlowPlist;
 - (void)getSkuDetailsWithProductIds:(NSSet<NSString *> * _Nonnull)productIds completion:(void (^ _Nullable)(NSDictionary<NSString *, SKProduct *> * _Nullable, NSError * _Nullable))completion;
-- (void)hasActiveSubscription:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
-- (void)restorePurchases:(void (^ _Nonnull)(NSDictionary<NSString *, IMEntitlement *> * _Nonnull, NSError * _Nullable))completion;
+- (void)hasActiveSubscription:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
+- (void)restorePurchases:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
 - (void)enableLog:(BOOL)isEnable;
 - (BOOL)isSandbox SWIFT_WARN_UNUSED_RESULT;
 - (void)invalidateCache;
@@ -729,9 +813,99 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 
 
 
-
 SWIFT_CLASS("_TtC10AppflowSDK16IMRequestManager")
 @interface IMRequestManager : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IMSubscription;
+
+SWIFT_CLASS("_TtC10AppflowSDK12IMSubscriber")
+@interface IMSubscriber : NSObject
+/// product id
+@property (nonatomic, readonly, copy) NSString * _Nonnull productId;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
+/// product subscription\purchase status,
+/// true: subscribed\purchased; false: unsubscribed\unpurchased
+@property (nonatomic, readonly) BOOL isActive;
+/// check entitlement for current status
+@property (nonatomic, copy) NSArray<IMEntitlement *> * _Nonnull imEntitlements;
+/// subscription details by product_id
+@property (nonatomic, copy) NSArray<IMSubscription *> * _Nonnull imSubscriptions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(int32_t, IMSubscriberStatus, open) {
+/// Not currently used
+/// The receipt is out of date or there is another purchase issue.
+/// *
+  IMSubscriberStatusIM_MISSING_PURCH_INFO = 0,
+/// The receipt is expired but the subscription is still in a billing-retry state.
+/// If grace period is enabled, this state excludes subscriptions in grace period.
+/// *
+  IMSubscriberStatusIM_EXPIRED_IN_RETRY = -1,
+/// The receipt is fully expired due to a billing issue.
+  IMSubscriberStatusIM_EXPIRED_FROM_BILLING = -2,
+/// The customer did not accept the price increase.
+  IMSubscriberStatusIM_FAIL_TO_ACCEPT_INCREASE = -3,
+/// The product is no longer available.
+  IMSubscriberStatusIM_PROD_NOT_AVAILABLE = -4,
+/// The customer intentionally cancelled the subscription.
+  IMSubscriberStatusIM_EXP_VOLUNTARILY = -5,
+/// The system canceled the subscription because the customer upgraded.
+  IMSubscriberStatusIM_Upgraded = -6,
+/// The customer received a refund due to a perceived issue with the app.
+  IMSubscriberStatusIM_ISSUE_REFUND = -7,
+/// The customer received a refund for the subscription.
+  IMSubscriberStatusIM_OTHER_REFUND = -8,
+/// The receipt is expired and have been paused
+  IMSubscriberStatusIM_EXPIRED_WITH_PAUSE = -9,
+/// The subscription is active and have been paused
+  IMSubscriberStatusIM_ACTIVE_BUT_PAUSE = 6,
+/// The subscription is active and auto-renew is on.
+  IMSubscriberStatusIM_ACTIVE_AUTO_REN_ON = 5,
+/// The subscription is active and auto-renew is off.
+  IMSubscriberStatusIM_ACTIVE_AUTO_REN_OFF = 4,
+/// The subscription is a non-renewing subscription.
+  IMSubscriberStatusIM_NON_REN_SUB = 3,
+/// The subscription is an off-platform subscription.
+  IMSubscriberStatusIM_OFF_PLATFORM_SUB = 2,
+/// The subscription expired, but is in grace period.
+  IMSubscriberStatusIM_EXPIRED_IN_GRACE = 1,
+};
+
+@class IMSubscriptionOriginalTransaction;
+
+SWIFT_CLASS("_TtC10AppflowSDK14IMSubscription")
+@interface IMSubscription : NSObject
+/// product Id
+@property (nonatomic, readonly, copy) NSString * _Nonnull productId;
+/// SubscriptionState_State
+@property (nonatomic, readonly) enum IMSubscriberStatus status;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
+/// Time to unsubscribe (millisecond)
+@property (nonatomic, readonly) int64_t cancelAt;
+/// The next subscription ID to switch: Product ID
+@property (nonatomic, readonly, copy) NSString * _Nonnull willRenewTo;
+/// Original transactions
+@property (nonatomic, copy) NSArray<IMSubscriptionOriginalTransaction *> * _Nonnull originalTransactions;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10AppflowSDK33IMSubscriptionOriginalTransaction")
+@interface IMSubscriptionOriginalTransaction : NSObject
+/// Original order note
+@property (nonatomic, readonly, copy) NSString * _Nonnull originalTxid;
+/// Time to start the subscription (millisecond)
+@property (nonatomic, readonly) int64_t startAt;
+/// Expiration time of the subscription (millisecond)
+@property (nonatomic, readonly) int64_t expireAt;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
