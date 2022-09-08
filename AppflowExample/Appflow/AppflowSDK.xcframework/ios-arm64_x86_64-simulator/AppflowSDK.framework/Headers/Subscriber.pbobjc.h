@@ -29,8 +29,6 @@ CF_EXTERN_C_BEGIN
 
 @class BillingIssue;
 @class Entitlement;
-@class ProductGroup;
-@class ProductGroup_Product;
 @class ProductInfo;
 @class ProductInfo_Discount;
 @class Subscription;
@@ -473,63 +471,6 @@ int32_t SubscriptionState_SubState_RawValue(SubscriptionState *message);
  **/
 void SetSubscriptionState_SubState_RawValue(SubscriptionState *message, int32_t value);
 
-#pragma mark - ProductGroupRequest
-
-typedef GPB_ENUM(ProductGroupRequest_FieldNumber) {
-  ProductGroupRequest_FieldNumber_Id_p = 1,
-};
-
-GPB_FINAL @interface ProductGroupRequest : GPBMessage
-
-/** product group id */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
-
-@end
-
-#pragma mark - ProductGroup
-
-typedef GPB_ENUM(ProductGroup_FieldNumber) {
-  ProductGroup_FieldNumber_Id_p = 1,
-  ProductGroup_FieldNumber_ProductsArray = 2,
-};
-
-GPB_FINAL @interface ProductGroup : GPBMessage
-
-/** product group id, entitlement id */
-@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ProductGroup_Product*> *productsArray;
-/** The number of items in @c productsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger productsArray_Count;
-
-@end
-
-#pragma mark - ProductGroup_Product
-
-typedef GPB_ENUM(ProductGroup_Product_FieldNumber) {
-  ProductGroup_Product_FieldNumber_Id_p = 1,
-};
-
-GPB_FINAL @interface ProductGroup_Product : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
-
-@end
-
-#pragma mark - GetAllProductGroupsResponse
-
-typedef GPB_ENUM(GetAllProductGroupsResponse_FieldNumber) {
-  GetAllProductGroupsResponse_FieldNumber_ProductGroupsArray = 1,
-};
-
-GPB_FINAL @interface GetAllProductGroupsResponse : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ProductGroup*> *productGroupsArray;
-/** The number of items in @c productGroupsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger productGroupsArray_Count;
-
-@end
-
 #pragma mark - UploadUserInfoRequest
 
 typedef GPB_ENUM(UploadUserInfoRequest_FieldNumber) {
@@ -595,6 +536,8 @@ typedef GPB_ENUM(GetInitInfoRequest_FieldNumber) {
   GetInitInfoRequest_FieldNumber_Timezone = 6,
   GetInitInfoRequest_FieldNumber_TzAbv = 7,
   GetInitInfoRequest_FieldNumber_DeviceId = 8,
+  GetInitInfoRequest_FieldNumber_PackageName = 9,
+  GetInitInfoRequest_FieldNumber_SdkVersion = 10,
 };
 
 GPB_FINAL @interface GetInitInfoRequest : GPBMessage
@@ -614,6 +557,10 @@ GPB_FINAL @interface GetInitInfoRequest : GPBMessage
 @property(nonatomic, readwrite, copy, null_resettable) NSString *tzAbv;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *packageName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sdkVersion;
 
 @end
 

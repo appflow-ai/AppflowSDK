@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.2
+Version：v1.0.3
 
 ## 1. SDK integration
 ##### AppflowSDK provides two integration methods for iOS developers to choose:
@@ -86,6 +86,22 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
  
  }
 ```
+**API Reference**
+| getPurchaseProductIds                             |                  |
+| ----------------------------------------- | ---------------- |
+| error = nil    | Success callback |
+| error != nil   | Failure callback |
+
+| error: Error   |                  |
+| -------------- | ---------------- |
+| code           | error code       |
+| message        | error message    |
+
+| Parameter returned: data type             | Tnstructions     |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| productIdArray: [string]                  | Returns the Appflow platform configuration ProductID  |
+
+
 ### Get the sku information of in-app purchases
 Displaying Products
 To fetch the products sku information, you have to call method:
@@ -96,57 +112,135 @@ Appflow.shared.getSkuDetails(productIds: Set(productIDs)) { skuDetailInfo, error
     
 };
 ```
+**API Reference**
+| getSkuDetails                             |                  |
+| ----------------------------------------- | ---------------- |
+| error = nil    | Success callback |
+| error != nil   | Failure callback |
+
+| error: Error   |                  |
+| -------------- | ---------------- |
+| code           | error code       |
+| message        | error message    |
+
+| Request parameter: data type              | Tnstructions      |
+| ----------------------------------------- | ------------------------------------------------------------------ |
+| productIds: Set<String>                   | The parameter is the product ID configured in the Apple background |
+
+| Returned parameter: data type             | Tnstructions                                                 |
+| ----------------------------------------- | ------------------------------------------------------------ |
+| skuDetailInfo: [String:SKProduct]         | key - value, Return SKProduct                                |
+
 After obtaining `SKProduct`, you can obtain information related to in-app purchases, and developers can save them in their own projects. Subsequent payment needs to be used.
+> SKProduct, please refer to the official documentation of Apple[:](https://developer.apple.com/documentation/storekit/skproduct)
 
 ### Check if payment available
 ```
  let canMakePurchases = Appflow.shared.canMakePayment()
 ```
+> This interface returns data of type 'bool'. True: indicates that payment can be pulled up. False: indicates that payment cannot be pulled up
+
 ### Making purchase
 To start the purchase process call function purchaseProduct it will take `SKProduct` object as a parameter.
 ```
-Appflow.shared.purchaseSKProduct(product) { (transaction, entitlement, error, isCanceled) in {
+Appflow.shared.purchaseSKProduct(product) { (transaction, subscriber, error, isCanceled) in {
 }
 ```
-Closure will return `SKPaymentTransaction`, entitlement dictionary, error if it occurred and bool to indicate if a user canceled the purchase process.
+> Closure will return `SKPaymentTransaction`, entitlement dictionary, error if it occurred and bool to indicate if a user canceled the purchase process.
+
+```
+ Users can use **IMSubscriber.isActive** to determine the subscription status. true: subscribed\purchased; false: unsubscribed\unpurchased
+ IMSubscriber.expireAt, Return the expiration time of the current subscription. You can compare `expireAt` with the current time and process the subscription status
+```
+
+
+**API Reference**
+| purchaseSKProduct                         |                  |
+| ----------------------------------------- | ---------------- |
+| error = nil    | Success callback |
+| error != nil   | Failure callback, **Note**: A user's subscription status cannot be determined by ERROR.Please use:`isActive` or `expireAt` |
+
+| error: Error   |                  |
+| -------------- | ---------------- |
+| code           | error code       |
+| message        | error message|
+
+| Request parameter: data type  | Tnstructions        |
+| ----------------------------- | ------------------- |
+| product: SKProduct            | Product information |
+
+| Returned parameter: data type       | Tnstructions                                                 |
+| ----------------------------------- | ------------------------------------------------------------ |
+| transaction: SKPaymentTransaction   | An object in the payment queue. [SKPaymentTransaction|](https://developer.apple.com/documentation/storekit/skpaymenttransaction) |
+| isCanceled: Bool                    | Cancel the payment  |
+
+| entitlement: IMSubscriber           | Tnstructions                                                 |
+| ----------------------------------- | ------------------------------------------------------------ |
+| productId: String                   | product id |
+| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
+| isActive: Bool                      | product subscription\purchase status, true: subscribed\purchased; false: unsubscribed\unpurchased |
+| imEntitlement: [IMEntitlement]      | check entitlement for current status |
+| imSubscription: [IMSubscription]    | subscription details by product_id |
+
+| IMEntitlement                       | Tnstructions                                                 |
+| ----------------------------------- | ------------------------------------------------------------ |
+| id: String                          | product group id      |
+| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
+| isActive: Bool                      | product subscription\purchase status, true: subscribed\purchased; false: unsubscribed\unpurchased |
+| productId: String                   | product id |
+
+| IMSubscription                      | product Id                                                 |
+| ----------------------------------- | ------------------------------------------------------------ |
+| status: IMSubscriberStatus          | SubscriptionState_State |
+| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
+| cancelAt: Int64                     | Time to unsubscribe (millisecond) |
+| willRenewTo: String                 | The next subscription ID to switch: Product ID |
+| originalTransactions: [IMSubscriptionOriginalTransaction]  | Original transactions |
+
+| IMSubscription                      | product Id                                                 |
+| ----------------------------------- | ------------------------------------------------------------ |
+| originalTxid: String                | Original order note |
+| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
+| startAt: Int64                      | Time to start the subscription (millisecond) |
+
 
 ### Checking user status
-To check if user have any active entitlements call function `hasActiveSubscription`
+To check if user have any active subscriber call function `hasActiveSubscription`
 ```
-Appflow.shared.hasActiveSubscription({ [weak self] entitlements, error in
+Appflow.shared.hasActiveSubscription({ [weak self] subscriber, error in
     guard let `self` = self else { return }
     var status = "pro not active"
     if error == nil {
-        if entitlements.count > 0 , let entilement:IMEntitlement = entitlements.values.first {
-            if entilement.isActive() {
-                status = "pro active"
-            }
+        if subscriber.isActive {
+            status = "pro active"
         }
         self.statusLabel.text = "Subcription status: \(status)"
     }
 })
 
 ```
-It will return the entitlements dictionary where key entitlement id and value `IMEntitlment` object. 
-To check if entilement active call `isActive()` method of `IMEntitlement` object.
+```
+ Users can use **IMSubscriber.isActive** to determine the subscription status. true: subscribed\purchased; false: unsubscribed\unpurchased
+ IMSubscriber.expireAt, Return the expiration time of the current subscription. You can compare `expireAt` with the current time and process the subscription status
+```
 
 ### Restoring purchases
 To restore user purchases call restorePurchases function.
 
 ```
-Appflow.shared.restorePurchases { (entitlement, error) in
+Appflow.shared.restorePurchases { (subscriber, error) in
     if error == nil {
-        if entitlements.count > 0 , let entilement:IMEntitlement = entitlements.values.first {
-            if entilement.isActive() {
-                // Purchase restored and have active entitlment
-            }else {
-                // Purchase restore finished but user don't have active entitlment
-            }
+        if subscriber.isActive {
+            // Purchase restored and have active entitlment
         }else {
             // Purchase restore finished but user don't have active entitlment
         }
     }
 }
+```
+```
+ Users can use **IMSubscriber.isActive** to determine the subscription status. true: subscribed\purchased; false: unsubscribed\unpurchased
+ IMSubscriber.expireAt, Return the expiration time of the current subscription. You can compare `expireAt` with the current time and process the subscription status
 ```
 
 ### UploadUserInfo
@@ -186,85 +280,29 @@ Appflow.shared.uploadUserInfo(userId: "app_user_idxxxxx", extraAttribute: extraA
 
 
 ## 4. Event tracking
-### First installation
-```
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .firstOpen, params: nil)
-```
-### The App launched
-```
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .appStart, params: nil)
-```
-### The App current uv
-```
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .screenView, params: [
-    kScreenViewName: kHomepage
-])
-or
-let model = ParamModel()
-model.screenType = ParamScreenHome
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .screenView, paramModel: model)
-```
-### Ads click
-```
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .adsClick, params: [
-    kPlacement: kQuickClean,
-    kFormat: kBanner
-])
-or 
-let model = ParamModel()
-model.placeType = ParamPlaceClean
-model.formatType = ParamFormatBanner
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .adsClick, paramModel: model)
-```
-### Ads show
-```
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .adsShow, params: [
-    kPlacement: kQuickClean,
-    kFormat: kBanner
-])
+You can send statistics events to Appflow backend in the following ways
 
-let model = ParamModel()
-model.placeType = ParamPlaceClean
-model.formatType = ParamFormatBanner
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .adsShow, paramModel: model)
+```Swift
+//Send an event with params, If you have no arguments you can just pass 'nil'
+uploadBigDataWithType(eventName: String, params: [AnyHashable : Any]?)
 ```
-### ev_User_Engagement
-```
-let tMSimestamp = "\(IMDeviceInfoManager.shared().getCurrentMSimestamp())"
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .userEngagement, params: [
-    kEngagementTimeMsec: tMSimestamp,
-    kScreenViewName: kHomepage
-])
-or
-let tMSimestamp = "\(IMDeviceInfoManager.shared().getCurrentMSimestamp())"
-let model = ParamModel()
-model.screenType = ParamScreenHome
-model.otherData = [
-    kEngagementTimeMsec: tMSimestamp
-]
-Appflow.shared.analytics.uploadBigData(eventType: .userEngagement, paramModel: model)
-```
-### If you need a callback in the above method, do something like this
+
+**Example**
+
+```Swift
+//Send an event with no parameters
+Appflow.shared.uploadBigDataWithType(eventName: "test_event", params: nil)
+//Send an event with parameters
+var params:[AnyHashable : Any] = [AnyHashable : Any]()
+params["name"] = "abc"
+arams["age"] = 18
+Appflow.shared.uploadBigDataWithType(eventName: "test_event", params: params)
 
 ```
-Appflow.shared.analytics.uploadBigDataWithType(eventType: .userEngagement, params: [
-    kEngagementTimeMsec: tMSimestamp,
-    kScreenViewName: kHomepage
-], successBlock: { obj in
 
-}) { obj in
+> If you want to check whether an event was reported successfully, you can open AnalyticsLogs with the following code:
+>> Appflow.shared.setAnalyticsLogs(enabled: true)
 
-}
-```
-### If the above enumeration does not meet the requirements, extend it as follows
-```
-Appflow.shared.analytics.uploadBigDataWithEvent(
-    eventName: "event_name",
-    params: [
-        "name": "123",
-        "time": "456"
-    ])
-```
 
 
 ## 5. Push notification

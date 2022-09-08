@@ -15,13 +15,10 @@
 #endif
 
 @class GPBEmpty;
-@class GetAllProductGroupsResponse;
 @class GetAppConfigRequest;
 @class GetAppConfigResponse;
 @class GetInitInfoRequest;
 @class GetInitInfoResponse;
-@class ProductGroup;
-@class ProductGroupRequest;
 @class ReceiptRequest;
 @class Subscriber;
 @class SubscriberRequest;
@@ -59,14 +56,6 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark VerifyReceipt(ReceiptRequest) returns (Subscriber)
 
 - (GRPCUnaryProtoCall *)verifyReceiptWithMessage:(ReceiptRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
-
-#pragma mark GetAllProductGroups(Empty) returns (GetAllProductGroupsResponse)
-
-- (GRPCUnaryProtoCall *)getAllProductGroupsWithMessage:(GPBEmpty *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
-
-#pragma mark GetProductGroup(ProductGroupRequest) returns (ProductGroup)
-
-- (GRPCUnaryProtoCall *)getProductGroupWithMessage:(ProductGroupRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 #pragma mark UploadUserInfo(UploadUserInfoRequest) returns (Empty)
 
@@ -116,20 +105,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)verifyReceiptWithRequest:(ReceiptRequest *)request handler:(void(^)(Subscriber *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToVerifyReceiptWithRequest:(ReceiptRequest *)request handler:(void(^)(Subscriber *_Nullable response, NSError *_Nullable error))handler;
-
-
-#pragma mark GetAllProductGroups(Empty) returns (GetAllProductGroupsResponse)
-
-- (void)getAllProductGroupsWithRequest:(GPBEmpty *)request handler:(void(^)(GetAllProductGroupsResponse *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToGetAllProductGroupsWithRequest:(GPBEmpty *)request handler:(void(^)(GetAllProductGroupsResponse *_Nullable response, NSError *_Nullable error))handler;
-
-
-#pragma mark GetProductGroup(ProductGroupRequest) returns (ProductGroup)
-
-- (void)getProductGroupWithRequest:(ProductGroupRequest *)request handler:(void(^)(ProductGroup *_Nullable response, NSError *_Nullable error))handler;
-
-- (GRPCProtoCall *)RPCToGetProductGroupWithRequest:(ProductGroupRequest *)request handler:(void(^)(ProductGroup *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark UploadUserInfo(UploadUserInfoRequest) returns (Empty)
