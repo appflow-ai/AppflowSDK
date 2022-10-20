@@ -10231,7 +10231,7 @@
       "kind": "StringLiteral",
       "offset": 287,
       "length": 7,
-      "value": "\"1.0.4\""
+      "value": "\"1.0.5\""
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
@@ -10645,6 +10645,20 @@
       "offset": 6126,
       "length": 1,
       "value": "1"
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 732,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
+      "kind": "BooleanLiteral",
+      "offset": 778,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
