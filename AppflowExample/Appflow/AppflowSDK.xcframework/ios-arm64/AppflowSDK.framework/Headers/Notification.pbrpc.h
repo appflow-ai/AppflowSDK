@@ -14,6 +14,8 @@
 #import <RxLibrary/GRXWriter.h>
 #endif
 
+@class GetInAppMessageRequest;
+@class InAppMessage;
 @class UploadDeviceTokenRequest;
 @class UploadDeviceTokenResponse;
 
@@ -38,6 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (GRPCUnaryProtoCall *)uploadDeviceTokenWithMessage:(UploadDeviceTokenRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
+#pragma mark GetInAppMessage(GetInAppMessageRequest) returns (InAppMessage)
+
+- (GRPCUnaryProtoCall *)getInAppMessageWithMessage:(GetInAppMessageRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
 @end
 
 /**
@@ -61,6 +67,13 @@ NS_ASSUME_NONNULL_BEGIN
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
 - (GRPCProtoCall *)RPCToUploadDeviceTokenWithRequest:(UploadDeviceTokenRequest *)request handler:(void(^)(UploadDeviceTokenResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetInAppMessage(GetInAppMessageRequest) returns (InAppMessage)
+
+- (void)getInAppMessageWithRequest:(GetInAppMessageRequest *)request handler:(void(^)(InAppMessage *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToGetInAppMessageWithRequest:(GetInAppMessageRequest *)request handler:(void(^)(InAppMessage *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
