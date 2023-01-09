@@ -14,6 +14,7 @@ import StoreKit
 import Swift
 import SystemConfiguration
 import UIKit
+import UserNotifications
 import WebKit
 import _Concurrency
 import _StringProcessing
@@ -132,6 +133,9 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func uploadBigDataWithType(eventName: Swift.String, params: [Swift.AnyHashable : Any]?)
+  @objc public func setInAppMesssageAutoShow(isAuto: Swift.Bool)
+  @objc public func setFromBackgroudPointToDelayTime(delayTime: Foundation.TimeInterval)
+  @objc public func sendUserNotificationCenterMessage(userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }
@@ -272,6 +276,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
   public var formatType: AppflowSDK.IMAnalytics.ParamFormatType
   public var otherData: [Swift.AnyHashable : Any]
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class IMInAppMessagePage : UIKit.UIView {
   @objc deinit
 }
 extension AppflowSDK.IMSubscriberStatus : Swift.Equatable {}

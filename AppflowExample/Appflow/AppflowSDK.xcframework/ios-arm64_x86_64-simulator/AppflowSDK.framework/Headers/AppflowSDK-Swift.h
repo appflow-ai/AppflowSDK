@@ -295,6 +295,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)loadPaywallToPurachaseWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)uploadBigDataWithTypeWithEventName:(NSString * _Nonnull)eventName params:(NSDictionary * _Nullable)params;
+- (void)setInAppMesssageAutoShowWithIsAuto:(BOOL)isAuto;
+- (void)setFromBackgroudPointToDelayTimeWithDelayTime:(NSTimeInterval)delayTime;
+- (BOOL)sendUserNotificationCenterMessageWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -346,6 +349,13 @@ SWIFT_CLASS("_TtC10AppflowSDK13IMEntitlement")
 @end
 
 
+SWIFT_CLASS("_TtC10AppflowSDK18IMInAppMessagePage")
+@interface IMInAppMessagePage : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC10AppflowSDK9IMProduct")
 @interface IMProduct : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull id;
@@ -389,6 +399,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
+
 
 
 
@@ -802,6 +813,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)loadPaywallToPurachaseWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)uploadBigDataWithTypeWithEventName:(NSString * _Nonnull)eventName params:(NSDictionary * _Nullable)params;
+- (void)setInAppMesssageAutoShowWithIsAuto:(BOOL)isAuto;
+- (void)setFromBackgroudPointToDelayTimeWithDelayTime:(NSTimeInterval)delayTime;
+- (BOOL)sendUserNotificationCenterMessageWithUserInfo:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -853,6 +867,13 @@ SWIFT_CLASS("_TtC10AppflowSDK13IMEntitlement")
 @end
 
 
+SWIFT_CLASS("_TtC10AppflowSDK18IMInAppMessagePage")
+@interface IMInAppMessagePage : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC10AppflowSDK9IMProduct")
 @interface IMProduct : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull id;
@@ -896,6 +917,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
+
 
 
 

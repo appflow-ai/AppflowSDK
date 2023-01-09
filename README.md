@@ -1,11 +1,10 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.3
+Version：v1.0.6
 
 ## 1. SDK integration
-##### AppflowSDK provides two integration methods for iOS developers to choose:
+##### AppflowSDK provides one integration methods for iOS developers to choose:
 - Pass through CocoaPods integrated
-- Pass through Swift package manager integrated
 ### Pass through CocoaPods integrated
 
 ```
@@ -22,19 +21,8 @@ pod install
 > Execute pod search AppflowSDK under the command line. If the displayed version of **AppflowSDK** is not the latest, execute the pod repo update operation to update the content of the local repo
 > For more information on CocoaPods please see [ CocoaPods](https://cocoapods.org/)。
 
-### Pass through Swift package manager integrated
-To add the SDK using Swift's package manager:
-1. Click File.
-1. Select Swift Packages.
-1. Select Add Package Dependency.
-1. In the box that appears, enter the SDK's GitHub address.
-1. Select the version of the AppflowSDK you want to use in the Version dropdown. Check the releases page for the latest stable version.
-```
-https://github.com/appflow-ai/AppflowSDK
-```
-
-
 ## 2. Initialize SDK
+
 ### Add configuration file
 
 > Download the **appflow-app-token.json** file, Add to targets to the project. 
@@ -343,7 +331,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 }
 ```
 
-## 5. Paywall
+## 6. Paywall
 The SDK provides a shortcut for displaying paid products. After setting the style in Appflow plaltform, you can display it by call method:
 
 ```
@@ -357,7 +345,7 @@ Appflow.shared.loadPaywallToPurachase {[weak self] result, msg in
 
 
 
-## 5. Attribution
+## 7. Attribution
 Appflow supports Appsflyer, Adjust, Branch, Apple search ads, FacebookAds and custom attribution data upload，you have to call method:
 ### Appsflyer
 To upload Appsflyer attribution data, the developer accesses the appsflyer SDK and reports the data in the AppsFlyerLibDelegate method, refer to the example below,which **networkUserId **cannot be empty
@@ -451,7 +439,7 @@ let attribution = [
 Appflow.shared.updateAttribution(attribution, source: .custom)
 ```
 
-## 5. WelcomPage
+## 8. WelcomPage
 The SDK adds the View of AppflowWelcomePage. If the user needs to start the welcome page, the configuration of the page needs to be configured on the Appflow platform. The welcomePage loading method can be referred to as follows:
 
 ```
@@ -470,4 +458,44 @@ func loadLaunchScreenView() {
 
 ```
 > It may take time to load welcome page for the first time. The default loading waiting time is 30s. Users can set **waitingTime** according to their needs.
+
+
+
+## 9. In App Message
+
+> In App message has a, b two ways to load, divided into automatic and manual,
+
+### a.  Automatically set the pop-up In App Message
+
+> If the user accesses the push function and wants to automatically manage and display the In App Message when it is received, you can call the following method to enable this function. The In App Message function is disabled by default. **Example:** 
+
+```
+ //In App Message
+ //true: automatically displayed;
+ //false: not automatically displayed
+ Appflow.shared.setInAppMesssageAutoShow(isAuto: true)
+```
+
+If you set 'setInAppMesssageAutoShow = True', developers can set the delay time of In App Mesesage as needed, the default delay time is 1.5s
+
+> Explanation： When the App is in the background, click on the content of the push message to enter the App. The In App Message cannot be displayed immediately. It needs to wait for the App to start up before displaying the content. In this setting process, there needs to be a delay time for loading buffers. The default loading buffer delay time is 1.5s, which can be set according to the effect of your own project. **Example:** 
+>
+
+```
+ //Set the delay time for message display
+ Appflow.shared.setFromBackgroudPointToDelayTime(delayTime: 2)
+```
+
+> **Note**: Method ‘a’ ：is not applicable to projects that have access to message push or need to process message content. If the message push function has been connected, you can use method 'b' to access 'In App message'
+
+### b.  Manually set the pop-up In App Message
+
+If the project itself is connected to the message push function, if you want to use the In App Message function, you can call the sendUserNotificationCenterMessage(userInfo:[AnyHashable:Any]) method after receiving the message, package the message and send it to the SDK, and the SDK will automatically parse the message content to judge Whether it is 'In App Message', if it is, it will be displayed automatically and return true, if it is not 'In App Message', it will not be displayed and return false. **example:**
+
+```
+//UserInfo: Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+//The custom data to associate with the notification.
+//userInfo ：notification.request.content.userInfo
+Appflow.shared.sendUserNotificationCenterMessage(userInfo: userInfo)
+```
 

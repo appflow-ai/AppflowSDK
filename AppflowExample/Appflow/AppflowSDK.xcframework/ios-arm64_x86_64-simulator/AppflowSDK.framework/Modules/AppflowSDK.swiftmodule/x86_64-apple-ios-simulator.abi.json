@@ -5099,6 +5099,107 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "setInAppMesssageAutoShow",
+            "printedName": "setInAppMesssageAutoShow(isAuto:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)setInAppMesssageAutoShowWithIsAuto:",
+            "mangledName": "$s10AppflowSDK0A0C24setInAppMesssageAutoShow02isG0ySb_tF",
+            "moduleName": "AppflowSDK",
+            "objc_name": "setInAppMesssageAutoShowWithIsAuto:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setFromBackgroudPointToDelayTime",
+            "printedName": "setFromBackgroudPointToDelayTime(delayTime:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)setFromBackgroudPointToDelayTimeWithDelayTime:",
+            "mangledName": "$s10AppflowSDK0A0C32setFromBackgroudPointToDelayTime05delayI0ySd_tF",
+            "moduleName": "AppflowSDK",
+            "objc_name": "setFromBackgroudPointToDelayTimeWithDelayTime:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendUserNotificationCenterMessage",
+            "printedName": "sendUserNotificationCenterMessage(userInfo:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.AnyHashable : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)sendUserNotificationCenterMessageWithUserInfo:",
+            "mangledName": "$s10AppflowSDK0A0C33sendUserNotificationCenterMessage8userInfoSbSDys11AnyHashableVypG_tF",
+            "moduleName": "AppflowSDK",
+            "objc_name": "sendUserNotificationCenterMessageWithUserInfo:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -7137,6 +7238,23 @@
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AppflowSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "AppflowSDK"
       },
       {
         "kind": "Import",
@@ -10106,6 +10224,144 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "AppflowSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "AppflowSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IMInAppMessagePage",
+        "printedName": "IMInAppMessagePage",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IMInAppMessagePage",
+                "printedName": "AppflowSDK.IMInAppMessagePage",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMInAppMessagePage"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMInAppMessagePage(im)initWithFrame:",
+            "mangledName": "$s10AppflowSDK18IMInAppMessagePageC5frameACSo6CGRectV_tcfc",
+            "moduleName": "AppflowSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AppflowSDK@objc(cs)IMInAppMessagePage",
+        "mangledName": "$s10AppflowSDK18IMInAppMessagePageC",
+        "moduleName": "AppflowSDK",
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIView",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -10231,7 +10487,7 @@
       "kind": "StringLiteral",
       "offset": 287,
       "length": 7,
-      "value": "\"1.0.5\""
+      "value": "\"1.0.6\""
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
@@ -10788,8 +11044,15 @@
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProductRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 313,
+      "length": 40,
+      "value": "\"AppflowSDK.IMProductsRequestCompletionHandlerObject\""
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProductRequest.swift",
       "kind": "Array",
-      "offset": 355,
+      "offset": 1116,
       "length": 2,
       "value": "[]"
     },
@@ -10908,14 +11171,14 @@
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
-      "offset": 13217,
+      "offset": 13239,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
-      "offset": 13449,
+      "offset": 13471,
       "length": 3,
       "value": "[]"
     },
@@ -11121,6 +11384,27 @@
       "offset": 1266,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 253,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
+      "kind": "FloatLiteral",
+      "offset": 293,
+      "length": 3,
+      "value": "1.5"
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 339,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
@@ -11758,6 +12042,13 @@
       "offset": 7312,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMInAppMessagePage.swift",
+      "kind": "StringLiteral",
+      "offset": 137,
+      "length": 18,
+      "value": "\"AppflowSDK.IMInAppMessagePage\""
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",

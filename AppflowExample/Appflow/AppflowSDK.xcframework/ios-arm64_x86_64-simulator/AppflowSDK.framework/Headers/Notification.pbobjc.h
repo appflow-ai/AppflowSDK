@@ -65,6 +65,39 @@ GPB_FINAL @interface UploadDeviceTokenResponse : GPBMessage
 
 @end
 
+#pragma mark - InAppMessage
+
+typedef GPB_ENUM(InAppMessage_FieldNumber) {
+  InAppMessage_FieldNumber_Id_p = 1,
+  InAppMessage_FieldNumber_Title = 2,
+  InAppMessage_FieldNumber_Content = 3,
+  InAppMessage_FieldNumber_Html = 4,
+};
+
+GPB_FINAL @interface InAppMessage : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *content;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *html;
+
+@end
+
+#pragma mark - GetInAppMessageRequest
+
+typedef GPB_ENUM(GetInAppMessageRequest_FieldNumber) {
+  GetInAppMessageRequest_FieldNumber_Id_p = 1,
+};
+
+GPB_FINAL @interface GetInAppMessageRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END
