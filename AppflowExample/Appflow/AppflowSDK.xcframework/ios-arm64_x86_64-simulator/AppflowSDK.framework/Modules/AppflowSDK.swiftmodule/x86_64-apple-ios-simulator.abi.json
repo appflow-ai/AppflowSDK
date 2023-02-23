@@ -10415,7 +10415,7 @@
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 11257,
+      "offset": 11137,
       "length": 5,
       "value": "false"
     },
@@ -10487,7 +10487,7 @@
       "kind": "StringLiteral",
       "offset": 287,
       "length": 7,
-      "value": "\"1.0.6\""
+      "value": "\"1.0.7\""
     },
     {
       "filePath": "\/Users\/implus\/Github\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",

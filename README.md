@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.6
+Version：v1.0.7
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.6
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.0'
+    pod 'AppflowSDK', '~> 1.0.7'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -130,8 +130,30 @@ After obtaining `SKProduct`, you can obtain information related to in-app purcha
 
 ### Making purchase
 To start the purchase process call function purchaseProduct it will take `SKProduct` object as a parameter.
+
+> NOTE: After the in-app purchase is completed, uploadUserInfo must be reported, which is mainly used for user data attribution.
+>
+> 1. If the developer has integrated the purchase method of AppflowSDK (Appflow.shared.purchaseSKProduct). There will be no need to process and report user information after subscription, this step has been completed automatically, (versions after V1.0.7 will be automatically reported, and versions before V1.0.7 need to be manually reported by developers)
+> 2. If the developer does not integrate the method of purchasing goods in AppflowSDK, the developer will need to manually handle it. After the user completes the purchase, use this method uploadUserInfo to report the user information, where UserId is not a mandatory parameter
+
 ```
-Appflow.shared.purchaseSKProduct(product) { (transaction, subscriber, error, isCanceled) in {
+// After V1.0.7, it will be automatically reported after subscription
+Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, canceled in
+    if canceled || error != nil {
+        print("Canceled")
+    } else {
+        print("Completed")
+    }
+}
+
+// Before V1.0.7, the subscription must be reported manually, otherwise it will lead to data loss
+Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, canceled in
+    if canceled || error != nil {
+        print("Canceled")
+    } else {
+        // Manually report user information after subscription is complete
+        Appflow.shared.uploadUserInfo()
+    }
 }
 ```
 > Closure will return `SKPaymentTransaction`, entitlement dictionary, error if it occurred and bool to indicate if a user canceled the purchase process.
@@ -233,15 +255,10 @@ Appflow.shared.restorePurchases { (subscriber, error) in
 
 ### UploadUserInfo
 
-To UploadUserInfo call uploadUserInfo function. This method needs to pass in the parameter userId
-> NOTE: Adds an interface uploadUserInfo, which is used to upload subscribed user data. Currently, this data is used for iap attribution. When in-app purchases are completed, uploadUserInfo, userId needs to be called (optional)
+Introduction: If you need to associate the userId in your application with the Appflow platform, then the developer needs to choose an appropriate time to report **userId** to the Appflow platform, for example, when your application logs in. Where **useId** is the unique identifier defined in the App.
 
-```
-Appflow.shared.uploadUserInfo(userId: "xxxx") { (result, error) in
-    
-}
-//
-```
+`Appflow.shared.uploadUserInfo(userId: "xxx") { _, _ in   }`
+
 #### expand
 ##### Add a json string field in the UploadUserInfo API to support developers uploading map<string, string> type data. It supports fixed fields: username, email, phone, gender, age.
 > - Field:
