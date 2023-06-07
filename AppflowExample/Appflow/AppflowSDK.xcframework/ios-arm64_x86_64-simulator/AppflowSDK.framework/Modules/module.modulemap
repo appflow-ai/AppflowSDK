@@ -6,6 +6,6 @@ framework module AppflowSDK {
 }
 
 module AppflowSDK.Swift {
-  header "AppflowSDK-Swift.h"
-  requires objc
+    header "AppflowSDK-Swift.h"
+    requires objc
 }
