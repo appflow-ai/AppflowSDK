@@ -123,6 +123,9 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func getPurchaseProductIds(_ completion: @escaping AppflowSDK.PruchaseGetProductIdsCompletionHander)
   @objc public func getSkuDetails(productIds: Swift.Set<Swift.String>, completion: AppflowSDK.ProductSkuDetailRequestCompletionHandler?)
   @objc public func purchaseSKProduct(_ product: StoreKit.SKProduct, completion: @escaping AppflowSDK.ProductPurchaseCompletionHandler)
+  @objc public func purchaseFetchReceiptSKProduct(_ product: StoreKit.SKProduct, completion: @escaping AppflowSDK.ProductPurchaseFetchReceiptCompletionHandler)
+  @objc public func finishTransactions(_ transactions: [StoreKit.SKPaymentTransaction])
+  @objc public func addMonitorTransationCompletionHandler(completion: @escaping AppflowSDK.MonitorTransationCompletionHandler)
   @objc public func canMakePayment() -> Swift.Bool
   @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void)
   @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void)
@@ -131,6 +134,7 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func getAppUserId() -> Swift.String
   @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  @objc public func updateCustomAttribution(channel: Swift.String, campaign: Swift.String?, adGroup: Swift.String?, creative: Swift.String?, clickID: Swift.String?, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func uploadBigDataWithType(eventName: Swift.String, params: [Swift.AnyHashable : Any]?)
   @objc public func setInAppMesssageAutoShow(isAuto: Swift.Bool)
@@ -159,6 +163,8 @@ public typealias FailedBlock = (Any) -> Swift.Void
   }
 }
 public typealias ProductPurchaseCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ subscriber: AppflowSDK.IMSubscriber, _ error: Swift.Error?, _ canceled: Swift.Bool) -> Swift.Void
+public typealias ProductPurchaseFetchReceiptCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ transactions: [StoreKit.SKPaymentTransaction], _ receiptData: Foundation.NSData?, _ error: Swift.Error?) -> Swift.Void
+public typealias MonitorTransationCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ transactions: [StoreKit.SKPaymentTransaction], _ receiptData: Foundation.NSData?, _ error: Swift.Error?) -> Swift.Void
 public typealias ProductRestoreCompletionHandler = (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void
 public typealias InitInfoRequestCompletionHandler = (_ initInfo: AppflowSDK.GetInitInfoResponse?, _ error: Swift.Error?) -> Swift.Void
 public typealias updateAttributionRequestCompletionHandler = (_ getAttributionResponse: AppflowSDK.GetAttributionResponse?, _ error: Swift.Error?) -> Swift.Void
@@ -181,6 +187,7 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
   @objc public func getAppUserId() -> Swift.String
   @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  @objc public func updateCustomAttribution(channel: Swift.String, campaign: Swift.String?, adGroup: Swift.String?, creative: Swift.String?, clickID: Swift.String?, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class CrashReporter {

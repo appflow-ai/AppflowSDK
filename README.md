@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.8
+Version：v1.0.9
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.8
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.8'
+    pod 'AppflowSDK', '~> 1.0.9'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -445,18 +445,49 @@ ADClient.shared().requestAttributionDetails({ (attributionDetails, error) in
 ```
 
 ### Custom
-To upload custom attribution data, refer to the following example,The framework AdServices and iAd are required for use, please refer to Apple's documentation for details.[setting_up_apple_search_ads_attribution](https://developer.apple.com/documentation/iad/setting_up_apple_search_ads_attribution)
+attribution_source = *custom* ，Update attribution data, There are 2 ways.
+
+Way 1:   The developer must pass it in according to the format set by this parameter, otherwise an error will be reported
 
 ```
-let attribution = [
-    "status" : "non_organic",
-    "channel" : "Google Ads",
-    "campaign" : "Christmas Sale"
+/// The developer must pass it in according to the format set by this parameter, otherwise an error will be reported
+/// - Parameter Description
+/// - channel: Corresponding to `channel` on the Appflow dashboard
+/// - campaign: Corresponding to `campaign` on the Appflow dashboard
+/// - ad_group: Corresponding to `ad group` on the Appflow dashboard
+/// - creative: Corresponding to `creative` on the Appflow dashboard
+/// - click_id: Currently just saving data
+/// - attributed: The app needs to pass this value explicitly. If it is false, it will be processed according to the natural amount. If it is true, the attribution information will be written according to the value of other fields,
+/// If using custom for attribution processing, attributed = True will be used by default
+let attribution: [String: Any] = [
+    "channel": "channel name",
+    "campaign": "campaign",
+    "ad_group": "ad_group",
+    "creative": "creative",
+    "click_id": "click_id",
+    "attributed": true
 ]
-Appflow.shared.updateAttribution(attribution, source: .custom)
+Appflow.shared.updateAttribution(attribution, source: .custom) { getAttributionResponse, error in
+    if error == nil {
+        print("Attribution data reported successfully")
+    } else {
+        print("Attribution data reported Failed")
+    }
+}
 ```
+
+Way2: If the developer does not want to deal with the data conversion problem by himself, he can use the following method to quickly set parameters, which will be automatically processed internally
+
+    Appflow.shared.updateCustomAttribution(channel: "channel name", campaign: "campaign name", adGroup: "adGroup name", creative: "creative name", clickID: "clickID") { getAttributionResponse, error in
+        if error == nil {
+            print("Attribution data reported successfully")
+        } else {
+            print("Attribution data reported Failed")
+        }
+    }
 
 ## 8. WelcomPage
+
 The SDK adds the View of AppflowWelcomePage. If the user needs to start the welcome page, the configuration of the page needs to be configured on the Appflow platform. The welcomePage loading method can be referred to as follows:
 
 ```
