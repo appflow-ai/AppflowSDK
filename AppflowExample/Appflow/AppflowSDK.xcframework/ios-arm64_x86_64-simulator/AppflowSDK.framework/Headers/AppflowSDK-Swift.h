@@ -258,6 +258,7 @@ using UInt = size_t;
 @class SKProduct;
 @class SKPaymentTransaction;
 @class IMSubscriber;
+@class NSData;
 enum AttributionNetwork : NSUInteger;
 @class GetAttributionResponse;
 
@@ -271,6 +272,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (void)getPurchaseProductIds:(void (^ _Nonnull)(NSArray<NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getSkuDetailsWithProductIds:(NSSet<NSString *> * _Nonnull)productIds completion:(void (^ _Nullable)(NSDictionary<NSString *, SKProduct *> * _Nullable, NSError * _Nullable))completion;
 - (void)purchaseSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, IMSubscriber * _Nonnull, NSError * _Nullable, BOOL))completion;
+- (void)purchaseFetchReceiptSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, NSArray<SKPaymentTransaction *> * _Nonnull, NSData * _Nullable, NSError * _Nullable))completion;
+- (void)finishTransactions:(NSArray<SKPaymentTransaction *> * _Nonnull)transactions;
+- (void)addMonitorTransationCompletionHandlerWithCompletion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, NSArray<SKPaymentTransaction *> * _Nonnull, NSData * _Nullable, NSError * _Nullable))completion;
 - (BOOL)canMakePayment SWIFT_WARN_UNUSED_RESULT;
 - (void)hasActiveSubscription:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
 - (void)restorePurchases:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
@@ -293,6 +297,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
+/// This method is a convenient way to <code>updateAttribution</code> when the value of attribution_source = custom
+/// Note: This method is only for custom attribution
+/// The parameter can be empty, note: when it is empty, there is no data in the <code>Appflow dashboard</code>, Be careful with empty fields
+/// \param channel Corresponding to <code>channel</code> on the Appflow dashboard
+///
+/// \param campaign Corresponding to <code>campaign</code> on the Appflow dashboard,
+///
+/// \param adGroup Corresponding to ad <code>ad group</code> on the Appflow dashboard
+///
+/// \param creative Corresponding to <code>creative</code> on the Appflow dashboard
+///
+/// \param clickID Currently just saving data
+///
+/// \param completion Callback after data reporting is complete
+///
+- (void)updateCustomAttributionWithChannel:(NSString * _Nonnull)channel campaign:(NSString * _Nullable)campaign adGroup:(NSString * _Nullable)adGroup creative:(NSString * _Nullable)creative clickID:(NSString * _Nullable)clickID completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)loadPaywallToPurachaseWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)uploadBigDataWithTypeWithEventName:(NSString * _Nonnull)eventName params:(NSDictionary * _Nullable)params;
 - (void)setInAppMesssageAutoShowWithIsAuto:(BOOL)isAuto;
@@ -398,6 +418,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 - (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
+- (void)updateCustomAttributionWithChannel:(NSString * _Nonnull)channel campaign:(NSString * _Nullable)campaign adGroup:(NSString * _Nullable)adGroup creative:(NSString * _Nullable)creative clickID:(NSString * _Nullable)clickID completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
 
@@ -776,6 +797,7 @@ using UInt = size_t;
 @class SKProduct;
 @class SKPaymentTransaction;
 @class IMSubscriber;
+@class NSData;
 enum AttributionNetwork : NSUInteger;
 @class GetAttributionResponse;
 
@@ -789,6 +811,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (void)getPurchaseProductIds:(void (^ _Nonnull)(NSArray<NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getSkuDetailsWithProductIds:(NSSet<NSString *> * _Nonnull)productIds completion:(void (^ _Nullable)(NSDictionary<NSString *, SKProduct *> * _Nullable, NSError * _Nullable))completion;
 - (void)purchaseSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, IMSubscriber * _Nonnull, NSError * _Nullable, BOOL))completion;
+- (void)purchaseFetchReceiptSKProduct:(SKProduct * _Nonnull)product completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, NSArray<SKPaymentTransaction *> * _Nonnull, NSData * _Nullable, NSError * _Nullable))completion;
+- (void)finishTransactions:(NSArray<SKPaymentTransaction *> * _Nonnull)transactions;
+- (void)addMonitorTransationCompletionHandlerWithCompletion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, NSArray<SKPaymentTransaction *> * _Nonnull, NSData * _Nullable, NSError * _Nullable))completion;
 - (BOOL)canMakePayment SWIFT_WARN_UNUSED_RESULT;
 - (void)hasActiveSubscription:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
 - (void)restorePurchases:(void (^ _Nonnull)(IMSubscriber * _Nonnull, NSError * _Nullable))completion;
@@ -811,6 +836,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
+/// This method is a convenient way to <code>updateAttribution</code> when the value of attribution_source = custom
+/// Note: This method is only for custom attribution
+/// The parameter can be empty, note: when it is empty, there is no data in the <code>Appflow dashboard</code>, Be careful with empty fields
+/// \param channel Corresponding to <code>channel</code> on the Appflow dashboard
+///
+/// \param campaign Corresponding to <code>campaign</code> on the Appflow dashboard,
+///
+/// \param adGroup Corresponding to ad <code>ad group</code> on the Appflow dashboard
+///
+/// \param creative Corresponding to <code>creative</code> on the Appflow dashboard
+///
+/// \param clickID Currently just saving data
+///
+/// \param completion Callback after data reporting is complete
+///
+- (void)updateCustomAttributionWithChannel:(NSString * _Nonnull)channel campaign:(NSString * _Nullable)campaign adGroup:(NSString * _Nullable)adGroup creative:(NSString * _Nullable)creative clickID:(NSString * _Nullable)clickID completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)loadPaywallToPurachaseWithCompletion:(void (^ _Nonnull)(BOOL, NSString * _Nullable))completion;
 - (void)uploadBigDataWithTypeWithEventName:(NSString * _Nonnull)eventName params:(NSDictionary * _Nullable)params;
 - (void)setInAppMesssageAutoShowWithIsAuto:(BOOL)isAuto;
@@ -916,6 +957,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 - (NSString * _Nonnull)getAppUserId SWIFT_WARN_UNUSED_RESULT;
 - (void)uploadDeviceInfoWithDeviceToken:(NSString * _Nonnull)deviceToken completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
+- (void)updateCustomAttributionWithChannel:(NSString * _Nonnull)channel campaign:(NSString * _Nullable)campaign adGroup:(NSString * _Nullable)adGroup creative:(NSString * _Nullable)creative clickID:(NSString * _Nullable)clickID completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
 

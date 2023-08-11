@@ -4502,6 +4502,226 @@
           },
           {
             "kind": "Function",
+            "name": "purchaseFetchReceiptSKProduct",
+            "printedName": "purchaseFetchReceiptSKProduct(_:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SKProduct",
+                "printedName": "StoreKit.SKProduct",
+                "usr": "c:objc(cs)SKProduct"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StoreKit.SKPaymentTransaction, [StoreKit.SKPaymentTransaction], Foundation.NSData?, Swift.Error?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(StoreKit.SKPaymentTransaction, [StoreKit.SKPaymentTransaction], Foundation.NSData?, Swift.Error?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SKPaymentTransaction",
+                        "printedName": "StoreKit.SKPaymentTransaction",
+                        "usr": "c:objc(cs)SKPaymentTransaction"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[StoreKit.SKPaymentTransaction]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SKPaymentTransaction",
+                            "printedName": "StoreKit.SKPaymentTransaction",
+                            "usr": "c:objc(cs)SKPaymentTransaction"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.NSData?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSData",
+                            "printedName": "Foundation.NSData",
+                            "usr": "c:objc(cs)NSData"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Error?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)purchaseFetchReceiptSKProduct:completion:",
+            "mangledName": "$s10AppflowSDK0A0C29purchaseFetchReceiptSKProduct_10completionySo0F0C_ySo20SKPaymentTransactionC_SayAIGSo6NSDataCSgs5Error_pSgtctF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "finishTransactions",
+            "printedName": "finishTransactions(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[StoreKit.SKPaymentTransaction]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SKPaymentTransaction",
+                    "printedName": "StoreKit.SKPaymentTransaction",
+                    "usr": "c:objc(cs)SKPaymentTransaction"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)finishTransactions:",
+            "mangledName": "$s10AppflowSDK0A0C18finishTransactionsyySaySo20SKPaymentTransactionCGF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addMonitorTransationCompletionHandler",
+            "printedName": "addMonitorTransationCompletionHandler(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(StoreKit.SKPaymentTransaction, [StoreKit.SKPaymentTransaction], Foundation.NSData?, Swift.Error?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(StoreKit.SKPaymentTransaction, [StoreKit.SKPaymentTransaction], Foundation.NSData?, Swift.Error?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SKPaymentTransaction",
+                        "printedName": "StoreKit.SKPaymentTransaction",
+                        "usr": "c:objc(cs)SKPaymentTransaction"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[StoreKit.SKPaymentTransaction]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SKPaymentTransaction",
+                            "printedName": "StoreKit.SKPaymentTransaction",
+                            "usr": "c:objc(cs)SKPaymentTransaction"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.NSData?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSData",
+                            "printedName": "Foundation.NSData",
+                            "usr": "c:objc(cs)NSData"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Error?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)addMonitorTransationCompletionHandlerWithCompletion:",
+            "mangledName": "$s10AppflowSDK0A0C37addMonitorTransationCompletionHandler10completionyySo20SKPaymentTransactionC_SayAGGSo6NSDataCSgs5Error_pSgtc_tF",
+            "moduleName": "AppflowSDK",
+            "objc_name": "addMonitorTransationCompletionHandlerWithCompletion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "canMakePayment",
             "printedName": "canMakePayment()",
             "children": [
@@ -4973,6 +5193,147 @@
             "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)updateAttribution:source:networkUserId:completion:",
             "mangledName": "$s10AppflowSDK0A0C17updateAttribution_6source13networkUserId10completionySDys11AnyHashableVypG_AA0D7NetworkOSSSgySo03GetD8ResponseCSg_s5Error_pSgtcSgtF",
             "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateCustomAttribution",
+            "printedName": "updateCustomAttribution(channel:campaign:adGroup:creative:clickID:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((AppflowSDK.GetAttributionResponse?, Swift.Error?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppflowSDK.GetAttributionResponse?, Swift.Error?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(AppflowSDK.GetAttributionResponse?, Swift.Error?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "AppflowSDK.GetAttributionResponse?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "GetAttributionResponse",
+                                "printedName": "AppflowSDK.GetAttributionResponse",
+                                "usr": "c:objc(cs)GetAttributionResponse"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Error?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)Appflow(im)updateCustomAttributionWithChannel:campaign:adGroup:creative:clickID:completion:",
+            "mangledName": "$s10AppflowSDK0A0C23updateCustomAttribution7channel8campaign7adGroup8creative7clickID10completionySS_SSSgA3KySo03GetE8ResponseCSg_s5Error_pSgtcSgtF",
+            "moduleName": "AppflowSDK",
+            "objc_name": "updateCustomAttributionWithChannel:campaign:adGroup:creative:clickID:completion:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -6843,6 +7204,147 @@
             "usr": "c:@M@AppflowSDK@objc(cs)IMPurchase(im)updateAttribution:source:networkUserId:completion:",
             "mangledName": "$s10AppflowSDK10IMPurchaseC17updateAttribution_6source13networkUserId10completionySDys11AnyHashableVypG_AA0E7NetworkOSSSgySo03GetE8ResponseCSg_s5Error_pSgtcSgtF",
             "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateCustomAttribution",
+            "printedName": "updateCustomAttribution(channel:campaign:adGroup:creative:clickID:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((AppflowSDK.GetAttributionResponse?, Swift.Error?) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(AppflowSDK.GetAttributionResponse?, Swift.Error?) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(AppflowSDK.GetAttributionResponse?, Swift.Error?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "AppflowSDK.GetAttributionResponse?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "GetAttributionResponse",
+                                "printedName": "AppflowSDK.GetAttributionResponse",
+                                "usr": "c:objc(cs)GetAttributionResponse"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Error?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Error",
+                                "printedName": "Swift.Error",
+                                "usr": "s:s5ErrorP"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMPurchase(im)updateCustomAttributionWithChannel:campaign:adGroup:creative:clickID:completion:",
+            "mangledName": "$s10AppflowSDK10IMPurchaseC23updateCustomAttribution7channel8campaign7adGroup8creative7clickID10completionySS_SSSgA3KySo03GetF8ResponseCSg_s5Error_pSgtcSgtF",
+            "moduleName": "AppflowSDK",
+            "objc_name": "updateCustomAttributionWithChannel:campaign:adGroup:creative:clickID:completion:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
@@ -10487,7 +10989,7 @@
       "kind": "StringLiteral",
       "offset": 287,
       "length": 7,
-      "value": "\"1.0.8\""
+      "value": "\"1.0.9\""
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
@@ -11038,7 +11540,7 @@
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/AppFlow.swift",
       "kind": "Dictionary",
-      "offset": 2810,
+      "offset": 3674,
       "length": 3,
       "value": "[]"
     },
@@ -11171,14 +11673,14 @@
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
-      "offset": 13239,
+      "offset": 14743,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
-      "offset": 13471,
+      "offset": 14975,
       "length": 3,
       "value": "[]"
     },
