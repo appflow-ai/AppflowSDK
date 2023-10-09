@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AppflowSDK-Swift.h</key>
 		<data>
-		PcqqZfjZWqxKrBbCuWHunrxm2Jk=
+		fRnyhJNjuouFoy+6FGZ/Z6cXDAo=
 		</data>
 		<key>Headers/AppflowSDK.h</key>
 		<data>
@@ -74,43 +74,43 @@
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		agmRH1gWPc9NhqXWJK/Y4ZvnOqM=
+		OEL0joCF4cGIav6DSemEBMJEvbQ=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		040cQxYSwB2EeDMShIGcIHlSvDI=
+		BlMjzUsuhZUKmqB4191K3gb6Lms=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		aBOixFgfYprckMzg8alxO00w1mk=
+		wgBgW7nT4F8X2TZ9JeuZQRoUcOg=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		040cQxYSwB2EeDMShIGcIHlSvDI=
+		BlMjzUsuhZUKmqB4191K3gb6Lms=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bmxcQR3qSr9yrXa60SA5EJdqk2A=
+		iADSmsEuxCy3FKCUJkRTbpFiiWY=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		agmRH1gWPc9NhqXWJK/Y4ZvnOqM=
+		OEL0joCF4cGIav6DSemEBMJEvbQ=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kVvrRPnCoZwqZo54xRiCNqS7GTk=
+		+gszx9x2Dwh4Z+YYFXpIb8I7tF8=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Y6mmpV7/ZcWqpkzBVGNgIf4xdFA=
+		poZ6YBJKdCbaH7sFMgUOVbTDCGQ=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kVvrRPnCoZwqZo54xRiCNqS7GTk=
+		+gszx9x2Dwh4Z+YYFXpIb8I7tF8=
 		</data>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Wu5DlO6BR31AwffwR+Wm3fEmT1o=
+		GtP4VzoHc0CC7vN+OSc2zdtNJSM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -123,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UYztNNHwWygiQx3Z2b6t68M5KVRuwizdK+E96zemDU8=
+			n7bNoSCwJIeJcARqLU7mgMWvGjHWmmXMNOnTZwPErA4=
 			</data>
 		</dict>
 		<key>Headers/AppflowSDK.h</key>
@@ -235,70 +235,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zR0zOwKOxI8A94CT9wBufICkM+qvBNGizNZLF9lH4sA=
+			PbSKeil4es00AqOCGN40BFbwcAgK8V3iDcxehGRcYq0=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8FEuBRjEGUJRdAB432ekJdA2i3cuxHnFElC3tbfBOFY=
+			/NIGBnLPFMboYdLH9QhJHVakQ4Lm04sWltZrz2QJQYE=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q1+sakt6Mt8RiKMeL75A/+ssCWuNvVW5Y8JsBdQaHmg=
+			zP44cwkw4+2iTAkBz/vyMQM9Oy4DB3K9Fw5Yb4nVAUw=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8FEuBRjEGUJRdAB432ekJdA2i3cuxHnFElC3tbfBOFY=
+			/NIGBnLPFMboYdLH9QhJHVakQ4Lm04sWltZrz2QJQYE=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pQkQF97DMxpI739cA9ulM/BnYBwqbDNolDfP3cOvb7M=
+			oFKNG8aBjGwaHU1sg5lauMtqMc98cptjhc9BjpVYAUc=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zR0zOwKOxI8A94CT9wBufICkM+qvBNGizNZLF9lH4sA=
+			PbSKeil4es00AqOCGN40BFbwcAgK8V3iDcxehGRcYq0=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4etjRLVLZrT4+uVbU+SUtXvrTKDHr3sSNJbO8FDlygU=
+			dg5tHksSWrVdYOZ8yMGkgD+VA3YzLLwS70qKD8cgnJ4=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZQ6Rl9+qs6EGoP5QgCGKQa93HyEikCBd+IDB8CxVAJY=
+			D8pUYJBMtQYYrkBocaVPbZLjAGHCwRTcG4R4hbSPnC0=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4etjRLVLZrT4+uVbU+SUtXvrTKDHr3sSNJbO8FDlygU=
+			dg5tHksSWrVdYOZ8yMGkgD+VA3YzLLwS70qKD8cgnJ4=
 			</data>
 		</dict>
 		<key>Modules/AppflowSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ay8D69D0E/tURTlqbtxpGAurfbk2H+reyCX9q7UKic0=
+			L/4pcx6jFntDAA17ek6xs+HqXFvAdgODdWxdE2VEFwY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

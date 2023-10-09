@@ -18,7 +18,6 @@ import UserNotifications
 import WebKit
 import _Concurrency
 import _StringProcessing
-import iAd
 public let SDKVersion: Swift.String
 public let kScreenViewName: Swift.String
 public let kPlacement: Swift.String
@@ -142,6 +141,10 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func sendUserNotificationCenterMessage(userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
+}
+extension AppflowSDK.Appflow {
+  @objc dynamic public func setAutoUserNotificationBehaviorDataReporting()
+  @objc dynamic public func sendNotificationUserInfoToBehaviorDataReporting(userInfo: [Swift.AnyHashable : Any])
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class AppflowWelcomePage : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var waitingTime: Swift.Double
