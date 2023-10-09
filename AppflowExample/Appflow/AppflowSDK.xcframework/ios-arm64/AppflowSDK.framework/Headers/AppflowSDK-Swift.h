@@ -321,6 +321,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+@interface Appflow (SWIFT_EXTENSION(AppflowSDK))
+/// Configure notifications to automatically enable behavior statistics
+- (void)setAutoUserNotificationBehaviorDataReporting;
+/// After the user connects to the message push process, choose to send statistics manually
+- (void)sendNotificationUserInfoToBehaviorDataReportingWithUserInfo:(NSDictionary * _Nonnull)userInfo;
+@end
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC10AppflowSDK18AppflowWelcomePage")

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AppflowSDK'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'A short description of AppflowSDK.'
 
 # This description is used to generate tags and improve search results.
@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
   # }
 
   s.dependency 'gRPC-ProtoRPC'
-  s.dependency 'FMDB' 
+  s.dependency 'FMDB'
   s.dependency 'Protobuf'
   s.dependency 'PLCrashReporter'
   s.dependency 'Founq_KeychainIDFA'
