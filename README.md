@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.9
+Version：v1.0.10
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.9
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.9'
+    pod 'AppflowSDK', '~> 1.0.10'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -403,6 +403,7 @@ To upload Adjust attribution data, the developer accesses the Adjust SDK and rep
 ```
 //  MARK: branch init
 func branchInit(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    Branch.getInstance().setIdentity("YOUR_USER_ID")
     Branch.getInstance().initSession(launchOptions: launchOptions) { (data, error) in
         if let data = data {
             Appflow.shared.updateAttribution(data, source: .branch,networkUserId: Appflow.shared.getAppUserId())
@@ -545,5 +546,29 @@ If the project itself is connected to the message push function, if you want to 
 //The custom data to associate with the notification.
 //userInfo ：notification.request.content.userInfo
 Appflow.shared.sendUserNotificationCenterMessage(userInfo: userInfo)
+```
+
+
+
+## 10. Post-notification behavior statistics
+
+> This function is mainly used to collect statistics and display data on user click notification behavior on our platform.
+>
+> There are two ways for developers to access this function, method a: automatic management; method b: manual reporting of user behavior data;
+
+a. Automatic management. **Example:** 
+
+```
+//Automatic management, development does not need to access the notification class for management.
+Appflow.shared.setAutoUserNotificationBehaviorDataReporting()
+```
+
+a. Report data manually. **Example:** 
+
+```
+//UserInfo: Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+//The custom data to associate with the notification.
+//userInfo ：notification.request.content.userInfo
+Appflow.shared.sendNotificationUserInfoToBehaviorDataReporting(userInfo: userInfo)
 ```
 
