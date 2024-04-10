@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppflowSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 @_exported import AppflowSDK
@@ -18,6 +18,7 @@ import UserNotifications
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 public let SDKVersion: Swift.String
 public let kScreenViewName: Swift.String
 public let kPlacement: Swift.String
@@ -62,8 +63,8 @@ public let kTimerDuration: Swift.Int
   @objc final public let isActive: Swift.Bool
   @objc final public let productId: Swift.String
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc public class IMSubscription : ObjectiveC.NSObject {
   @objc final public let productId: Swift.String
@@ -79,8 +80,8 @@ public let kTimerDuration: Swift.Int
   @objc final public let startAt: Swift.Int64
   @objc final public let expireAt: Swift.Int64
   @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum IMSubscriberStatus : Swift.Int32 {
   case IM_MISSING_PURCH_INFO = 0
@@ -105,6 +106,19 @@ public let kTimerDuration: Swift.Int
     get
   }
 }
+@objc public enum IMPromotingInAppPurchaseStatus : Swift.Int32 {
+  case IM_CONTINUE
+  case IM_DEFER_PAYMENT
+  case IM_CANCEL_PAYMENT
+  public init?(rawValue: Swift.Int32)
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public protocol IMPromotingObserverProtocol : ObjectiveC.NSObjectProtocol {
+  @objc func imPromotingAddStorePayment(status: AppflowSDK.IMPromotingInAppPurchaseStatus, payment: StoreKit.SKPayment, product: StoreKit.SKProduct)
+}
 public typealias SuccessBlock = (Any) -> Swift.Void
 public typealias FailedBlock = (Any) -> Swift.Void
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IMRequestManager : ObjectiveC.NSObject {
@@ -126,12 +140,12 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func finishTransactions(_ transactions: [StoreKit.SKPaymentTransaction])
   @objc public func addMonitorTransationCompletionHandler(completion: @escaping AppflowSDK.MonitorTransationCompletionHandler)
   @objc public func canMakePayment() -> Swift.Bool
-  @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void)
-  @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void)
+  @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
+  @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
   @objc public func uploadUserInfo()
-  @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, Swift.Error?) -> Swift.Void)?)
+  @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, (any Swift.Error)?) -> Swift.Void)?)
   @objc public func getAppUserId() -> Swift.String
-  @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc public func updateCustomAttribution(channel: Swift.String, campaign: Swift.String?, adGroup: Swift.String?, creative: Swift.String?, clickID: Swift.String?, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
@@ -145,6 +159,9 @@ public typealias FailedBlock = (Any) -> Swift.Void
 extension AppflowSDK.Appflow {
   @objc dynamic public func setAutoUserNotificationBehaviorDataReporting()
   @objc dynamic public func sendNotificationUserInfoToBehaviorDataReporting(userInfo: [Swift.AnyHashable : Any])
+}
+extension AppflowSDK.Appflow {
+  @objc dynamic public func setInAppPurchasePromotingStatus(_ status: AppflowSDK.IMPromotingInAppPurchaseStatus, addObserver: any AppflowSDK.IMPromotingObserverProtocol)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class AppflowWelcomePage : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var waitingTime: Swift.Double
@@ -165,36 +182,36 @@ extension AppflowSDK.Appflow {
     get
   }
 }
-public typealias ProductPurchaseCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ subscriber: AppflowSDK.IMSubscriber, _ error: Swift.Error?, _ canceled: Swift.Bool) -> Swift.Void
-public typealias ProductPurchaseFetchReceiptCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ transactions: [StoreKit.SKPaymentTransaction], _ receiptData: Foundation.NSData?, _ error: Swift.Error?) -> Swift.Void
-public typealias MonitorTransationCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ transactions: [StoreKit.SKPaymentTransaction], _ receiptData: Foundation.NSData?, _ error: Swift.Error?) -> Swift.Void
-public typealias ProductRestoreCompletionHandler = (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void
-public typealias InitInfoRequestCompletionHandler = (_ initInfo: AppflowSDK.GetInitInfoResponse?, _ error: Swift.Error?) -> Swift.Void
-public typealias updateAttributionRequestCompletionHandler = (_ getAttributionResponse: AppflowSDK.GetAttributionResponse?, _ error: Swift.Error?) -> Swift.Void
-public typealias ProductSkuDetailRequestCompletionHandler = (_ skuDetailInfo: [Swift.String : StoreKit.SKProduct]?, _ error: Swift.Error?) -> Swift.Void
-public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swift.String]?, _ error: Swift.Error?) -> Swift.Void
+public typealias ProductPurchaseCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ subscriber: AppflowSDK.IMSubscriber, _ error: (any Swift.Error)?, _ canceled: Swift.Bool) -> Swift.Void
+public typealias ProductPurchaseFetchReceiptCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ transactions: [StoreKit.SKPaymentTransaction], _ receiptData: Foundation.NSData?, _ error: (any Swift.Error)?) -> Swift.Void
+public typealias MonitorTransationCompletionHandler = (_ transaction: StoreKit.SKPaymentTransaction, _ transactions: [StoreKit.SKPaymentTransaction], _ receiptData: Foundation.NSData?, _ error: (any Swift.Error)?) -> Swift.Void
+public typealias ProductRestoreCompletionHandler = (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void
+public typealias InitInfoRequestCompletionHandler = (_ initInfo: AppflowSDK.GetInitInfoResponse?, _ error: (any Swift.Error)?) -> Swift.Void
+public typealias updateAttributionRequestCompletionHandler = (_ getAttributionResponse: AppflowSDK.GetAttributionResponse?, _ error: (any Swift.Error)?) -> Swift.Void
+public typealias ProductSkuDetailRequestCompletionHandler = (_ skuDetailInfo: [Swift.String : StoreKit.SKProduct]?, _ error: (any Swift.Error)?) -> Swift.Void
+public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swift.String]?, _ error: (any Swift.Error)?) -> Swift.Void
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class IMPurchase : ObjectiveC.NSObject {
   @objc public static let shared: AppflowSDK.IMPurchase
   @objc public func configureInitSDKWithAppFlowPlist()
   @objc public func getSkuDetails(productIds: Swift.Set<Swift.String>, completion: AppflowSDK.ProductSkuDetailRequestCompletionHandler?)
   public func canMakePayments() -> Swift.Bool
-  @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void)
-  @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, Swift.Error?) -> Swift.Void)
+  @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
+  @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
   @objc public func enableLog(_ isEnable: Swift.Bool)
   @objc public func isSandbox() -> Swift.Bool
   @objc public func invalidateCache()
   public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
   @objc public func getPurchaseProductIds(_ completion: @escaping AppflowSDK.PruchaseGetProductIdsCompletionHander)
   @objc public func getUserIsActive() -> Swift.Bool
-  @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, Swift.Error?) -> Swift.Void)?)
+  @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, (any Swift.Error)?) -> Swift.Void)?)
   @objc public func getAppUserId() -> Swift.String
-  @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc public func updateCustomAttribution(channel: Swift.String, campaign: Swift.String?, adGroup: Swift.String?, creative: Swift.String?, clickID: Swift.String?, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class CrashReporter {
-  final public func startCrashReporter(completion: @escaping (Swift.String?, Swift.Error?) -> Swift.Void)
+  final public func startCrashReporter(completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IMDeviceInfoManager : ObjectiveC.NSObject {
@@ -294,6 +311,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
 extension AppflowSDK.IMSubscriberStatus : Swift.Equatable {}
 extension AppflowSDK.IMSubscriberStatus : Swift.Hashable {}
 extension AppflowSDK.IMSubscriberStatus : Swift.RawRepresentable {}
+extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Equatable {}
+extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Hashable {}
+extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.RawRepresentable {}
 extension AppflowSDK.AttributionNetwork : Swift.Equatable {}
 extension AppflowSDK.AttributionNetwork : Swift.Hashable {}
 extension AppflowSDK.AttributionNetwork : Swift.RawRepresentable {}

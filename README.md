@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.10
+Version：v1.0.11
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -570,5 +570,32 @@ a. Report data manually. **Example:**
 //The custom data to associate with the notification.
 //userInfo ：notification.request.content.userInfo
 Appflow.shared.sendNotificationUserInfoToBehaviorDataReporting(userInfo: userInfo)
+```
+
+## 11. Promote configuration for in-app purchases
+
+> This function is used to configure whether to continue transactions from the App Store when promoting in-app purchases
+
+**The interface invocation is described as follows：**
+
+```
+/// This interface is used to configure whether to continue transactions from the App Store when promoting in-app purchases. By default, this is set to `IM_CONTINUE`.
+/// - Parameters:
+///   - status: `IMPromotingInAppPurchaseStatus` types, is used to specify the promotion within the purchasing behavior. You can select `IM_CONTINUE`, `IM_DEFER_PAYMENT`, or `IM_CANCEL_PAYMENT`.
+///   - addObserver: Follow `IMPromotingObserverProtocol` observer object of the agreement, the purchase within the time to deal with the promotion of related operations.
+@objc public func setInAppPurchasePromotingStatus(_ status: IMPromotingInAppPurchaseStatus, addObserver: IMPromotingObserverProtocol) {}
+```
+
+**Example:** 
+
+```
+// Set the behavior when promoting in-store purchases to continue transactions
+Appflow.shared.setInAppPurchasePromotingStatus(.IM_CONTINUE, addObserver: self)
+
+// Set the behavior when promoting in-app purchases to require a delay in payment until the boot is complete
+Appflow.shared.setInAppPurchasePromotingStatus(.IM_DEFER_PAYMENT, addObserver: self)
+
+// Set the action when promoting in-app purchases to cancel the transaction
+Appflow.shared.setInAppPurchasePromotingStatus(.IM_CANCEL_PAYMENT, addObserver: self)
 ```
 
