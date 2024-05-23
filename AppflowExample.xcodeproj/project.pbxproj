@@ -21,8 +21,6 @@
 		552C161027E434FB009CAC99 /* dataParamsCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552C160427E434FB009CAC99 /* dataParamsCellTableViewCell.xib */; };
 		552C161127E434FB009CAC99 /* dataParams.xib in Resources */ = {isa = PBXBuildFile; fileRef = 552C160527E434FB009CAC99 /* dataParams.xib */; };
 		552C161227E434FB009CAC99 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552C160627E434FB009CAC99 /* CrashViewController.swift */; };
-		552C161727E43748009CAC99 /* AppflowSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552C161527E4373C009CAC99 /* AppflowSDK.xcframework */; };
-		552C161827E43748009CAC99 /* AppflowSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 552C161527E4373C009CAC99 /* AppflowSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		554521B627FF10930009C015 /* SkuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554521B427FF10930009C015 /* SkuListViewController.swift */; };
 		554521B727FF10930009C015 /* SkuListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554521B527FF10930009C015 /* SkuListViewController.xib */; };
 		55FA166627F4999F009CD6EC /* UpLoadUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA166227F4999F009CD6EC /* UpLoadUserInfoViewController.swift */; };
@@ -30,6 +28,8 @@
 		55FA166827F4999F009CD6EC /* AttributionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55FA166427F4999F009CD6EC /* AttributionViewController.xib */; };
 		55FA166927F499A0009CD6EC /* AttributionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FA166527F4999F009CD6EC /* AttributionViewController.swift */; };
 		94463DE2B0E4FECFA0068BB7 /* Pods_AppflowExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5777F6BCD0FD629FAC637722 /* Pods_AppflowExample.framework */; };
+		F36AF8CD2BFF3E2000F08E9B /* AppflowSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36AF8CB2BFF3E1A00F08E9B /* AppflowSDK.xcframework */; };
+		F36AF8CE2BFF3E2000F08E9B /* AppflowSDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F36AF8CB2BFF3E1A00F08E9B /* AppflowSDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				552C161827E43748009CAC99 /* AppflowSDK.xcframework in Embed Frameworks */,
+				F36AF8CE2BFF3E2000F08E9B /* AppflowSDK.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +65,6 @@
 		552C160427E434FB009CAC99 /* dataParamsCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dataParamsCellTableViewCell.xib; sourceTree = "<group>"; };
 		552C160527E434FB009CAC99 /* dataParams.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dataParams.xib; sourceTree = "<group>"; };
 		552C160627E434FB009CAC99 /* CrashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
-		552C161527E4373C009CAC99 /* AppflowSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AppflowSDK.xcframework; sourceTree = "<group>"; };
 		554521B427FF10930009C015 /* SkuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkuListViewController.swift; sourceTree = "<group>"; };
 		554521B527FF10930009C015 /* SkuListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkuListViewController.xib; sourceTree = "<group>"; };
 		55FA166227F4999F009CD6EC /* UpLoadUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpLoadUserInfoViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		55FA166427F4999F009CD6EC /* AttributionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttributionViewController.xib; sourceTree = "<group>"; };
 		55FA166527F4999F009CD6EC /* AttributionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributionViewController.swift; sourceTree = "<group>"; };
 		5777F6BCD0FD629FAC637722 /* Pods_AppflowExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppflowExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F36AF8CB2BFF3E1A00F08E9B /* AppflowSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AppflowSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				552C161727E43748009CAC99 /* AppflowSDK.xcframework in Frameworks */,
+				F36AF8CD2BFF3E2000F08E9B /* AppflowSDK.xcframework in Frameworks */,
 				94463DE2B0E4FECFA0068BB7 /* Pods_AppflowExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +133,7 @@
 		552C15F927E43459009CAC99 /* Appflow */ = {
 			isa = PBXGroup;
 			children = (
-				552C161527E4373C009CAC99 /* AppflowSDK.xcframework */,
+				F36AF8CB2BFF3E1A00F08E9B /* AppflowSDK.xcframework */,
 				552C15FA27E43491009CAC99 /* appflow-app-token.plist */,
 			);
 			path = Appflow;

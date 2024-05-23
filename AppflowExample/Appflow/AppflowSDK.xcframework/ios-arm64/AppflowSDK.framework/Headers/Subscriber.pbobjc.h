@@ -51,6 +51,7 @@ typedef GPB_ENUM(StoreType) {
 
   /** google play */
   StoreType_Googleplay = 1,
+  StoreType_Stripe = 2,
 };
 
 GPBEnumDescriptor *StoreType_EnumDescriptor(void);
@@ -187,6 +188,8 @@ typedef GPB_ENUM(ReceiptRequest_FieldNumber) {
   ReceiptRequest_FieldNumber_Receipt = 2,
   ReceiptRequest_FieldNumber_SubscriptionId = 3,
   ReceiptRequest_FieldNumber_ProductInfoArray = 4,
+  ReceiptRequest_FieldNumber_TransactionId = 5,
+  ReceiptRequest_FieldNumber_PaymentIntentId = 6,
 };
 
 GPB_FINAL @interface ReceiptRequest : GPBMessage
@@ -200,10 +203,16 @@ GPB_FINAL @interface ReceiptRequest : GPBMessage
 /** Android only */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *subscriptionId;
 
-/** iOS only, product list */
+/** product list */
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ProductInfo*> *productInfoArray;
-/** The number of items in @c productInfoArray without causing the array to be created. */
+/** The number of items in @c productInfoArray without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger productInfoArray_Count;
+
+/** iOS only, for new way to verify */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *transactionId;
+
+/** stripe only */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *paymentIntentId;
 
 @end
 
@@ -230,7 +239,7 @@ GPB_FINAL @interface ProductInfo : GPBMessage
 @property(nonatomic, readwrite) float introductoryPrice;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ProductInfo_Discount*> *discountsArray;
-/** The number of items in @c discountsArray without causing the array to be created. */
+/** The number of items in @c discountsArray without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger discountsArray_Count;
 
 @end
@@ -256,6 +265,7 @@ typedef GPB_ENUM(SubscriberRequest_FieldNumber) {
   SubscriberRequest_FieldNumber_AppUserId = 1,
   SubscriberRequest_FieldNumber_Receipt = 2,
   SubscriberRequest_FieldNumber_SubscriptionId = 3,
+  SubscriberRequest_FieldNumber_TransactionId = 4,
 };
 
 GPB_FINAL @interface SubscriberRequest : GPBMessage
@@ -267,6 +277,9 @@ GPB_FINAL @interface SubscriberRequest : GPBMessage
 
 /** Android only */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *subscriptionId;
+
+/** iOS only, for new way to verify */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *transactionId;
 
 @end
 
@@ -340,11 +353,11 @@ GPB_FINAL @interface Subscription : GPBMessage
 @property(nonatomic, readwrite, copy, null_resettable) NSString *promotionalOfferId;
 
 @property(nonatomic, readwrite, strong, null_resettable) GPBStringInt32Dictionary *consumedPromoOffers;
-/** The number of items in @c consumedPromoOffers without causing the array to be created. */
+/** The number of items in @c consumedPromoOffers without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger consumedPromoOffers_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Subscription_OriginalTransaction*> *originalTransactionsArray;
-/** The number of items in @c originalTransactionsArray without causing the array to be created. */
+/** The number of items in @c originalTransactionsArray without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger originalTransactionsArray_Count;
 
 /** if there's billing issue */
@@ -421,12 +434,12 @@ GPB_FINAL @interface Subscriber : GPBMessage
 
 /** check entitlement for current status */
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Entitlement*> *entitlementsArray;
-/** The number of items in @c entitlementsArray without causing the array to be created. */
+/** The number of items in @c entitlementsArray without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger entitlementsArray_Count;
 
 /** subscription details group by product_id */
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Subscription*> *subscriptionsArray;
-/** The number of items in @c subscriptionsArray without causing the array to be created. */
+/** The number of items in @c subscriptionsArray without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger subscriptionsArray_Count;
 
 @end
@@ -520,7 +533,7 @@ GPB_FINAL @interface GetAppConfigResponse : GPBMessage
 @property(nonatomic, readwrite, copy, null_resettable) NSString *paywallPage;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *productIdsArray;
-/** The number of items in @c productIdsArray without causing the array to be created. */
+/** The number of items in @c productIdsArray without causing the container to be created. */
 @property(nonatomic, readonly) NSUInteger productIdsArray_Count;
 
 @end
@@ -573,6 +586,45 @@ typedef GPB_ENUM(GetInitInfoResponse_FieldNumber) {
 GPB_FINAL @interface GetInitInfoResponse : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *tag;
+
+@end
+
+#pragma mark - GeneratePromotionalOfferSignatureRequest
+
+typedef GPB_ENUM(GeneratePromotionalOfferSignatureRequest_FieldNumber) {
+  GeneratePromotionalOfferSignatureRequest_FieldNumber_AppUserId = 1,
+  GeneratePromotionalOfferSignatureRequest_FieldNumber_ProductId = 2,
+  GeneratePromotionalOfferSignatureRequest_FieldNumber_OfferId = 3,
+};
+
+GPB_FINAL @interface GeneratePromotionalOfferSignatureRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *appUserId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *productId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *offerId;
+
+@end
+
+#pragma mark - GeneratePromotionalOfferSignatureResponse
+
+typedef GPB_ENUM(GeneratePromotionalOfferSignatureResponse_FieldNumber) {
+  GeneratePromotionalOfferSignatureResponse_FieldNumber_Signature = 1,
+  GeneratePromotionalOfferSignatureResponse_FieldNumber_KeyId = 2,
+  GeneratePromotionalOfferSignatureResponse_FieldNumber_Nonce = 3,
+  GeneratePromotionalOfferSignatureResponse_FieldNumber_Timestamp = 4,
+};
+
+GPB_FINAL @interface GeneratePromotionalOfferSignatureResponse : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *signature;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *keyId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *nonce;
+
+@property(nonatomic, readwrite) int64_t timestamp;
 
 @end
 

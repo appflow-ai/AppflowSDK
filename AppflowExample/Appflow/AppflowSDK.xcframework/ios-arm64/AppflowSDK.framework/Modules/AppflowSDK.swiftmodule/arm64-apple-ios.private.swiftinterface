@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AppflowSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AppflowSDK
 @_exported import AppflowSDK
 import AudioToolbox
 import SystemConfiguration.CaptiveNetwork
@@ -47,6 +46,13 @@ public let kTimerDuration: Swift.Int
 @_hasMissingDesignatedInitializers @objc public class IMProduct : ObjectiveC.NSObject {
   @objc final public let id: Swift.String
   @objc final public let product: StoreKit.SKProduct
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class IMOfferSignatureDetail : ObjectiveC.NSObject {
+  @objc final public let keyIdentifier: Swift.String
+  @objc final public let signature: Swift.String
+  @objc final public let nonce: Swift.String
+  @objc final public let timestamp: Swift.Int64
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class IMSubscriber : ObjectiveC.NSObject {
@@ -162,6 +168,11 @@ extension AppflowSDK.Appflow {
 }
 extension AppflowSDK.Appflow {
   @objc dynamic public func setInAppPurchasePromotingStatus(_ status: AppflowSDK.IMPromotingInAppPurchaseStatus, addObserver: any AppflowSDK.IMPromotingObserverProtocol)
+}
+extension AppflowSDK.Appflow {
+  @objc dynamic public func createASignature(productId: Swift.String, offerId: Swift.String, userid: Swift.String, completion: @escaping (AppflowSDK.IMOfferSignatureDetail?, (any Swift.Error)?) -> Swift.Void)
+  @available(iOS 12.2, *)
+  @objc dynamic public func purchaseSKProductWithDiscount(_ product: StoreKit.SKProduct, paymentDiscount: StoreKit.SKPaymentDiscount, applicationUsername: Swift.String?, completion: @escaping AppflowSDK.ProductPurchaseCompletionHandler)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class AppflowWelcomePage : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var waitingTime: Swift.Double
