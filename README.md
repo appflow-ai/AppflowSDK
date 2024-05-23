@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.11
+Version：v1.0.12
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.11
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.10'
+    pod 'AppflowSDK', '~> 1.0.12'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -163,8 +163,8 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
  IMSubscriber.expireAt, Return the expiration time of the current subscription. You can compare `expireAt` with the current time and process the subscription status
 ```
 
-
 **API Reference**
+
 | purchaseSKProduct                         |                  |
 | ----------------------------------------- | ---------------- |
 | error = nil    | Success callback |
@@ -214,7 +214,40 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
 | startAt: Int64                      | Time to start the subscription (millisecond) |
 
 
+
+### Expended offer discount purchased
+
+iOS 12.2 launched `SKPaymentDiscount` ,The signed discount to apply to a payment.
+
+> Initializing a Payment Discount
+>
+> init(identifier: String, keyIdentifier: String, nonce: UUID, signature: String, timestamp: NSNumber)
+
+SDK provides an interface for obtaining initialization `SKPaymentDiscount` parameters 
+
+```
+/// A signature is a unique string that your server generates using specified parameters and your private key. You include it in the signature parameter of SKPaymentDiscount, and the App Store uses it to validate the promotional offer.
+/// - Parameters:
+///   - productId: Product Identifier
+///   - offerId: Discount identifier
+///   - userid: App user id
+///   - completion: IMOfferSignatureDetail And Error
+@objc public func createASignature(productId: String, offerId: String, userid: String, completion:@escaping (IMOfferSignatureDetail?, Error?)  -> Void) {}
+```
+
+After creating the paymentDiscount object, you can call the discount-related payment API to make the payment.
+
+```
+/// `paymentDiscount` was launched after iOS12.2. Only systems after iOS12.2 can use this interface.
+@available(iOS 12.2, *)
+/// In-app purchase, pull up payment, `paymentDiscount` is the discount information for setting promotions.
+@objc public func purchaseSKProductWithDiscount(_ product : SKProduct, paymentDiscount: SKPaymentDiscount, applicationUsername: String?, completion: @escaping ProductPurchaseCompletionHandler) { }
+```
+
+
+
 ### Checking user status
+
 To check if user have any active subscriber call function `hasActiveSubscription`
 ```
 Appflow.shared.hasActiveSubscription({ [weak self] subscriber, error in
@@ -572,6 +605,8 @@ a. Report data manually. **Example:**
 Appflow.shared.sendNotificationUserInfoToBehaviorDataReporting(userInfo: userInfo)
 ```
 
+
+
 ## 11. Promote configuration for in-app purchases
 
 > This function is used to configure whether to continue transactions from the App Store when promoting in-app purchases
@@ -598,4 +633,5 @@ Appflow.shared.setInAppPurchasePromotingStatus(.IM_DEFER_PAYMENT, addObserver: s
 // Set the action when promoting in-app purchases to cancel the transaction
 Appflow.shared.setInAppPurchasePromotingStatus(.IM_CANCEL_PAYMENT, addObserver: self)
 ```
+
 

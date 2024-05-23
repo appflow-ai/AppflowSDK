@@ -15,6 +15,8 @@
 #endif
 
 @class GPBEmpty;
+@class GeneratePromotionalOfferSignatureRequest;
+@class GeneratePromotionalOfferSignatureResponse;
 @class GetAppConfigRequest;
 @class GetAppConfigResponse;
 @class GetInitInfoRequest;
@@ -68,6 +70,13 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Init(GetInitInfoRequest) returns (GetInitInfoResponse)
 
 - (GRPCUnaryProtoCall *)initWithMessage:(GetInitInfoRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark GeneratePromotionalOfferSignature(GeneratePromotionalOfferSignatureRequest) returns (GeneratePromotionalOfferSignatureResponse)
+
+/**
+ * Generating a signature for promotional offers
+ */
+- (GRPCUnaryProtoCall *)generatePromotionalOfferSignatureWithMessage:(GeneratePromotionalOfferSignatureRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 @end
 
@@ -126,6 +135,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)initWithRequest:(GetInitInfoRequest *)request handler:(void(^)(GetInitInfoResponse *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToInitWithRequest:(GetInitInfoRequest *)request handler:(void(^)(GetInitInfoResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GeneratePromotionalOfferSignature(GeneratePromotionalOfferSignatureRequest) returns (GeneratePromotionalOfferSignatureResponse)
+
+/**
+ * Generating a signature for promotional offers
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (void)generatePromotionalOfferSignatureWithRequest:(GeneratePromotionalOfferSignatureRequest *)request handler:(void(^)(GeneratePromotionalOfferSignatureResponse *_Nullable response, NSError *_Nullable error))handler;
+
+/**
+ * Generating a signature for promotional offers
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (GRPCProtoCall *)RPCToGeneratePromotionalOfferSignatureWithRequest:(GeneratePromotionalOfferSignatureRequest *)request handler:(void(^)(GeneratePromotionalOfferSignatureResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
