@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.12
+Version：v1.0.13
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.12
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.12'
+    pod 'AppflowSDK', '~> 1.0.13'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
