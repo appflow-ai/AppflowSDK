@@ -368,6 +368,25 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSNumber;
+
+@interface Appflow (SWIFT_EXTENSION(AppflowSDK))
+/// This method is used to fetch the exchange rate for a specified currency code. It takes a currency code as input and asynchronously returns the exchange rate relative to a base currency (usually USD or another benchmark currency).
+/// \param currencyCode standard(ISO 4217) currency code(e.g., “USD”, “EUR”, “JPY”).
+///
+/// \param completion A closure that takes two parameters:
+/// <ul>
+///   <li>
+///     Double:  An <code>NSNumber</code> object representing the currency exchange rate. This value will be <code>nil</code> if the retrieval fails.
+///   </li>
+///   <li>
+///     Error?: An error object if the request fails; if the request is successful, this will be nil.
+///   </li>
+/// </ul>
+///
+- (void)getCurrencyRateWithCurrencyCode:(NSString * _Nonnull)currencyCode completion:(void (^ _Nonnull)(NSNumber * _Nullable, NSError * _Nullable))completion;
+@end
+
 enum IMPromotingInAppPurchaseStatus : int32_t;
 @protocol IMPromotingObserverProtocol;
 
@@ -534,6 +553,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMPurchase *
 - (void)updateAttribution:(NSDictionary * _Nonnull)attribution source:(enum AttributionNetwork)source networkUserId:(NSString * _Nullable)networkUserId completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 - (void)updateCustomAttributionWithChannel:(NSString * _Nonnull)channel campaign:(NSString * _Nullable)campaign adGroup:(NSString * _Nullable)adGroup creative:(NSString * _Nullable)creative clickID:(NSString * _Nullable)clickID completion:(void (^ _Nullable)(GetAttributionResponse * _Nullable, NSError * _Nullable))completion;
 @end
+
 
 
 

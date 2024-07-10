@@ -14,11 +14,13 @@
 #import <RxLibrary/GRXWriter.h>
 #endif
 
+@class CurrencyRate;
 @class GPBEmpty;
 @class GeneratePromotionalOfferSignatureRequest;
 @class GeneratePromotionalOfferSignatureResponse;
 @class GetAppConfigRequest;
 @class GetAppConfigResponse;
+@class GetCurrencyRateRequest;
 @class GetInitInfoRequest;
 @class GetInitInfoResponse;
 @class ReceiptRequest;
@@ -77,6 +79,13 @@ NS_ASSUME_NONNULL_BEGIN
  * Generating a signature for promotional offers
  */
 - (GRPCUnaryProtoCall *)generatePromotionalOfferSignatureWithMessage:(GeneratePromotionalOfferSignatureRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark GetCurrencyRate(GetCurrencyRateRequest) returns (CurrencyRate)
+
+/**
+ * USD base currency rate
+ */
+- (GRPCUnaryProtoCall *)getCurrencyRateWithMessage:(GetCurrencyRateRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 @end
 
@@ -152,6 +161,23 @@ NS_ASSUME_NONNULL_BEGIN
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
 - (GRPCProtoCall *)RPCToGeneratePromotionalOfferSignatureWithRequest:(GeneratePromotionalOfferSignatureRequest *)request handler:(void(^)(GeneratePromotionalOfferSignatureResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetCurrencyRate(GetCurrencyRateRequest) returns (CurrencyRate)
+
+/**
+ * USD base currency rate
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (void)getCurrencyRateWithRequest:(GetCurrencyRateRequest *)request handler:(void(^)(CurrencyRate *_Nullable response, NSError *_Nullable error))handler;
+
+/**
+ * USD base currency rate
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (GRPCProtoCall *)RPCToGetCurrencyRateWithRequest:(GetCurrencyRateRequest *)request handler:(void(^)(CurrencyRate *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end

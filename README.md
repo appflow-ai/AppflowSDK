@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.13
+Version：v1.0.14
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.13
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.13'
+    pod 'AppflowSDK', '~> 1.0.14'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -634,4 +634,34 @@ Appflow.shared.setInAppPurchasePromotingStatus(.IM_DEFER_PAYMENT, addObserver: s
 Appflow.shared.setInAppPurchasePromotingStatus(.IM_CANCEL_PAYMENT, addObserver: self)
 ```
 
+
+
+## 12. Get Currency Rate
+
+### Description
+This API retrieves the currency exchange rate for a given currency code asynchronously.
+
+### Parameters
+- **currencyCode**: A `String` parameter specifying the currency code for which the exchange rate is to be fetched. (e.g., "USD", "EUR", "JPY").
+
+### Completion Handler
+The completion handler provides the result of the currency rate retrieval.
+- **rate**: An `NSNumber` object representing the currency exchange rate. This value will be `nil` if the retrieval fails.
+- **error**: An `Error` object containing details if an error occurred during the retrieval process. If retrieval is successful, this value will be `nil`.
+
+**Example:** 
+
+```swift
+  let currencyCode = "USD"
+  Appflow.shared.getCurrencyRate(currencyCode: currencyCode) { rate, error in
+      if let rate = rate {
+          debugPrint("Currency rate for \(currencyCode): \(rate)")
+      } else if let error = error {
+          debugPrint("Error fetching currency rate: \(error.localizedDescription)")
+      } else {
+          debugPrint("Unknown error occurred.")
+      }
+  }
+
+```
 

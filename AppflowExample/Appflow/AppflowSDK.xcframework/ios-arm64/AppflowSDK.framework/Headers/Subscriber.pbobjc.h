@@ -628,6 +628,32 @@ GPB_FINAL @interface GeneratePromotionalOfferSignatureResponse : GPBMessage
 
 @end
 
+#pragma mark - GetCurrencyRateRequest
+
+typedef GPB_ENUM(GetCurrencyRateRequest_FieldNumber) {
+  GetCurrencyRateRequest_FieldNumber_CurrencyCode = 1,
+};
+
+GPB_FINAL @interface GetCurrencyRateRequest : GPBMessage
+
+/** standard(ISO 4217) currency code */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *currencyCode;
+
+@end
+
+#pragma mark - CurrencyRate
+
+typedef GPB_ENUM(CurrencyRate_FieldNumber) {
+  CurrencyRate_FieldNumber_CurrencyRate = 1,
+};
+
+GPB_FINAL @interface CurrencyRate : GPBMessage
+
+/** 1 USD convert to relevant currency */
+@property(nonatomic, readwrite) double currencyRate;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END
@@ -635,3 +661,5 @@ CF_EXTERN_C_END
 #pragma clang diagnostic pop
 
 // @@protoc_insertion_point(global_scope)
+
+// clang-format on
