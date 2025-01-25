@@ -9,7 +9,6 @@ import UIKit
 import AppflowSDK
 import FBSDKCoreKit
 import AdServices
-import iAd
 import AppsFlyerLib
 import Adjust
 
@@ -65,14 +64,6 @@ class AttributionViewController: UIViewController {
                 let param = ["attributionToken": attributionToken]
                 Appflow.shared.updateAttribution(param, source: .appleSearchAds)
             }
-        }else {
-            ADClient.shared().requestAttributionDetails({ (attributionDetails, error) in
-                guard let attributionDetails = attributionDetails else {
-                    print("Search Ads error: \(error?.localizedDescription ?? "")")
-                    return
-                }
-                Appflow.shared.updateAttribution(attributionDetails, source: .appleSearchAds)
-            })
         }
     }
     
