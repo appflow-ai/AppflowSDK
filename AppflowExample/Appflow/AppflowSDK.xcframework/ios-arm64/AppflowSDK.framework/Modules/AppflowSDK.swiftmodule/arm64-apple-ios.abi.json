@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "AppflowSDK",
+    "printedName": "AppflowSDK",
     "children": [
       {
         "kind": "Import",
@@ -1056,7 +1056,23 @@
         "declAttributes": [
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -1238,6 +1254,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1539,6 +1569,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2044,6 +2088,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -2411,6 +2469,20 @@
             "printedName": "Encodable",
             "usr": "s:SE",
             "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -2884,6 +2956,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -3199,6 +3285,20 @@
             "printedName": "Encodable",
             "usr": "s:SE",
             "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -4013,6 +4113,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4266,6 +4380,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -4359,6 +4487,22 @@
         "declAttributes": [
           "AccessControl",
           "ObjC"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
         ]
       },
       {
@@ -4537,6 +4681,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -6598,6 +6756,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -6724,8 +6896,9 @@
             "moduleName": "AppflowSDK",
             "declAttributes": [
               "HasInitialValue",
-              "HasStorage",
+              "Preconcurrency",
               "Custom",
+              "HasStorage",
               "AccessControl",
               "RawDocComment"
             ],
@@ -6814,6 +6987,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override",
               "AccessControl"
@@ -6847,6 +7021,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override",
               "AccessControl"
@@ -6859,6 +7034,7 @@
         "mangledName": "$s10AppflowSDK0A11WelcomePageC",
         "moduleName": "AppflowSDK",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "ObjC"
@@ -6872,6 +7048,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -7288,6 +7478,20 @@
         ],
         "enumRawTypeName": "UInt",
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -8372,6 +8576,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -8537,7 +8755,23 @@
           "Final",
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -8685,6 +8919,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -8899,7 +9147,23 @@
         "declAttributes": [
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -9457,6 +9721,20 @@
             "conformances": [
               {
                 "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "Equatable",
                 "printedName": "Equatable",
                 "usr": "s:SQ",
@@ -9737,6 +10015,20 @@
             ],
             "enumRawTypeName": "Int",
             "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
               {
                 "kind": "Conformance",
                 "name": "Equatable",
@@ -10021,6 +10313,20 @@
             "conformances": [
               {
                 "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "Equatable",
                 "printedName": "Equatable",
                 "usr": "s:SQ",
@@ -10303,6 +10609,20 @@
             "conformances": [
               {
                 "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
                 "name": "Equatable",
                 "printedName": "Equatable",
                 "usr": "s:SQ",
@@ -10543,6 +10863,20 @@
             ],
             "enumRawTypeName": "Int",
             "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
               {
                 "kind": "Conformance",
                 "name": "Equatable",
@@ -11102,6 +11436,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -11670,6 +12018,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -11769,6 +12131,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Preconcurrency",
               "Custom",
               "Override"
             ],
@@ -11780,6 +12143,7 @@
         "mangledName": "$s10AppflowSDK18IMInAppMessagePageC",
         "moduleName": "AppflowSDK",
         "declAttributes": [
+          "Preconcurrency",
           "Custom",
           "AccessControl",
           "ObjC"
@@ -11792,6 +12156,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -11946,52 +12324,10 @@
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
-      "kind": "IntegerLiteral",
-      "offset": 218,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
-      "kind": "IntegerLiteral",
-      "offset": 232,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
-      "kind": "IntegerLiteral",
-      "offset": 248,
-      "length": 3,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
-      "kind": "IntegerLiteral",
-      "offset": 218,
-      "length": 4,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
-      "kind": "IntegerLiteral",
-      "offset": 232,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
-      "kind": "IntegerLiteral",
-      "offset": 248,
-      "length": 3,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 287,
       "length": 8,
-      "value": "\"1.0.14\""
+      "value": "\"1.0.15\""
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
@@ -12127,20 +12463,6 @@
       "value": "60"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProduct.swift",
-      "kind": "StringLiteral",
-      "offset": 207,
-      "length": 9,
-      "value": "\"AppflowSDK.IMProduct\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProduct.swift",
-      "kind": "StringLiteral",
-      "offset": 436,
-      "length": 22,
-      "value": "\"AppflowSDK.IMOfferSignatureDetail\""
-    },
-    {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "Array",
       "offset": 644,
@@ -12156,20 +12478,6 @@
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "StringLiteral",
-      "offset": 192,
-      "length": 12,
-      "value": "\"AppflowSDK.IMSubscriber\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "StringLiteral",
-      "offset": 1001,
-      "length": 13,
-      "value": "\"AppflowSDK.IMEntitlement\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "Array",
       "offset": 2448,
       "length": 2,
@@ -12177,20 +12485,6 @@
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "StringLiteral",
-      "offset": 1863,
-      "length": 14,
-      "value": "\"AppflowSDK.IMSubscription\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "StringLiteral",
-      "offset": 3559,
-      "length": 33,
-      "value": "\"AppflowSDK.IMSubscriptionOriginalTransaction\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
       "offset": 4506,
       "length": 1,
@@ -12300,132 +12594,6 @@
       "offset": 6142,
       "length": 1,
       "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4506,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4733,
-      "length": 1,
-      "value": "-1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4840,
-      "length": 1,
-      "value": "-2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4945,
-      "length": 1,
-      "value": "-3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5033,
-      "length": 1,
-      "value": "-4"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5137,
-      "length": 1,
-      "value": "-5"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5247,
-      "length": 1,
-      "value": "-6"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5363,
-      "length": 1,
-      "value": "-7"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5462,
-      "length": 1,
-      "value": "-8"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5558,
-      "length": 1,
-      "value": "-9"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5652,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5748,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5863,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 5952,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6047,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 6142,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7629,
-      "length": 16,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
-      "kind": "IntegerLiteral",
-      "offset": 7720,
-      "length": 17,
-      "value": "2"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
@@ -12454,13 +12622,6 @@
       "offset": 898,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
-      "kind": "StringLiteral",
-      "offset": 670,
-      "length": 17,
-      "value": "\"AppflowSDK.IMStoreKitWrapper\""
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
@@ -12583,13 +12744,6 @@
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProductRequest.swift",
-      "kind": "StringLiteral",
-      "offset": 313,
-      "length": 40,
-      "value": "\"AppflowSDK.IMProductsRequestCompletionHandlerObject\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProductRequest.swift",
       "kind": "Array",
       "offset": 1116,
       "length": 2,
@@ -12673,41 +12827,6 @@
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 176,
-      "length": 9,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 195,
-      "length": 6,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 211,
-      "length": 14,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 235,
-      "length": 8,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 253,
-      "length": 6,
-      "value": "5"
-    },
-    {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
       "offset": 14814,
@@ -12748,90 +12867,6 @@
       "offset": 418,
       "length": 6,
       "value": "\"ipv6\""
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 576,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 597,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 618,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 639,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 660,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 711,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 576,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 597,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 618,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 639,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 660,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 711,
-      "length": 1,
-      "value": "5"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
@@ -13109,471 +13144,135 @@
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
-      "offset": 540,
+      "offset": 1001,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
-      "offset": 597,
+      "offset": 1042,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
-      "offset": 641,
+      "offset": 1085,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
-      "offset": 682,
+      "offset": 1129,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
-      "offset": 718,
+      "offset": 1220,
       "length": 1,
-      "value": "4"
+      "value": "0"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
-      "offset": 757,
+      "offset": 1261,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1307,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1350,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1442,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1488,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1534,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1578,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1667,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1710,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1760,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2707,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 794,
-      "length": 1,
-      "value": "6"
+      "kind": "StringLiteral",
+      "offset": 2919,
+      "length": 29,
+      "value": "\"IMPLUS_ANALYTICS_FIRST_OPEN\""
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 826,
-      "length": 1,
-      "value": "7"
+      "kind": "BooleanLiteral",
+      "offset": 3025,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 863,
-      "length": 1,
-      "value": "8"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 891,
-      "length": 1,
-      "value": "9"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 920,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 540,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 597,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 641,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 682,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 718,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 757,
-      "length": 1,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 794,
-      "length": 1,
-      "value": "6"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 826,
-      "length": 1,
-      "value": "7"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 863,
-      "length": 1,
-      "value": "8"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 891,
-      "length": 1,
-      "value": "9"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 920,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1001,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1042,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1085,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1129,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1001,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1042,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1085,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1129,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1001,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1042,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1085,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1129,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1220,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1261,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1307,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1350,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1220,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1261,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1307,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1350,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1220,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1261,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1307,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1350,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1442,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1488,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1534,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1578,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1442,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1488,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1534,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1578,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1442,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1488,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1534,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1578,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1667,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1710,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1760,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1667,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1710,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1760,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1667,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1710,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1760,
-      "length": 1,
-      "value": "2"
+      "kind": "StringLiteral",
+      "offset": 3039,
+      "length": 29,
+      "value": "\"IMPLUS_ANALYTICS_FIRST_OPEN\""
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
@@ -13581,13 +13280,6 @@
       "offset": 7088,
       "length": 3,
       "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMInAppMessagePage.swift",
-      "kind": "StringLiteral",
-      "offset": 137,
-      "length": 18,
-      "value": "\"AppflowSDK.IMInAppMessagePage\""
     },
     {
       "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
@@ -13637,6 +13329,139 @@
       "offset": 621,
       "length": 1,
       "value": "5"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 791,
+      "length": 19,
+      "value": "\"ATTrackingManager\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 888,
+      "length": 29,
+      "value": "\"trackingAuthorizationStatus\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1145,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1636,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1746,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1836,
+      "length": 21,
+      "value": "\"ASIdentifierManager\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1997,
+      "length": 15,
+      "value": "\"sharedManager\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 2151,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 2589,
+      "length": 30,
+      "value": "\"isAdvertisingTrackingEnabled\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 2761,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 3231,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 3366,
+      "length": 21,
+      "value": "\"ASIdentifierManager\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 3519,
+      "length": 15,
+      "value": "\"sharedManager\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 3669,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 4087,
+      "length": 23,
+      "value": "\"advertisingIdentifier\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 4248,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 4648,
+      "length": 38,
+      "value": "\"00000000-0000-0000-0000-000000000000\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 4712,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 4830,
+      "length": 2,
+      "value": "\"\""
     }
   ]
 }
