@@ -9,7 +9,7 @@ import UIKit
 import AppflowSDK
 import UserNotifications
 import AppsFlyerLib
-import Adjust
+import AdjustSdk
 import Branch
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appToken: yourAppToken,
             environment: environment)
         adjustConfig?.delegate = self
-        Adjust.appDidLaunch(adjustConfig)
+        Adjust.initSdk(adjustConfig)
 
     }
     //    MARK: branch init

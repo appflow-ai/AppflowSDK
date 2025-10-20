@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.15
+Version：v1.0.16
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.15
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.15'
+    pod 'AppflowSDK', '~> 1.0.16'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -202,16 +202,24 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
 | IMSubscription                      | product Id                                                 |
 | ----------------------------------- | ------------------------------------------------------------ |
 | status: IMSubscriberStatus          | SubscriptionState_State |
+| subStatus: IMSubscriberSubStatus    | SubscriptionState_SubState |
 | expireAt: Int64                     | Expiration time of the subscription (millisecond) |
 | cancelAt: Int64                     | Time to unsubscribe (millisecond) |
 | willRenewTo: String                 | The next subscription ID to switch: Product ID |
 | originalTransactions: [IMSubscriptionOriginalTransaction]  | Original transactions |
 
-| IMSubscription                      | product Id                                                 |
+| IMSubscriptionOriginalTransaction   | Original transaction details                               |
 | ----------------------------------- | ------------------------------------------------------------ |
 | originalTxid: String                | Original order note |
 | expireAt: Int64                     | Expiration time of the subscription (millisecond) |
 | startAt: Int64                      | Time to start the subscription (millisecond) |
+
+| IMSubscriberSubStatus               | Subscription sub-state types                               |
+| ----------------------------------- | ------------------------------------------------------------ |
+| IM_STANDARD_SUB                     | Standard subscription |
+| IM_FREE_TRIAL                       | Free trial period |
+| IM_INTRODUCTORY                     | Introductory pricing period |
+| IM_SUB_OFFER                        | Subscription offer period |
 
 
 
@@ -420,18 +428,27 @@ To upload Adjust attribution data, the developer accesses the Adjust SDK and rep
 extension AppDelegate: AdjustDelegate {
     //Callback for the first app installation
     func adjustAttributionChanged(_ attribution: ADJAttribution?) {
-        // Just pass Adjust attribution to Adapty SDK
+        // Just pass Adjust attribution to Appflow SDK
         if let attribution = attribution?.dictionary() {
-            //networkUserId:Adjust.adid()
-            Appflow.shared.updateAttribution(attribution, source: .adjust, networkUserId: Adjust.adid())
+            Appflow.shared.updateAttribution(attribution, source: .adjust)
         }
     }
     
 }
 ```
 
+You can also get the Adjust ID asynchronously if needed:
+
+```
+Adjust.adid { adid in
+    // Use the adid if needed for specific attribution scenarios
+    let attribution = ["adid": adid ?? ""]
+    Appflow.shared.updateAttribution(attribution, source: .adjust, networkUserId: adid)
+}
+```
+
 ### Branch
-To upload Adjust attribution data, the developer accesses the Adjust SDK and reports the data in the andRegisterDeepLinkHandler block, refer to the example below
+To upload Branch attribution data, the developer accesses the Branch SDK and reports the data in the initSession block, refer to the example below
 
 ```
 //  MARK: branch init
@@ -664,4 +681,5 @@ The completion handler provides the result of the currency rate retrieval.
   }
 
 ```
+
 

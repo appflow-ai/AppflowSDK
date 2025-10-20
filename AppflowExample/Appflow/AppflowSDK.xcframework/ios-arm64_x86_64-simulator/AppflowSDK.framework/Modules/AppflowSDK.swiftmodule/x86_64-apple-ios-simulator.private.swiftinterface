@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AppflowSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppflowSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 @_exported import AppflowSDK
 import AudioToolbox
 import SystemConfiguration.CaptiveNetwork
@@ -40,7 +40,9 @@ public let kInterstitial: Swift.String
 public let maxCurrentNum: Swift.Int
 public let kTimerDuration: Swift.Int
 @_hasMissingDesignatedInitializers public class AppFlowIMPTopViewController {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func topViewContoller() -> UIKit.UIViewController?
+  #endif
   public static func topViewController(root: UIKit.UIViewController) -> UIKit.UIViewController
   @objc deinit
 }
@@ -76,6 +78,7 @@ public let kTimerDuration: Swift.Int
 @_hasMissingDesignatedInitializers @objc public class IMSubscription : ObjectiveC.NSObject {
   @objc final public let productId: Swift.String
   @objc final public let status: AppflowSDK.IMSubscriberStatus
+  @objc final public let subStatus: AppflowSDK.IMSubscriberSubStatus
   @objc final public let expireAt: Swift.Int64
   @objc final public let cancelAt: Swift.Int64
   @objc final public let willRenewTo: Swift.String
@@ -107,7 +110,22 @@ public let kTimerDuration: Swift.Int
   case IM_NON_REN_SUB = 3
   case IM_OFF_PLATFORM_SUB = 2
   case IM_EXPIRED_IN_GRACE = 1
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int32)
+  #endif
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum IMSubscriberSubStatus : Swift.Int32 {
+  case IM_STANDARD_SUB = 0
+  case IM_FREE_TRIAL = 1
+  case IM_INTRODUCTORY = 2
+  case IM_SUB_OFFER = 3
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int32)
+  #endif
   public typealias RawValue = Swift.Int32
   public var rawValue: Swift.Int32 {
     get
@@ -117,7 +135,9 @@ public let kTimerDuration: Swift.Int
   case IM_CONTINUE
   case IM_DEFER_PAYMENT
   case IM_CANCEL_PAYMENT
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int32)
+  #endif
   public typealias RawValue = Swift.Int32
   public var rawValue: Swift.Int32 {
     get
@@ -130,7 +150,9 @@ public typealias SuccessBlock = (Any) -> Swift.Void
 public typealias FailedBlock = (Any) -> Swift.Void
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IMRequestManager : ObjectiveC.NSObject {
   public static let shared: AppflowSDK.IMRequestManager
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadCacheData(with successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class Appflow : ObjectiveC.NSObject {
@@ -141,22 +163,40 @@ public typealias FailedBlock = (Any) -> Swift.Void
   @objc public func setPurchasesLogs(enabled: Swift.Bool)
   @objc public func setAnalyticsLogs(enabled: Swift.Bool)
   @objc public func getPurchaseProductIds(_ completion: @escaping AppflowSDK.PruchaseGetProductIdsCompletionHander)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getSkuDetails(productIds: Swift.Set<Swift.String>, completion: AppflowSDK.ProductSkuDetailRequestCompletionHandler?)
+  #endif
   @objc public func purchaseSKProduct(_ product: StoreKit.SKProduct, completion: @escaping AppflowSDK.ProductPurchaseCompletionHandler)
   @objc public func purchaseFetchReceiptSKProduct(_ product: StoreKit.SKProduct, completion: @escaping AppflowSDK.ProductPurchaseFetchReceiptCompletionHandler)
   @objc public func finishTransactions(_ transactions: [StoreKit.SKPaymentTransaction])
   @objc public func addMonitorTransationCompletionHandler(completion: @escaping AppflowSDK.MonitorTransationCompletionHandler)
   @objc public func canMakePayment() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc public func uploadUserInfo()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, (any Swift.Error)?) -> Swift.Void)?)
+  #endif
   @objc public func getAppUserId() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func updateCustomAttribution(channel: Swift.String, campaign: Swift.String?, adGroup: Swift.String?, creative: Swift.String?, clickID: Swift.String?, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func uploadBigDataWithType(eventName: Swift.String, params: [Swift.AnyHashable : Any]?)
+  #endif
   @objc public func setInAppMesssageAutoShow(isAuto: Swift.Bool)
   @objc public func setFromBackgroudPointToDelayTime(delayTime: Foundation.TimeInterval)
   @objc public func sendUserNotificationCenterMessage(userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
@@ -171,12 +211,18 @@ extension AppflowSDK.Appflow {
   @objc dynamic public func setInAppPurchasePromotingStatus(_ status: AppflowSDK.IMPromotingInAppPurchaseStatus, addObserver: any AppflowSDK.IMPromotingObserverProtocol)
 }
 extension AppflowSDK.Appflow {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func createASignature(productId: Swift.String, offerId: Swift.String, userid: Swift.String, completion: @escaping (AppflowSDK.IMOfferSignatureDetail?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 12.2, *)
   @objc dynamic public func purchaseSKProductWithDiscount(_ product: StoreKit.SKProduct, paymentDiscount: StoreKit.SKPaymentDiscount, applicationUsername: Swift.String?, completion: @escaping AppflowSDK.ProductPurchaseCompletionHandler)
+  #endif
 }
 extension AppflowSDK.Appflow {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func getCurrencyRate(currencyCode: Swift.String, completion: @escaping (Foundation.NSNumber?, (any Swift.Error)?) -> Swift.Void)
+  #endif
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class AppflowWelcomePage : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public var waitingTime: Swift.Double
@@ -191,7 +237,9 @@ extension AppflowSDK.Appflow {
   case appleSearchAds
   case facebook
   case custom
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.UInt)
+  #endif
   public typealias RawValue = Swift.UInt
   public var rawValue: Swift.UInt {
     get
@@ -208,25 +256,43 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class IMPurchase : ObjectiveC.NSObject {
   @objc public static let shared: AppflowSDK.IMPurchase
   @objc public func configureInitSDKWithAppFlowPlist()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getSkuDetails(productIds: Swift.Set<Swift.String>, completion: AppflowSDK.ProductSkuDetailRequestCompletionHandler?)
+  #endif
   public func canMakePayments() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func hasActiveSubscription(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func restorePurchases(_ completion: @escaping (AppflowSDK.IMSubscriber, (any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc public func enableLog(_ isEnable: Swift.Bool)
   @objc public func isSandbox() -> Swift.Bool
   @objc public func invalidateCache()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func loadPaywallToPurachase(completion: @escaping (Swift.Bool, Swift.String?) -> Swift.Void)
+  #endif
   @objc public func getPurchaseProductIds(_ completion: @escaping AppflowSDK.PruchaseGetProductIdsCompletionHander)
   @objc public func getUserIsActive() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func uploadUserInfo(userId: Swift.String?, extraAttribute: [Swift.String : Any] = [:], completion: ((Swift.Bool, (any Swift.Error)?) -> Swift.Void)?)
+  #endif
   @objc public func getAppUserId() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func uploadDeviceInfo(deviceToken: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func updateAttribution(_ attribution: [Swift.AnyHashable : Any], source: AppflowSDK.AttributionNetwork, networkUserId: Swift.String? = nil, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func updateCustomAttribution(channel: Swift.String, campaign: Swift.String?, adGroup: Swift.String?, creative: Swift.String?, clickID: Swift.String?, completion: AppflowSDK.updateAttributionRequestCompletionHandler? = nil)
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class CrashReporter {
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func startCrashReporter(completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class IMDeviceInfoManager : ObjectiveC.NSObject {
@@ -236,7 +302,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
 }
 @_hasMissingDesignatedInitializers public class IMRequestCache {
   public static let shared: AppflowSDK.IMRequestCache
+  #if compiler(>=5.3) && $NonescapableTypes
   public func allRequests(fromFmdbWihtClass cls: Swift.AnyClass, finishBlock: @escaping (_ requestArr: [Any]?) -> Swift.Void)
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class IMAnalytics : ObjectiveC.NSObject {
@@ -252,7 +320,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
     case nonFatalCrash
     case fatalCrash
     case viewPaywall
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -263,7 +333,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
     case paramScreenHome
     case paramScreenSet
     case eParamScreenLock
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -274,7 +346,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
     case paramPlaceClean
     case paramPlaceBoost
     case paramPlaceInstall
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -285,7 +359,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
     case paramAdSouceFacebook
     case paramAdSouceAdmob
     case paramAdSouceMobpup
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -295,19 +371,33 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
     case paramFormatNono
     case paramFormatBanner
     case paramFormatInterstitial
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
   }
   public func registerBigDataWitInfoPlist()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, params: [Swift.AnyHashable : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadBigDataWithEvent(eventName: Swift.String?, params: [Swift.AnyHashable : Any]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, params: [Swift.AnyHashable : Any]?, successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadBigDataWithEvent(eventName: Swift.String?, params: [Swift.AnyHashable : Any]?, successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, paramModel model: AppflowSDK.ParamModel?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func uploadBigDataWithType(eventType: AppflowSDK.IMAnalytics.EventType, paramModel model: AppflowSDK.ParamModel?, successBlock: AppflowSDK.SuccessBlock?, failureBlock failedBlock: AppflowSDK.FailedBlock?)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -326,6 +416,9 @@ public typealias PruchaseGetProductIdsCompletionHander = (_ productIdArray: [Swi
 extension AppflowSDK.IMSubscriberStatus : Swift.Equatable {}
 extension AppflowSDK.IMSubscriberStatus : Swift.Hashable {}
 extension AppflowSDK.IMSubscriberStatus : Swift.RawRepresentable {}
+extension AppflowSDK.IMSubscriberSubStatus : Swift.Equatable {}
+extension AppflowSDK.IMSubscriberSubStatus : Swift.Hashable {}
+extension AppflowSDK.IMSubscriberSubStatus : Swift.RawRepresentable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Equatable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Hashable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.RawRepresentable {}
