@@ -10,7 +10,7 @@ import AppflowSDK
 import FBSDKCoreKit
 import AdServices
 import AppsFlyerLib
-import Adjust
+import AdjustSdk
 
 class AttributionViewController: UIViewController {
 
@@ -28,28 +28,31 @@ class AttributionViewController: UIViewController {
     }
 
     @IBAction func appsfyerSimulation(_ sender: Any) {
-        let attibution = ["af_message":"organic install",
+        let attribution = ["af_message":"organic install",
                           "af_status":"Organic",
                           "install_time":getcurrentDate(),
                           "is_first_launch":"0",
         ]
-        Appflow.shared.updateAttribution(attibution, source: .appsflyer, networkUserId: AppsFlyerLib.shared().getAppsFlyerUID())
+        Appflow.shared.updateAttribution(attribution, source: .appsflyer, networkUserId: AppsFlyerLib.shared().getAppsFlyerUID())
     }
     
     
     @IBAction func adjustSimulation(_ sender: Any) {
-        let attibution = ["adid":"32c3e0cedee1fce1ed4a27af4bbe5e8e98",
+        let attribution = ["adid":"32c3e0cedee1fce1ed4a27af4bbe5e8e98",
                           "network":"Organic",
                           "trackerName":"Organic",
                           "trackerToken":"0pfx3d3o",
         ]
-        Appflow.shared.updateAttribution(attibution, source: .adjust, networkUserId: Adjust.adid())
+        Adjust.adid { adid in
+              // add your completion handler
+            Appflow.shared.updateAttribution(attribution, source: .adjust, networkUserId: adid)
+        };
     }
     
     @IBAction func branchSimulation(_ sender: Any) {
-        let attibution = ["branch":"32c3e0cedee1fce1ed4ssa27af4bbe5e8e98",
+        let attribution = ["branch":"32c3e0cedee1fce1ed4ssa27af4bbe5e8e98",
                           "network":"Organic",]
-        Appflow.shared.updateAttribution(attibution, source: .branch, networkUserId: Appflow.shared.getAppUserId())
+        Appflow.shared.updateAttribution(attribution, source: .branch, networkUserId: Appflow.shared.getAppUserId())
     }
     
     @IBAction func facebookSimulation(_ sender: Any) {

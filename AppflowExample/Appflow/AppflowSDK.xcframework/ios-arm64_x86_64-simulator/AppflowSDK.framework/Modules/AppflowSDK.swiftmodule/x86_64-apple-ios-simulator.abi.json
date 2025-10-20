@@ -2644,6 +2644,57 @@
           },
           {
             "kind": "Var",
+            "name": "subStatus",
+            "printedName": "subStatus",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IMSubscriberSubStatus",
+                "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)subStatus",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC9subStatusAA015IMSubscriberSubE0Ovp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMSubscriberSubStatus",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                    "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)subStatus",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC9subStatusAA015IMSubscriberSubE0Ovg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "expireAt",
             "printedName": "expireAt",
             "children": [
@@ -4104,6 +4155,314 @@
         "declKind": "Enum",
         "usr": "c:@M@AppflowSDK@E@IMSubscriberStatus",
         "mangledName": "$s10AppflowSDK18IMSubscriberStatusO",
+        "moduleName": "AppflowSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int32",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IMSubscriberSubStatus",
+        "printedName": "IMSubscriberSubStatus",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "IM_STANDARD_SUB",
+            "printedName": "IM_STANDARD_SUB",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMSubscriberSubStatus.Type) -> AppflowSDK.IMSubscriberSubStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMSubscriberSubStatus",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                    "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMSubscriberSubStatus",
+                        "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                        "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus@IMSubscriberSubStatusIM_STANDARD_SUB",
+            "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO15IM_STANDARD_SUByA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "IM_FREE_TRIAL",
+            "printedName": "IM_FREE_TRIAL",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMSubscriberSubStatus.Type) -> AppflowSDK.IMSubscriberSubStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMSubscriberSubStatus",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                    "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMSubscriberSubStatus",
+                        "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                        "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus@IMSubscriberSubStatusIM_FREE_TRIAL",
+            "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO13IM_FREE_TRIALyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "IM_INTRODUCTORY",
+            "printedName": "IM_INTRODUCTORY",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMSubscriberSubStatus.Type) -> AppflowSDK.IMSubscriberSubStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMSubscriberSubStatus",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                    "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMSubscriberSubStatus",
+                        "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                        "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus@IMSubscriberSubStatusIM_INTRODUCTORY",
+            "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO15IM_INTRODUCTORYyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "IM_SUB_OFFER",
+            "printedName": "IM_SUB_OFFER",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMSubscriberSubStatus.Type) -> AppflowSDK.IMSubscriberSubStatus",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMSubscriberSubStatus",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                    "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMSubscriberSubStatus",
+                        "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                        "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus@IMSubscriberSubStatusIM_SUB_OFFER",
+            "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO12IM_SUB_OFFERyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppflowSDK.IMSubscriberSubStatus?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMSubscriberSubStatus",
+                    "printedName": "AppflowSDK.IMSubscriberSubStatus",
+                    "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10AppflowSDK21IMSubscriberSubStatusO8rawValueACSgs5Int32V_tcfc",
+            "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO8rawValueACSgs5Int32V_tcfc",
+            "moduleName": "AppflowSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10AppflowSDK21IMSubscriberSubStatusO8rawValues5Int32Vvp",
+            "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO8rawValues5Int32Vvp",
+            "moduleName": "AppflowSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10AppflowSDK21IMSubscriberSubStatusO8rawValues5Int32Vvg",
+                "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO8rawValues5Int32Vvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AppflowSDK@E@IMSubscriberSubStatus",
+        "mangledName": "$s10AppflowSDK21IMSubscriberSubStatusO",
         "moduleName": "AppflowSDK",
         "declAttributes": [
           "AccessControl",
@@ -7117,6 +7476,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           },
           {
             "kind": "Conformance",
@@ -12228,6 +12594,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
             "name": "UITraitChangeObservable",
             "printedName": "UITraitChangeObservable",
             "usr": "s:5UIKit23UITraitChangeObservableP",
@@ -12281,1183 +12654,1211 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
       "kind": "BooleanLiteral",
       "offset": 383,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
       "kind": "BooleanLiteral",
       "offset": 423,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/loadPaywall\/AppFlowIMPPaywallviewController.swift",
       "kind": "BooleanLiteral",
       "offset": 11137,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "IntegerLiteral",
       "offset": 218,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "IntegerLiteral",
       "offset": 232,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "IntegerLiteral",
       "offset": 248,
       "length": 3,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 287,
       "length": 8,
       "value": "\"1.0.15\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 521,
       "length": 14,
       "value": "\"screeen_name\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 720,
       "length": 12,
       "value": "\"splacement\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 915,
       "length": 11,
       "value": "\"ad_source\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 1102,
       "length": 8,
       "value": "\"format\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 1298,
       "length": 22,
       "value": "\"engagement_time_msec\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 1498,
       "length": 10,
       "value": "\"homepage\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 1546,
       "length": 17,
       "value": "\"not_fatal_crash\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 1740,
       "length": 9,
       "value": "\"setting\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 1928,
       "length": 12,
       "value": "\"lockscreen\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 2117,
       "length": 13,
       "value": "\"quick_clean\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 2274,
       "length": 7,
       "value": "\"boost\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 2432,
       "length": 9,
       "value": "\"install\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 2590,
       "length": 10,
       "value": "\"facebook\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 2743,
       "length": 7,
       "value": "\"admob\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 2897,
       "length": 8,
       "value": "\"mobpup\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 3048,
       "length": 8,
       "value": "\"banner\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "StringLiteral",
       "offset": 3211,
       "length": 14,
       "value": "\"inserstitial\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "IntegerLiteral",
       "offset": 3283,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
       "kind": "IntegerLiteral",
       "offset": 3358,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "Array",
       "offset": 644,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "Array",
       "offset": 755,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "Array",
-      "offset": 2448,
+      "offset": 2545,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 4506,
+      "offset": 4824,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 4733,
+      "offset": 5051,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 4840,
+      "offset": 5158,
       "length": 2,
       "value": "-2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 4945,
+      "offset": 5263,
       "length": 2,
       "value": "-3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5033,
+      "offset": 5351,
       "length": 2,
       "value": "-4"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5137,
+      "offset": 5455,
       "length": 2,
       "value": "-5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5247,
+      "offset": 5565,
       "length": 2,
       "value": "-6"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5363,
+      "offset": 5681,
       "length": 2,
       "value": "-7"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5462,
+      "offset": 5780,
       "length": 2,
       "value": "-8"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5558,
+      "offset": 5876,
       "length": 2,
       "value": "-9"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5652,
+      "offset": 5970,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5748,
+      "offset": 6066,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5863,
+      "offset": 6181,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5952,
+      "offset": 6270,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6047,
+      "offset": 6365,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6142,
+      "offset": 6460,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7629,
+      "offset": 6579,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6633,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6699,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6760,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8242,
       "length": 16,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7720,
+      "offset": 8333,
       "length": 17,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
       "kind": "BooleanLiteral",
       "offset": 852,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMStoreKitWrapper.swift",
       "kind": "BooleanLiteral",
       "offset": 898,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "StringLiteral",
       "offset": 725,
       "length": 19,
       "value": "\"appflow-app-token\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "StringLiteral",
       "offset": 754,
       "length": 7,
       "value": "\"plist\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "StringLiteral",
       "offset": 875,
       "length": 13,
       "value": "\"api_address\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "StringLiteral",
       "offset": 999,
       "length": 23,
       "value": "\"gw.appgrowapi.com:443\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "Array",
       "offset": 1109,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "IntegerLiteral",
       "offset": 1217,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestManager.swift",
       "kind": "StringLiteral",
       "offset": 1492,
       "length": 16,
       "value": "\"com.addDel.www\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "StringLiteral",
       "offset": 324,
       "length": 26,
       "value": "\"IMPLUS_ANALYTICS_USER_ID\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "StringLiteral",
       "offset": 394,
       "length": 27,
       "value": "\"IPLUS_PURCHASE_SUBSCRIBER\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "IntegerLiteral",
       "offset": 467,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "IntegerLiteral",
       "offset": 472,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "Array",
       "offset": 804,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "Array",
       "offset": 849,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "StringLiteral",
       "offset": 1091,
       "length": 23,
       "value": "\"AppFlowWelcomHtmlData\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "StringLiteral",
       "offset": 1491,
       "length": 23,
       "value": "\"AppFlowWelcomHtmlData\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMDataCache.swift",
       "kind": "StringLiteral",
       "offset": 1598,
       "length": 27,
       "value": "\"AppFlowWelcomPageDateName\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/AppFlow.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/AppFlow.swift",
       "kind": "Dictionary",
       "offset": 3674,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProductRequest.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMProductRequest.swift",
       "kind": "Array",
       "offset": 1116,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMUtils.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMUtils.swift",
       "kind": "BooleanLiteral",
       "offset": 641,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMUtils.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMUtils.swift",
       "kind": "BooleanLiteral",
       "offset": 671,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMUtils.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMUtils.swift",
       "kind": "BooleanLiteral",
       "offset": 2102,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/WelComePage\/AppflowWelcomePage.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/WelComePage\/AppflowWelcomePage.swift",
       "kind": "IntegerLiteral",
       "offset": 351,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/WelComePage\/AppflowWelcomePage.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/WelComePage\/AppflowWelcomePage.swift",
       "kind": "IntegerLiteral",
       "offset": 2459,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/WelComePage\/AppflowWelcomePage.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/WelComePage\/AppflowWelcomePage.swift",
       "kind": "IntegerLiteral",
       "offset": 2483,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
       "kind": "IntegerLiteral",
       "offset": 176,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
       "kind": "IntegerLiteral",
       "offset": 195,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
       "kind": "IntegerLiteral",
       "offset": 211,
       "length": 14,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
       "kind": "IntegerLiteral",
       "offset": 235,
       "length": 8,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Attribution\/AppflowConstants.swift",
       "kind": "IntegerLiteral",
       "offset": 253,
       "length": 6,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
       "offset": 14814,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMPurchase.swift",
       "kind": "Dictionary",
       "offset": 15046,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 342,
       "length": 9,
       "value": "\"pdp_ip0\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 367,
       "length": 5,
       "value": "\"en0\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 392,
       "length": 6,
       "value": "\"ipv4\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 418,
       "length": 6,
       "value": "\"ipv6\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 576,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 597,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 618,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 639,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 660,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 711,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 769,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 833,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 877,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 928,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "StringLiteral",
       "offset": 1082,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "BooleanLiteral",
       "offset": 1211,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMDeviceInfoManager.swift",
       "kind": "IntegerLiteral",
       "offset": 1255,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
       "kind": "BooleanLiteral",
       "offset": 253,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
       "kind": "FloatLiteral",
       "offset": 293,
       "length": 3,
       "value": "1.5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/Notification\/IMNotificationUtil.swift",
       "kind": "BooleanLiteral",
       "offset": 339,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 267,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 357,
       "length": 19,
       "value": "\"appflow-app-token\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 386,
       "length": 7,
       "value": "\"plist\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 502,
       "length": 8,
       "value": "\"app_id\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "BooleanLiteral",
       "offset": 616,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 623,
       "length": 93,
       "value": "\"notice: ** Check that the appflow-app-token.plist file, file contains the 'app_id' field **\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 733,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 886,
       "length": 19,
       "value": "\"appflow-app-token\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 915,
       "length": 7,
       "value": "\"plist\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 1036,
       "length": 13,
       "value": "\"api_address\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/GRPCserviceManager.swift",
       "kind": "StringLiteral",
       "offset": 1160,
       "length": 23,
       "value": "\"gw.appgrowapi.com:443\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "Array",
       "offset": 199,
       "length": 243,
       "value": "[\"ev_first_open\", \"ev_app_start\", \"ev_scree_view\", \"ev_ads_click\", \"ev_ads_show\", \"ev_ads_request\", \"ev_in_app_purchases\", \"ev_user_engagement\", \"non_fatal_crash\", \"fatal_crash\", \"ev_view_paywall\"]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 540,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 597,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 641,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 682,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 718,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 757,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 794,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 826,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 863,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 891,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 920,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1001,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1042,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1085,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1129,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1220,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1261,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1307,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1350,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1442,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1488,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1534,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1578,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1667,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1710,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 1760,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "IntegerLiteral",
       "offset": 2707,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 2919,
       "length": 29,
       "value": "\"IMPLUS_ANALYTICS_FIRST_OPEN\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "BooleanLiteral",
       "offset": 3025,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 3039,
       "length": 29,
       "value": "\"IMPLUS_ANALYTICS_FIRST_OPEN\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMAnalytics.swift",
       "kind": "Dictionary",
       "offset": 7088,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "StringLiteral",
       "offset": 224,
       "length": 47,
       "value": "\"IMUncaughtExceptionHandlerSignalExceptionName\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "StringLiteral",
       "offset": 314,
       "length": 37,
       "value": "\"IMUncaughtExceptionHandlerSignalKey\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "StringLiteral",
       "offset": 397,
       "length": 40,
       "value": "\"IMUncaughtExceptionHandlerAddressesKey\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "IntegerLiteral",
       "offset": 475,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "IntegerLiteral",
       "offset": 515,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "IntegerLiteral",
       "offset": 568,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMExceptionModel.swift",
       "kind": "IntegerLiteral",
       "offset": 621,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 791,
       "length": 19,
       "value": "\"ATTrackingManager\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 888,
       "length": 29,
       "value": "\"trackingAuthorizationStatus\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 1145,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "IntegerLiteral",
       "offset": 1636,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 1746,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 1836,
       "length": 21,
       "value": "\"ASIdentifierManager\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 1997,
       "length": 15,
       "value": "\"sharedManager\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 2151,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 2589,
       "length": 30,
       "value": "\"isAdvertisingTrackingEnabled\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 2761,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 3231,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 3366,
       "length": 21,
       "value": "\"ASIdentifierManager\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 3519,
       "length": 15,
       "value": "\"sharedManager\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 3669,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 4087,
       "length": 23,
       "value": "\"advertisingIdentifier\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 4248,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 4648,
       "length": 38,
       "value": "\"00000000-0000-0000-0000-000000000000\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 4712,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/sweet\/Desktop\/App\/AppFlow\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/AppflowSDK\/ImplusPurchases\/IMDeviceInfo.swift",
       "kind": "StringLiteral",
       "offset": 4830,
       "length": 2,
