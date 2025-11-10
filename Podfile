@@ -26,10 +26,19 @@ post_install do |installer|
       project.targets.each do |target|
           target.build_configurations.each do |config|
               config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+              # 设置 C++ 语言标准为 C++17
+              config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+              config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
           end
       end
   end
   installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # 为所有 Pod 设置 C++17 标准
+      config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+      config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
+    end
+    
     if target.name == 'BoringSSL-GRPC'
       target.source_build_phase.files.each do |file|
         if file.settings && file.settings['COMPILER_FLAGS']

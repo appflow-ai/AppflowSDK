@@ -79,6 +79,7 @@ public let kTimerDuration: Swift.Int
   @objc final public let productId: Swift.String
   @objc final public let status: AppflowSDK.IMSubscriberStatus
   @objc final public let subStatus: AppflowSDK.IMSubscriberSubStatus
+  @objc final public let introductoryDiscountType: AppflowSDK.IMIntroductoryDiscountType
   @objc final public let expireAt: Swift.Int64
   @objc final public let cancelAt: Swift.Int64
   @objc final public let willRenewTo: Swift.String
@@ -123,6 +124,19 @@ public let kTimerDuration: Swift.Int
   case IM_FREE_TRIAL = 1
   case IM_INTRODUCTORY = 2
   case IM_SUB_OFFER = 3
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int32)
+  #endif
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum IMIntroductoryDiscountType : Swift.Int32 {
+  case IM_UNSPECIFIED = 0
+  case IM_INTRO_FREE_TRIAL = 1
+  case IM_PAY_AS_YOU_GO = 2
+  case IM_PAY_UP_FRONT = 3
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int32)
   #endif
@@ -419,6 +433,9 @@ extension AppflowSDK.IMSubscriberStatus : Swift.RawRepresentable {}
 extension AppflowSDK.IMSubscriberSubStatus : Swift.Equatable {}
 extension AppflowSDK.IMSubscriberSubStatus : Swift.Hashable {}
 extension AppflowSDK.IMSubscriberSubStatus : Swift.RawRepresentable {}
+extension AppflowSDK.IMIntroductoryDiscountType : Swift.Equatable {}
+extension AppflowSDK.IMIntroductoryDiscountType : Swift.Hashable {}
+extension AppflowSDK.IMIntroductoryDiscountType : Swift.RawRepresentable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Equatable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Hashable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.RawRepresentable {}

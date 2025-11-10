@@ -23,17 +23,19 @@
 @class GetCurrencyRateRequest;
 @class GetInitInfoRequest;
 @class GetInitInfoResponse;
+@class GetSubscriptionRequest;
+@class GetSubscriptionResponse;
 @class ReceiptRequest;
 @class Subscriber;
 @class SubscriberRequest;
 @class UploadUserInfoRequest;
 
 #if !defined(GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO) || !GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
-//#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) && GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
+#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) && GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
   #import <Protobuf/GPBEmpty.pbobjc.h>
-//#else
-//  #import "GPBEmpty.pbobjc.h"
-//#endif
+#else
+  #import "GPBEmpty.pbobjc.h"
+#endif
 #endif
 
 @class GRPCUnaryProtoCall;
@@ -86,6 +88,13 @@ NS_ASSUME_NONNULL_BEGIN
  * USD base currency rate
  */
 - (GRPCUnaryProtoCall *)getCurrencyRateWithMessage:(GetCurrencyRateRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse)
+
+/**
+ * Query subscription information, currently used to check if the subscription right has been used before reward distribution
+ */
+- (GRPCUnaryProtoCall *)getSubscriptionWithMessage:(GetSubscriptionRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 @end
 
@@ -178,6 +187,23 @@ NS_ASSUME_NONNULL_BEGIN
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
 - (GRPCProtoCall *)RPCToGetCurrencyRateWithRequest:(GetCurrencyRateRequest *)request handler:(void(^)(CurrencyRate *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse)
+
+/**
+ * Query subscription information, currently used to check if the subscription right has been used before reward distribution
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (void)getSubscriptionWithRequest:(GetSubscriptionRequest *)request handler:(void(^)(GetSubscriptionResponse *_Nullable response, NSError *_Nullable error))handler;
+
+/**
+ * Query subscription information, currently used to check if the subscription right has been used before reward distribution
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (GRPCProtoCall *)RPCToGetSubscriptionWithRequest:(GetSubscriptionRequest *)request handler:(void(^)(GetSubscriptionResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
