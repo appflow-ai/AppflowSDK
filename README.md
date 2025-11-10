@@ -1,6 +1,6 @@
 # AppflowSDK
 Platform：iOS
-Version：v1.0.16
+Version：v1.0.17
 
 ## 1. SDK integration
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
@@ -10,7 +10,7 @@ Version：v1.0.16
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.16'
+    pod 'AppflowSDK', '~> 1.0.17'
 end
 ```
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
@@ -203,6 +203,7 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
 | ----------------------------------- | ------------------------------------------------------------ |
 | status: IMSubscriberStatus          | SubscriptionState_State |
 | subStatus: IMSubscriberSubStatus    | SubscriptionState_SubState |
+| introductoryDiscountType: IMIntroductoryDiscountType | SubscriptionState_IntroductoryDiscountType |
 | expireAt: Int64                     | Expiration time of the subscription (millisecond) |
 | cancelAt: Int64                     | Time to unsubscribe (millisecond) |
 | willRenewTo: String                 | The next subscription ID to switch: Product ID |
@@ -220,6 +221,13 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
 | IM_FREE_TRIAL                       | Free trial period |
 | IM_INTRODUCTORY                     | Introductory pricing period |
 | IM_SUB_OFFER                        | Subscription offer period |
+
+| IMIntroductoryDiscountType          | Introductory discount types                                |
+| ----------------------------------- | ------------------------------------------------------------ |
+| IM_UNSPECIFIED                      | Unspecified introductory discount type |
+| IM_INTRO_FREE_TRIAL                 | Introductory free trial |
+| IM_PAY_AS_YOU_GO                    | Pay as you go introductory pricing |
+| IM_PAY_UP_FRONT                     | Pay up front introductory pricing |
 
 
 

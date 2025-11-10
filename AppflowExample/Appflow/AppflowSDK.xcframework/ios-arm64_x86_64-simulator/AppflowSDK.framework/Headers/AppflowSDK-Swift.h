@@ -475,6 +475,17 @@ SWIFT_CLASS("_TtC10AppflowSDK18IMInAppMessagePage")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+typedef SWIFT_ENUM(int32_t, IMIntroductoryDiscountType, open) {
+/// Unspecified introductory discount type
+  IMIntroductoryDiscountTypeIM_UNSPECIFIED = 0,
+/// Introductory free trial
+  IMIntroductoryDiscountTypeIM_INTRO_FREE_TRIAL = 1,
+/// Pay as you go introductory pricing
+  IMIntroductoryDiscountTypeIM_PAY_AS_YOU_GO = 2,
+/// Pay up front introductory pricing
+  IMIntroductoryDiscountTypeIM_PAY_UP_FRONT = 3,
+};
+
 SWIFT_CLASS("_TtC10AppflowSDK22IMOfferSignatureDetail")
 @interface IMOfferSignatureDetail : NSObject
 /// keyIdentifier in SKPaymentDiscount
@@ -629,6 +640,8 @@ SWIFT_CLASS("_TtC10AppflowSDK14IMSubscription")
 @property (nonatomic, readonly) enum IMSubscriberStatus status;
 /// SubscriptionState_SubState
 @property (nonatomic, readonly) enum IMSubscriberSubStatus subStatus;
+/// SubscriptionState_IntroductoryDiscountType
+@property (nonatomic, readonly) enum IMIntroductoryDiscountType introductoryDiscountType;
 /// Expiration time of the subscription (millisecond)
 @property (nonatomic, readonly) int64_t expireAt;
 /// Time to unsubscribe (millisecond)
@@ -1143,6 +1156,17 @@ SWIFT_CLASS("_TtC10AppflowSDK18IMInAppMessagePage")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+typedef SWIFT_ENUM(int32_t, IMIntroductoryDiscountType, open) {
+/// Unspecified introductory discount type
+  IMIntroductoryDiscountTypeIM_UNSPECIFIED = 0,
+/// Introductory free trial
+  IMIntroductoryDiscountTypeIM_INTRO_FREE_TRIAL = 1,
+/// Pay as you go introductory pricing
+  IMIntroductoryDiscountTypeIM_PAY_AS_YOU_GO = 2,
+/// Pay up front introductory pricing
+  IMIntroductoryDiscountTypeIM_PAY_UP_FRONT = 3,
+};
+
 SWIFT_CLASS("_TtC10AppflowSDK22IMOfferSignatureDetail")
 @interface IMOfferSignatureDetail : NSObject
 /// keyIdentifier in SKPaymentDiscount
@@ -1297,6 +1321,8 @@ SWIFT_CLASS("_TtC10AppflowSDK14IMSubscription")
 @property (nonatomic, readonly) enum IMSubscriberStatus status;
 /// SubscriptionState_SubState
 @property (nonatomic, readonly) enum IMSubscriberSubStatus subStatus;
+/// SubscriptionState_IntroductoryDiscountType
+@property (nonatomic, readonly) enum IMIntroductoryDiscountType introductoryDiscountType;
 /// Expiration time of the subscription (millisecond)
 @property (nonatomic, readonly) int64_t expireAt;
 /// Time to unsubscribe (millisecond)
