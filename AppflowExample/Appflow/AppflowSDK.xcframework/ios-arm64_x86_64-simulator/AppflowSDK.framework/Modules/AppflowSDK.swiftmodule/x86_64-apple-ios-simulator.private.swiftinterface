@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppflowSDK
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name AppflowSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 @_exported import AppflowSDK
 import AudioToolbox
@@ -76,14 +76,21 @@ public let kTimerDuration: Swift.Int
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc public class IMSubscription : ObjectiveC.NSObject {
+  @objc final public let store: AppflowSDK.IMStoreType
   @objc final public let productId: Swift.String
   @objc final public let status: AppflowSDK.IMSubscriberStatus
   @objc final public let subStatus: AppflowSDK.IMSubscriberSubStatus
   @objc final public let introductoryDiscountType: AppflowSDK.IMIntroductoryDiscountType
   @objc final public let expireAt: Swift.Int64
   @objc final public let cancelAt: Swift.Int64
+  @objc final public let totalRenewals: Swift.Int32
+  @objc final public let trialConsumed: Swift.Bool
+  @objc final public let groupId: Swift.String
   @objc final public let willRenewTo: Swift.String
+  @objc final public let promotionalOfferId: Swift.String
+  @objc public var consumedPromoOffers: [Swift.String : Swift.Int32]
   @objc public var originalTransactions: [AppflowSDK.IMSubscriptionOriginalTransaction]
+  @objc public var billingIssue: AppflowSDK.IMBillingIssue?
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class IMSubscriptionOriginalTransaction : ObjectiveC.NSObject, Swift.Codable {
@@ -144,6 +151,27 @@ public let kTimerDuration: Swift.Int
   public var rawValue: Swift.Int32 {
     get
   }
+}
+@objc public enum IMStoreType : Swift.Int32 {
+  case IM_APPSTORE = 0
+  case IM_GOOGLEPLAY = 1
+  case IM_STRIPE = 2
+  case IM_APPFLOWSHOP = 3
+  case IM_REBILLY = 4
+  case IM_PAYCLY = 5
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int32)
+  #endif
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class IMBillingIssue : ObjectiveC.NSObject {
+  @objc final public let code: Swift.Int32
+  @objc final public let failAt: Swift.Int64
+  @objc final public let reason: Swift.String
+  @objc deinit
 }
 @objc public enum IMPromotingInAppPurchaseStatus : Swift.Int32 {
   case IM_CONTINUE
@@ -436,6 +464,9 @@ extension AppflowSDK.IMSubscriberSubStatus : Swift.RawRepresentable {}
 extension AppflowSDK.IMIntroductoryDiscountType : Swift.Equatable {}
 extension AppflowSDK.IMIntroductoryDiscountType : Swift.Hashable {}
 extension AppflowSDK.IMIntroductoryDiscountType : Swift.RawRepresentable {}
+extension AppflowSDK.IMStoreType : Swift.Equatable {}
+extension AppflowSDK.IMStoreType : Swift.Hashable {}
+extension AppflowSDK.IMStoreType : Swift.RawRepresentable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Equatable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.Hashable {}
 extension AppflowSDK.IMPromotingInAppPurchaseStatus : Swift.RawRepresentable {}

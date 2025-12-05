@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse)
 
 /**
- * Query subscription information, currently used to check if the subscription right has been used before reward distribution
+ * Query subscription information, currently used to check if the subscription right has been used before hammer distribution
  */
 - (GRPCUnaryProtoCall *)getSubscriptionWithMessage:(GetSubscriptionRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
@@ -192,14 +192,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse)
 
 /**
- * Query subscription information, currently used to check if the subscription right has been used before reward distribution
+ * Query subscription information, currently used to check if the subscription right has been used before hammer distribution
  *
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
 - (void)getSubscriptionWithRequest:(GetSubscriptionRequest *)request handler:(void(^)(GetSubscriptionResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
- * Query subscription information, currently used to check if the subscription right has been used before reward distribution
+ * Query subscription information, currently used to check if the subscription right has been used before hammer distribution
  *
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */

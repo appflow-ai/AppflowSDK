@@ -2542,6 +2542,57 @@
         "children": [
           {
             "kind": "Var",
+            "name": "store",
+            "printedName": "store",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IMStoreType",
+                "printedName": "AppflowSDK.IMStoreType",
+                "usr": "c:@M@AppflowSDK@E@IMStoreType"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)store",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC5storeAA11IMStoreTypeOvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)store",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC5storeAA11IMStoreTypeOvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "productId",
             "printedName": "productId",
             "children": [
@@ -2848,6 +2899,159 @@
           },
           {
             "kind": "Var",
+            "name": "totalRenewals",
+            "printedName": "totalRenewals",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)totalRenewals",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC13totalRenewalss5Int32Vvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)totalRenewals",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC13totalRenewalss5Int32Vvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "trialConsumed",
+            "printedName": "trialConsumed",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)trialConsumed",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC13trialConsumedSbvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)trialConsumed",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC13trialConsumedSbvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "groupId",
+            "printedName": "groupId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)groupId",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC7groupIdSSvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)groupId",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC7groupIdSSvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "willRenewTo",
             "printedName": "willRenewTo",
             "children": [
@@ -2894,6 +3098,193 @@
                   "ObjC"
                 ],
                 "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "promotionalOfferId",
+            "printedName": "promotionalOfferId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)promotionalOfferId",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC18promotionalOfferIdSSvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)promotionalOfferId",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC18promotionalOfferIdSSvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "consumedPromoOffers",
+            "printedName": "consumedPromoOffers",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.Int32]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)consumedPromoOffers",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC19consumedPromoOffersSDySSs5Int32VGvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.Int32]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)consumedPromoOffers",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC19consumedPromoOffersSDySSs5Int32VGvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.Int32]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)setConsumedPromoOffers:",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC19consumedPromoOffersSDySSs5Int32VGvs",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10AppflowSDK14IMSubscriptionC19consumedPromoOffersSDySSs5Int32VGvM",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC19consumedPromoOffersSDySSs5Int32VGvM",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
               }
             ]
           },
@@ -3009,6 +3400,124 @@
                 "declKind": "Accessor",
                 "usr": "s:10AppflowSDK14IMSubscriptionC20originalTransactionsSayAA0C19OriginalTransactionCGvM",
                 "mangledName": "$s10AppflowSDK14IMSubscriptionC20originalTransactionsSayAA0C19OriginalTransactionCGvM",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "billingIssue",
+            "printedName": "billingIssue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppflowSDK.IMBillingIssue?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMBillingIssue",
+                    "printedName": "AppflowSDK.IMBillingIssue",
+                    "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(py)billingIssue",
+            "mangledName": "$s10AppflowSDK14IMSubscriptionC12billingIssueAA09IMBillingE0CSgvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AppflowSDK.IMBillingIssue?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMBillingIssue",
+                        "printedName": "AppflowSDK.IMBillingIssue",
+                        "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)billingIssue",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC12billingIssueAA09IMBillingE0CSgvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "AppflowSDK.IMBillingIssue?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMBillingIssue",
+                        "printedName": "AppflowSDK.IMBillingIssue",
+                        "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMSubscription(im)setBillingIssue:",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC12billingIssueAA09IMBillingE0CSgvs",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10AppflowSDK14IMSubscriptionC12billingIssueAA09IMBillingE0CSgvM",
+                "mangledName": "$s10AppflowSDK14IMSubscriptionC12billingIssueAA09IMBillingE0CSgvM",
                 "moduleName": "AppflowSDK",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -4878,6 +5387,662 @@
             ],
             "usr": "s:SY",
             "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IMStoreType",
+        "printedName": "IMStoreType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "IM_APPSTORE",
+            "printedName": "IM_APPSTORE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMStoreType.Type) -> AppflowSDK.IMStoreType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMStoreType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMStoreType",
+                        "printedName": "AppflowSDK.IMStoreType",
+                        "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMStoreType@IMStoreTypeIM_APPSTORE",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO11IM_APPSTOREyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "IM_GOOGLEPLAY",
+            "printedName": "IM_GOOGLEPLAY",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMStoreType.Type) -> AppflowSDK.IMStoreType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMStoreType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMStoreType",
+                        "printedName": "AppflowSDK.IMStoreType",
+                        "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMStoreType@IMStoreTypeIM_GOOGLEPLAY",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO13IM_GOOGLEPLAYyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "IM_STRIPE",
+            "printedName": "IM_STRIPE",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMStoreType.Type) -> AppflowSDK.IMStoreType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMStoreType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMStoreType",
+                        "printedName": "AppflowSDK.IMStoreType",
+                        "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMStoreType@IMStoreTypeIM_STRIPE",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO9IM_STRIPEyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "IM_APPFLOWSHOP",
+            "printedName": "IM_APPFLOWSHOP",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMStoreType.Type) -> AppflowSDK.IMStoreType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMStoreType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMStoreType",
+                        "printedName": "AppflowSDK.IMStoreType",
+                        "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMStoreType@IMStoreTypeIM_APPFLOWSHOP",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO14IM_APPFLOWSHOPyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "IM_REBILLY",
+            "printedName": "IM_REBILLY",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMStoreType.Type) -> AppflowSDK.IMStoreType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMStoreType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMStoreType",
+                        "printedName": "AppflowSDK.IMStoreType",
+                        "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMStoreType@IMStoreTypeIM_REBILLY",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO10IM_REBILLYyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Var",
+            "name": "IM_PAYCLY",
+            "printedName": "IM_PAYCLY",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(AppflowSDK.IMStoreType.Type) -> AppflowSDK.IMStoreType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "AppflowSDK.IMStoreType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IMStoreType",
+                        "printedName": "AppflowSDK.IMStoreType",
+                        "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@AppflowSDK@E@IMStoreType@IMStoreTypeIM_PAYCLY",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO9IM_PAYCLYyA2CmF",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 5
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppflowSDK.IMStoreType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IMStoreType",
+                    "printedName": "AppflowSDK.IMStoreType",
+                    "usr": "c:@M@AppflowSDK@E@IMStoreType"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10AppflowSDK11IMStoreTypeO8rawValueACSgs5Int32V_tcfc",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO8rawValueACSgs5Int32V_tcfc",
+            "moduleName": "AppflowSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10AppflowSDK11IMStoreTypeO8rawValues5Int32Vvp",
+            "mangledName": "$s10AppflowSDK11IMStoreTypeO8rawValues5Int32Vvp",
+            "moduleName": "AppflowSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10AppflowSDK11IMStoreTypeO8rawValues5Int32Vvg",
+                "mangledName": "$s10AppflowSDK11IMStoreTypeO8rawValues5Int32Vvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@AppflowSDK@E@IMStoreType",
+        "mangledName": "$s10AppflowSDK11IMStoreTypeO",
+        "moduleName": "AppflowSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int32",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IMBillingIssue",
+        "printedName": "IMBillingIssue",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "code",
+            "printedName": "code",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(py)code",
+            "mangledName": "$s10AppflowSDK14IMBillingIssueC4codes5Int32Vvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(im)code",
+                "mangledName": "$s10AppflowSDK14IMBillingIssueC4codes5Int32Vvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "failAt",
+            "printedName": "failAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(py)failAt",
+            "mangledName": "$s10AppflowSDK14IMBillingIssueC6failAts5Int64Vvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(im)failAt",
+                "mangledName": "$s10AppflowSDK14IMBillingIssueC6failAts5Int64Vvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reason",
+            "printedName": "reason",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(py)reason",
+            "mangledName": "$s10AppflowSDK14IMBillingIssueC6reasonSSvp",
+            "moduleName": "AppflowSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(im)reason",
+                "mangledName": "$s10AppflowSDK14IMBillingIssueC6reasonSSvg",
+                "moduleName": "AppflowSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IMBillingIssue",
+                "printedName": "AppflowSDK.IMBillingIssue",
+                "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue(im)init",
+            "mangledName": "$s10AppflowSDK14IMBillingIssueCACycfc",
+            "moduleName": "AppflowSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@AppflowSDK@objc(cs)IMBillingIssue",
+        "mangledName": "$s10AppflowSDK14IMBillingIssueC",
+        "moduleName": "AppflowSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -13059,7 +14224,7 @@
       "kind": "StringLiteral",
       "offset": 287,
       "length": 8,
-      "value": "\"1.0.15\""
+      "value": "\"1.0.18\""
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusAnalytics\/IMRequestMacro.swift",
@@ -13210,190 +14375,239 @@
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "Dictionary",
+      "offset": 3105,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "Array",
-      "offset": 2678,
+      "offset": 3224,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5281,
+      "offset": 7931,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5508,
+      "offset": 8158,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5615,
+      "offset": 8265,
       "length": 2,
       "value": "-2"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5720,
+      "offset": 8370,
       "length": 2,
       "value": "-3"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5808,
+      "offset": 8458,
       "length": 2,
       "value": "-4"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 5912,
+      "offset": 8562,
       "length": 2,
       "value": "-5"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6022,
+      "offset": 8672,
       "length": 2,
       "value": "-6"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6138,
+      "offset": 8788,
       "length": 2,
       "value": "-7"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6237,
+      "offset": 8887,
       "length": 2,
       "value": "-8"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6333,
+      "offset": 8983,
       "length": 2,
       "value": "-9"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6427,
+      "offset": 9077,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6523,
+      "offset": 9173,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6638,
+      "offset": 9288,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6727,
+      "offset": 9377,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6822,
+      "offset": 9472,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 6917,
+      "offset": 9567,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7036,
+      "offset": 9686,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7090,
+      "offset": 9740,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7156,
+      "offset": 9806,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7217,
+      "offset": 9867,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7352,
+      "offset": 10002,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7425,
+      "offset": 10071,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7506,
+      "offset": 10148,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 7585,
+      "offset": 10223,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 9067,
+      "offset": 10315,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10372,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10414,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10467,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10511,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10553,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12627,
       "length": 16,
       "value": "1"
     },
     {
       "filePath": "\/Users\/lucky\/Documents\/SDK\/appflow-ios-sdk\/appFlowSDK\/ImplusPurchases\/IMSubscriber.swift",
       "kind": "IntegerLiteral",
-      "offset": 9158,
+      "offset": 12718,
       "length": 17,
       "value": "2"
     },

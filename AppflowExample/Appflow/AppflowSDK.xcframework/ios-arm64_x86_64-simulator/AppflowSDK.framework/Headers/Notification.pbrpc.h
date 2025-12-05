@@ -14,12 +14,45 @@
 #import <RxLibrary/GRXWriter.h>
 #endif
 
+@class BatchSendNotificationRequest;
+@class BatchSendNotificationResponse;
+@class CountNotificationsGroupByStatusRequest;
+@class CountNotificationsGroupByStatusResponse;
+@class CreateNotificationRequest;
+@class DeleteNotificationRequest;
+@class GPBEmpty;
 @class GetInAppMessageRequest;
+@class GetNotificationRequest;
 @class InAppMessage;
+@class ListNotificationLogsRequest;
+@class ListNotificationLogsResponse;
+@class ListNotificationsRequest;
+@class ListNotificationsResponse;
+@class Notification;
+@class PauseNotificationRequest;
+@class PauseNotificationResponse;
+@class PublishNotificationRequest;
+@class PublishNotificationResponse;
+@class RestartNotificationRequest;
+@class RestartNotificationResponse;
+@class RunNotificationByVidRequest;
+@class RunNotificationByVidResponse;
+@class SendNotificationRequest;
+@class SendNotificationResponse;
+@class StartNotificationByVidRequest;
+@class StartNotificationByVidResponse;
+@class StopNotificationRequest;
+@class StopNotificationResponse;
+@class UpdateNotificationRequest;
 @class UploadDeviceTokenRequest;
 @class UploadDeviceTokenResponse;
 
 #if !defined(GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO) || !GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
+#if defined(GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS) && GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
+  #import <Protobuf/GPBEmpty.pbobjc.h>
+#else
+  #import "GPBEmpty.pbobjc.h"
+#endif
 #endif
 
 @class GRPCUnaryProtoCall;
@@ -33,16 +66,83 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PushNotificationService2 <NSObject>
 
+#pragma mark CreateNotification(CreateNotificationRequest) returns (Notification)
+
+- (GRPCUnaryProtoCall *)createNotificationWithMessage:(CreateNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark UpdateNotification(UpdateNotificationRequest) returns (Notification)
+
+- (GRPCUnaryProtoCall *)updateNotificationWithMessage:(UpdateNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark GetNotification(GetNotificationRequest) returns (Notification)
+
+/**
+ * get notification, it will return the notification of the given id
+ * It can use the metadata 'X-AF-FieldMask'
+ * e.g.:
+ * ctx := metadata.AppendToOutgoingContext(ctx, "X-AF-FieldMask", "id,setting.trigger_type,content.title")
+ * res, err := client.GetSegment(ctx, req)
+ */
+- (GRPCUnaryProtoCall *)getNotificationWithMessage:(GetNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark ListNotifications(ListNotificationsRequest) returns (ListNotificationsResponse)
+
+- (GRPCUnaryProtoCall *)listNotificationsWithMessage:(ListNotificationsRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark DeleteNotification(DeleteNotificationRequest) returns (Empty)
+
+- (GRPCUnaryProtoCall *)deleteNotificationWithMessage:(DeleteNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark PublishNotification(PublishNotificationRequest) returns (PublishNotificationResponse)
+
+- (GRPCUnaryProtoCall *)publishNotificationWithMessage:(PublishNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark PauseNotification(PauseNotificationRequest) returns (PauseNotificationResponse)
+
+- (GRPCUnaryProtoCall *)pauseNotificationWithMessage:(PauseNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark RestartNotification(RestartNotificationRequest) returns (RestartNotificationResponse)
+
+- (GRPCUnaryProtoCall *)restartNotificationWithMessage:(RestartNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark StopNotification(StopNotificationRequest) returns (StopNotificationResponse)
+
+- (GRPCUnaryProtoCall *)stopNotificationWithMessage:(StopNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark StartNotificationByVid(StartNotificationByVidRequest) returns (StartNotificationByVidResponse)
+
+- (GRPCUnaryProtoCall *)startNotificationByVidWithMessage:(StartNotificationByVidRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark RunNotificationByVid(RunNotificationByVidRequest) returns (RunNotificationByVidResponse)
+
+- (GRPCUnaryProtoCall *)runNotificationByVidWithMessage:(RunNotificationByVidRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark SendNotification(SendNotificationRequest) returns (SendNotificationResponse)
+
+- (GRPCUnaryProtoCall *)sendNotificationWithMessage:(SendNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark BatchSendNotification(BatchSendNotificationRequest) returns (BatchSendNotificationResponse)
+
+- (GRPCUnaryProtoCall *)batchSendNotificationWithMessage:(BatchSendNotificationRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
 #pragma mark UploadDeviceToken(UploadDeviceTokenRequest) returns (UploadDeviceTokenResponse)
 
 /**
- * UploadDeviceToken can be called by app, it should be called with metadata 'Authorization'
+ * UploadDeviceToken and GetInAppMessage can be called by app, it should be called with metadata 'Authorization'
  */
 - (GRPCUnaryProtoCall *)uploadDeviceTokenWithMessage:(UploadDeviceTokenRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 #pragma mark GetInAppMessage(GetInAppMessageRequest) returns (InAppMessage)
 
 - (GRPCUnaryProtoCall *)getInAppMessageWithMessage:(GetInAppMessageRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark CountNotificationsGroupByStatus(CountNotificationsGroupByStatusRequest) returns (CountNotificationsGroupByStatusResponse)
+
+- (GRPCUnaryProtoCall *)countNotificationsGroupByStatusWithMessage:(CountNotificationsGroupByStatusRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark ListNotificationLogs(ListNotificationLogsRequest) returns (ListNotificationLogsResponse)
+
+- (GRPCUnaryProtoCall *)listNotificationLogsWithMessage:(ListNotificationLogsRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 @end
 
@@ -52,17 +152,126 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol PushNotificationService <NSObject>
 
+#pragma mark CreateNotification(CreateNotificationRequest) returns (Notification)
+
+- (void)createNotificationWithRequest:(CreateNotificationRequest *)request handler:(void(^)(Notification *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToCreateNotificationWithRequest:(CreateNotificationRequest *)request handler:(void(^)(Notification *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark UpdateNotification(UpdateNotificationRequest) returns (Notification)
+
+- (void)updateNotificationWithRequest:(UpdateNotificationRequest *)request handler:(void(^)(Notification *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToUpdateNotificationWithRequest:(UpdateNotificationRequest *)request handler:(void(^)(Notification *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark GetNotification(GetNotificationRequest) returns (Notification)
+
+/**
+ * get notification, it will return the notification of the given id
+ * It can use the metadata 'X-AF-FieldMask'
+ * e.g.:
+ * ctx := metadata.AppendToOutgoingContext(ctx, "X-AF-FieldMask", "id,setting.trigger_type,content.title")
+ * res, err := client.GetSegment(ctx, req)
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (void)getNotificationWithRequest:(GetNotificationRequest *)request handler:(void(^)(Notification *_Nullable response, NSError *_Nullable error))handler;
+
+/**
+ * get notification, it will return the notification of the given id
+ * It can use the metadata 'X-AF-FieldMask'
+ * e.g.:
+ * ctx := metadata.AppendToOutgoingContext(ctx, "X-AF-FieldMask", "id,setting.trigger_type,content.title")
+ * res, err := client.GetSegment(ctx, req)
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (GRPCProtoCall *)RPCToGetNotificationWithRequest:(GetNotificationRequest *)request handler:(void(^)(Notification *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark ListNotifications(ListNotificationsRequest) returns (ListNotificationsResponse)
+
+- (void)listNotificationsWithRequest:(ListNotificationsRequest *)request handler:(void(^)(ListNotificationsResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToListNotificationsWithRequest:(ListNotificationsRequest *)request handler:(void(^)(ListNotificationsResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark DeleteNotification(DeleteNotificationRequest) returns (Empty)
+
+- (void)deleteNotificationWithRequest:(DeleteNotificationRequest *)request handler:(void(^)(GPBEmpty *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToDeleteNotificationWithRequest:(DeleteNotificationRequest *)request handler:(void(^)(GPBEmpty *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark PublishNotification(PublishNotificationRequest) returns (PublishNotificationResponse)
+
+- (void)publishNotificationWithRequest:(PublishNotificationRequest *)request handler:(void(^)(PublishNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToPublishNotificationWithRequest:(PublishNotificationRequest *)request handler:(void(^)(PublishNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark PauseNotification(PauseNotificationRequest) returns (PauseNotificationResponse)
+
+- (void)pauseNotificationWithRequest:(PauseNotificationRequest *)request handler:(void(^)(PauseNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToPauseNotificationWithRequest:(PauseNotificationRequest *)request handler:(void(^)(PauseNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark RestartNotification(RestartNotificationRequest) returns (RestartNotificationResponse)
+
+- (void)restartNotificationWithRequest:(RestartNotificationRequest *)request handler:(void(^)(RestartNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToRestartNotificationWithRequest:(RestartNotificationRequest *)request handler:(void(^)(RestartNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark StopNotification(StopNotificationRequest) returns (StopNotificationResponse)
+
+- (void)stopNotificationWithRequest:(StopNotificationRequest *)request handler:(void(^)(StopNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToStopNotificationWithRequest:(StopNotificationRequest *)request handler:(void(^)(StopNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark StartNotificationByVid(StartNotificationByVidRequest) returns (StartNotificationByVidResponse)
+
+- (void)startNotificationByVidWithRequest:(StartNotificationByVidRequest *)request handler:(void(^)(StartNotificationByVidResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToStartNotificationByVidWithRequest:(StartNotificationByVidRequest *)request handler:(void(^)(StartNotificationByVidResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark RunNotificationByVid(RunNotificationByVidRequest) returns (RunNotificationByVidResponse)
+
+- (void)runNotificationByVidWithRequest:(RunNotificationByVidRequest *)request handler:(void(^)(RunNotificationByVidResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToRunNotificationByVidWithRequest:(RunNotificationByVidRequest *)request handler:(void(^)(RunNotificationByVidResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark SendNotification(SendNotificationRequest) returns (SendNotificationResponse)
+
+- (void)sendNotificationWithRequest:(SendNotificationRequest *)request handler:(void(^)(SendNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToSendNotificationWithRequest:(SendNotificationRequest *)request handler:(void(^)(SendNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark BatchSendNotification(BatchSendNotificationRequest) returns (BatchSendNotificationResponse)
+
+- (void)batchSendNotificationWithRequest:(BatchSendNotificationRequest *)request handler:(void(^)(BatchSendNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToBatchSendNotificationWithRequest:(BatchSendNotificationRequest *)request handler:(void(^)(BatchSendNotificationResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
 #pragma mark UploadDeviceToken(UploadDeviceTokenRequest) returns (UploadDeviceTokenResponse)
 
 /**
- * UploadDeviceToken can be called by app, it should be called with metadata 'Authorization'
+ * UploadDeviceToken and GetInAppMessage can be called by app, it should be called with metadata 'Authorization'
  *
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
 - (void)uploadDeviceTokenWithRequest:(UploadDeviceTokenRequest *)request handler:(void(^)(UploadDeviceTokenResponse *_Nullable response, NSError *_Nullable error))handler;
 
 /**
- * UploadDeviceToken can be called by app, it should be called with metadata 'Authorization'
+ * UploadDeviceToken and GetInAppMessage can be called by app, it should be called with metadata 'Authorization'
  *
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
@@ -74,6 +283,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getInAppMessageWithRequest:(GetInAppMessageRequest *)request handler:(void(^)(InAppMessage *_Nullable response, NSError *_Nullable error))handler;
 
 - (GRPCProtoCall *)RPCToGetInAppMessageWithRequest:(GetInAppMessageRequest *)request handler:(void(^)(InAppMessage *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark CountNotificationsGroupByStatus(CountNotificationsGroupByStatusRequest) returns (CountNotificationsGroupByStatusResponse)
+
+- (void)countNotificationsGroupByStatusWithRequest:(CountNotificationsGroupByStatusRequest *)request handler:(void(^)(CountNotificationsGroupByStatusResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToCountNotificationsGroupByStatusWithRequest:(CountNotificationsGroupByStatusRequest *)request handler:(void(^)(CountNotificationsGroupByStatusResponse *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark ListNotificationLogs(ListNotificationLogsRequest) returns (ListNotificationLogsResponse)
+
+- (void)listNotificationLogsWithRequest:(ListNotificationLogsRequest *)request handler:(void(^)(ListNotificationLogsResponse *_Nullable response, NSError *_Nullable error))handler;
+
+- (GRPCProtoCall *)RPCToListNotificationLogsWithRequest:(ListNotificationLogsRequest *)request handler:(void(^)(ListNotificationLogsResponse *_Nullable response, NSError *_Nullable error))handler;
 
 
 @end
