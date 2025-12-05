@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AppflowSDK'
-  s.version          = '1.0.17'
+  s.version          = '1.0.18'
   s.summary          = 'A short description of AppflowSDK.'
 
 # This description is used to generate tags and improve search results.
@@ -27,7 +27,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/appflow-ai/AppflowSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '15.0'
 
   s.vendored_frameworks  = "AppflowExample/Appflow/AppflowSDK.xcframework "
 
@@ -49,5 +49,8 @@ TODO: Add long description of the pod here.
     'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
     # This is needed by all pods that depend on gRPC-RxLibrary:
     'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+    # C++17 support required by gRPC 1.76+:
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
+    'CLANG_CXX_LIBRARY' => 'libc++'
   }
 end

@@ -1,22 +1,30 @@
 # AppflowSDK
+
 Platform：iOS
-Version：v1.0.17
+Version：v1.0.18
+Minimum iOS Version：15.0
 
 ## 1. SDK integration
+
 ##### AppflowSDK provides one integration methods for iOS developers to choose:
+
 - Pass through CocoaPods integrated
+
 ### Pass through CocoaPods integrated
 
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.17'
+    pod 'AppflowSDK', '~> 1.0.18'
 end
 ```
+
 Save and execute pod install, then open the project with a file suffixed with .xcworkspace.
+
 ```
 pod install
 ```
+
 > Notice:
 > Execute pod search AppflowSDK under the command line. If the displayed version of **AppflowSDK** is not the latest, execute the pod repo update operation to update the content of the local repo
 > For more information on CocoaPods please see [ CocoaPods](https://cocoapods.org/)。
@@ -25,17 +33,21 @@ pod install
 
 ### Add configuration file
 
-> Download the **appflow-app-token.json** file, Add to targets to the project. 
+> Download the **appflow-app-token.json** file, Add to targets to the project.
 > Select Copy Items if needed.
 > Create groups.
 > Add to targets.
 
 ### import header file
+
 Import the header file in the project's AppDelegate file
+
 ```
 import AppflowSDK
 ```
+
 ## Setup
+
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //AppflowSDK initialization
@@ -43,13 +55,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         return true
 }
 ```
+
 ### Enable SDK log (optional)
+
 #### You can enable SDK log output before initializing the SDK
 
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    
+  
     //AppflowSDK initialization
     Appflow.shared.configure()
     //Whether to enable in-app purchase related logs, the default is not
@@ -60,11 +74,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-
 ## 3. Purchases
+
 > Ready to work
 > a. Configure product information in apple store
-> 
+>
 > b. Add product information in appflow platform
 
 ### Get product id of in-app purchase
@@ -74,61 +88,70 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
  
  }
 ```
+
 **API Reference**
-| getPurchaseProductIds                             |                  |
-| ----------------------------------------- | ---------------- |
-| error = nil    | Success callback |
-| error != nil   | Failure callback |
 
-| error: Error   |                  |
-| -------------- | ---------------- |
-| code           | error code       |
-| message        | error message    |
+| getPurchaseProductIds |                  |
+| --------------------- | ---------------- |
+| error = nil           | Success callback |
+| error != nil          | Failure callback |
 
-| Parameter returned: data type             | Tnstructions     |
-| ----------------------------------------- | ------------------------------------------------------------ |
-| productIdArray: [string]                  | Returns the Appflow platform configuration ProductID  |
+| error: Error |               |
+| ------------ | ------------- |
+| code         | error code    |
+| message      | error message |
 
+| Parameter returned: data type | Tnstructions                                         |
+| ----------------------------- | ---------------------------------------------------- |
+| productIdArray: [string]      | Returns the Appflow platform configuration ProductID |
 
 ### Get the sku information of in-app purchases
+
 Displaying Products
 To fetch the products sku information, you have to call method:
 
 According to the interface `getSkuDetails`, you need to pass in the Set <product_Ids> of in-app purchases, the return value is a dictionary, `product_id` is key, value: `SKProduct` object
+
 ```
 Appflow.shared.getSkuDetails(productIds: Set(productIDs)) { skuDetailInfo, error in
-    
+  
 };
 ```
+
 **API Reference**
-| getSkuDetails                             |                  |
-| ----------------------------------------- | ---------------- |
-| error = nil    | Success callback |
-| error != nil   | Failure callback |
 
-| error: Error   |                  |
-| -------------- | ---------------- |
-| code           | error code       |
-| message        | error message    |
+| getSkuDetails |                  |
+| ------------- | ---------------- |
+| error = nil   | Success callback |
+| error != nil  | Failure callback |
 
-| Request parameter: data type              | Tnstructions      |
-| ----------------------------------------- | ------------------------------------------------------------------ |
-| productIds: Set<String>                   | The parameter is the product ID configured in the Apple background |
+| error: Error |               |
+| ------------ | ------------- |
+| code         | error code    |
+| message      | error message |
 
-| Returned parameter: data type             | Tnstructions                                                 |
-| ----------------------------------------- | ------------------------------------------------------------ |
-| skuDetailInfo: [String:SKProduct]         | key - value, Return SKProduct                                |
+| Request parameter: data type | Tnstructions                                                       |
+| ---------------------------- | ------------------------------------------------------------------ |
+| productIds: Set`<String>`  | The parameter is the product ID configured in the Apple background |
+
+| Returned parameter: data type     | Tnstructions                  |
+| --------------------------------- | ----------------------------- |
+| skuDetailInfo: [String:SKProduct] | key - value, Return SKProduct |
 
 After obtaining `SKProduct`, you can obtain information related to in-app purchases, and developers can save them in their own projects. Subsequent payment needs to be used.
+
 > SKProduct, please refer to the official documentation of Apple[:](https://developer.apple.com/documentation/storekit/skproduct)
 
 ### Check if payment available
+
 ```
  let canMakePurchases = Appflow.shared.canMakePayment()
 ```
+
 > This interface returns data of type 'bool'. True: indicates that payment can be pulled up. False: indicates that payment cannot be pulled up
 
 ### Making purchase
+
 To start the purchase process call function purchaseProduct it will take `SKProduct` object as a parameter.
 
 > NOTE: After the in-app purchase is completed, uploadUserInfo must be reported, which is mainly used for user data attribution.
@@ -156,6 +179,7 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
     }
 }
 ```
+
 > Closure will return `SKPaymentTransaction`, entitlement dictionary, error if it occurred and bool to indicate if a user canceled the purchase process.
 
 ```
@@ -165,71 +189,92 @@ Appflow.shared.purchaseSKProduct(skProduct) { transaction, subscriber, error, ca
 
 **API Reference**
 
-| purchaseSKProduct                         |                  |
-| ----------------------------------------- | ---------------- |
-| error = nil    | Success callback |
-| error != nil   | Failure callback, **Note**: A user's subscription status cannot be determined by ERROR.Please use:`isActive` or `expireAt` |
+| purchaseSKProduct |                                                                                                                                     |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| error = nil       | Success callback                                                                                                                    |
+| error != nil      | Failure callback,**Note**: A user's subscription status cannot be determined by ERROR.Please use:`isActive` or `expireAt` |
 
-| error: Error   |                  |
-| -------------- | ---------------- |
-| code           | error code       |
-| message        | error message|
+| error: Error |               |
+| ------------ | ------------- |
+| code         | error code    |
+| message      | error message |
 
-| Request parameter: data type  | Tnstructions        |
-| ----------------------------- | ------------------- |
-| product: SKProduct            | Product information |
+| Request parameter: data type | Tnstructions        |
+| ---------------------------- | ------------------- |
+| product: SKProduct           | Product information |
 
-| Returned parameter: data type       | Tnstructions                                                 |
-| ----------------------------------- | ------------------------------------------------------------ |
-| transaction: SKPaymentTransaction   | An object in the payment queue. [SKPaymentTransaction|](https://developer.apple.com/documentation/storekit/skpaymenttransaction) |
-| isCanceled: Bool                    | Cancel the payment  |
+| Returned parameter: data type     | Tnstructions                                          |
+| --------------------------------- | ----------------------------------------------------- |
+| transaction: SKPaymentTransaction | An object in the payment queue. [SKPaymentTransaction |
+| isCanceled: Bool                  | Cancel the payment                                    |
 
-| entitlement: IMSubscriber           | Tnstructions                                                 |
-| ----------------------------------- | ------------------------------------------------------------ |
-| productId: String                   | product id |
-| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
-| isActive: Bool                      | product subscription\purchase status, true: subscribed\purchased; false: unsubscribed\unpurchased |
-| imEntitlement: [IMEntitlement]      | check entitlement for current status |
-| imSubscription: [IMSubscription]    | subscription details by product_id |
+| entitlement: IMSubscriber        | Tnstructions                                                                                      |
+| -------------------------------- | ------------------------------------------------------------------------------------------------- |
+| productId: String                | product id                                                                                        |
+| expireAt: Int64                  | Expiration time of the subscription (millisecond)                                                 |
+| isActive: Bool                   | product subscription\purchase status, true: subscribed\purchased; false: unsubscribed\unpurchased |
+| imEntitlement: [IMEntitlement]   | check entitlement for current status                                                              |
+| imSubscription: [IMSubscription] | subscription details by product_id                                                                |
 
-| IMEntitlement                       | Tnstructions                                                 |
-| ----------------------------------- | ------------------------------------------------------------ |
-| id: String                          | product group id      |
-| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
-| isActive: Bool                      | product subscription\purchase status, true: subscribed\purchased; false: unsubscribed\unpurchased |
-| productId: String                   | product id |
+| IMEntitlement     | Tnstructions                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| id: String        | product group id                                                                                  |
+| expireAt: Int64   | Expiration time of the subscription (millisecond)                                                 |
+| isActive: Bool    | product subscription\purchase status, true: subscribed\purchased; false: unsubscribed\unpurchased |
+| productId: String | product id                                                                                        |
 
-| IMSubscription                      | product Id                                                 |
-| ----------------------------------- | ------------------------------------------------------------ |
-| status: IMSubscriberStatus          | SubscriptionState_State |
-| subStatus: IMSubscriberSubStatus    | SubscriptionState_SubState |
-| introductoryDiscountType: IMIntroductoryDiscountType | SubscriptionState_IntroductoryDiscountType |
-| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
-| cancelAt: Int64                     | Time to unsubscribe (millisecond) |
-| willRenewTo: String                 | The next subscription ID to switch: Product ID |
-| originalTransactions: [IMSubscriptionOriginalTransaction]  | Original transactions |
+| IMSubscription                                            | Subscription details                                                   |
+| --------------------------------------------------------- | ---------------------------------------------------------------------- |
+| store: IMStoreType                                        | Store type (App Store, Google Play, etc.)                              |
+| productId: String                                         | Product ID                                                             |
+| status: IMSubscriberStatus                                | SubscriptionState_State                                                |
+| subStatus: IMSubscriberSubStatus                          | SubscriptionState_SubState                                             |
+| introductoryDiscountType: IMIntroductoryDiscountType      | SubscriptionState_IntroductoryDiscountType                             |
+| expireAt: Int64                                           | Expiration time of the subscription (millisecond)                      |
+| cancelAt: Int64                                           | Time to unsubscribe (millisecond)                                      |
+| totalRenewals: Int32                                      | Total number of renewals                                               |
+| trialConsumed: Bool                                       | Whether trial has been consumed                                        |
+| groupId: String                                           | Product group ID                                                       |
+| willRenewTo: String                                       | The next subscription ID to switch: Product ID                         |
+| promotionalOfferId: String                                | Promotional offer ID that is in effect                                 |
+| consumedPromoOffers: [String: Int32]                      | Consumed promotional offers (dictionary of offer ID to consumed count) |
+| originalTransactions: [IMSubscriptionOriginalTransaction] | Original transactions                                                  |
+| billingIssue: IMBillingIssue?                             | Billing issue information (if any)                                     |
 
-| IMSubscriptionOriginalTransaction   | Original transaction details                               |
-| ----------------------------------- | ------------------------------------------------------------ |
-| originalTxid: String                | Original order note |
-| expireAt: Int64                     | Expiration time of the subscription (millisecond) |
-| startAt: Int64                      | Time to start the subscription (millisecond) |
+| IMSubscriptionOriginalTransaction | Original transaction details                      |
+| --------------------------------- | ------------------------------------------------- |
+| originalTxid: String              | Original order note                               |
+| expireAt: Int64                   | Expiration time of the subscription (millisecond) |
+| startAt: Int64                    | Time to start the subscription (millisecond)      |
 
-| IMSubscriberSubStatus               | Subscription sub-state types                               |
-| ----------------------------------- | ------------------------------------------------------------ |
-| IM_STANDARD_SUB                     | Standard subscription |
-| IM_FREE_TRIAL                       | Free trial period |
-| IM_INTRODUCTORY                     | Introductory pricing period |
-| IM_SUB_OFFER                        | Subscription offer period |
+| IMSubscriberSubStatus | Subscription sub-state types |
+| --------------------- | ---------------------------- |
+| IM_STANDARD_SUB       | Standard subscription        |
+| IM_FREE_TRIAL         | Free trial period            |
+| IM_INTRODUCTORY       | Introductory pricing period  |
+| IM_SUB_OFFER          | Subscription offer period    |
 
-| IMIntroductoryDiscountType          | Introductory discount types                                |
-| ----------------------------------- | ------------------------------------------------------------ |
-| IM_UNSPECIFIED                      | Unspecified introductory discount type |
-| IM_INTRO_FREE_TRIAL                 | Introductory free trial |
-| IM_PAY_AS_YOU_GO                    | Pay as you go introductory pricing |
-| IM_PAY_UP_FRONT                     | Pay up front introductory pricing |
+| IMIntroductoryDiscountType | Introductory discount types            |
+| -------------------------- | -------------------------------------- |
+| IM_UNSPECIFIED             | Unspecified introductory discount type |
+| IM_INTRO_FREE_TRIAL        | Introductory free trial                |
+| IM_PAY_AS_YOU_GO           | Pay as you go introductory pricing     |
+| IM_PAY_UP_FRONT            | Pay up front introductory pricing      |
 
+| IMStoreType    | Store platform types     |
+| -------------- | ------------------------ |
+| IM_APPSTORE    | iOS App Store            |
+| IM_GOOGLEPLAY  | Google Play Store        |
+| IM_STRIPE      | Stripe payment platform  |
+| IM_APPFLOWSHOP | AppFlow Shop             |
+| IM_REBILLY     | Rebilly payment platform |
+| IM_PAYCLY      | Paycly payment platform  |
 
+| IMBillingIssue | Billing issue information                |
+| -------------- | ---------------------------------------- |
+| code: Int32    | Error code, 0 means no failure           |
+| failAt: Int64  | Time when payment failed (millisecond)   |
+| reason: String | Error message/reason for billing failure |
 
 ### Expended offer discount purchased
 
@@ -239,7 +284,7 @@ iOS 12.2 launched `SKPaymentDiscount` ,The signed discount to apply to a payment
 >
 > init(identifier: String, keyIdentifier: String, nonce: UUID, signature: String, timestamp: NSNumber)
 
-SDK provides an interface for obtaining initialization `SKPaymentDiscount` parameters 
+SDK provides an interface for obtaining initialization `SKPaymentDiscount` parameters
 
 ```
 /// A signature is a unique string that your server generates using specified parameters and your private key. You include it in the signature parameter of SKPaymentDiscount, and the App Store uses it to validate the promotional offer.
@@ -260,11 +305,10 @@ After creating the paymentDiscount object, you can call the discount-related pay
 @objc public func purchaseSKProductWithDiscount(_ product : SKProduct, paymentDiscount: SKPaymentDiscount, applicationUsername: String?, completion: @escaping ProductPurchaseCompletionHandler) { }
 ```
 
-
-
 ### Checking user status
 
 To check if user have any active subscriber call function `hasActiveSubscription`
+
 ```
 Appflow.shared.hasActiveSubscription({ [weak self] subscriber, error in
     guard let `self` = self else { return }
@@ -278,12 +322,14 @@ Appflow.shared.hasActiveSubscription({ [weak self] subscriber, error in
 })
 
 ```
+
 ```
  Users can use **IMSubscriber.isActive** to determine the subscription status. true: subscribed\purchased; false: unsubscribed\unpurchased
  IMSubscriber.expireAt, Return the expiration time of the current subscription. You can compare `expireAt` with the current time and process the subscription status
 ```
 
 ### Restoring purchases
+
 To restore user purchases call restorePurchases function.
 
 ```
@@ -297,6 +343,7 @@ Appflow.shared.restorePurchases { (subscriber, error) in
     }
 }
 ```
+
 ```
  Users can use **IMSubscriber.isActive** to determine the subscription status. true: subscribed\purchased; false: unsubscribed\unpurchased
  IMSubscriber.expireAt, Return the expiration time of the current subscription. You can compare `expireAt` with the current time and process the subscription status
@@ -309,22 +356,22 @@ Introduction: If you need to associate the userId in your application with the A
 `Appflow.shared.uploadUserInfo(userId: "xxx") { _, _ in   }`
 
 #### expand
+
 ##### Add a json string field in the UploadUserInfo API to support developers uploading map<string, string> type data. It supports fixed fields: username, email, phone, gender, age.
+
 > - Field:
 > - All key , value length limit is 128 , calculated according to toString characters
 > - The fixed fields are username, email, phone, gender, age, please refer to the table below, gender is a number, and the meaning is shown in the table
 > - There are no restrictions on the type of additional fields added by the user, both numbers and strings can be used
 > - If you need to report user-related data, report it through the following methods
 
-field | type |
----|---
-username | string
-email | string
-phone | string
-gender | number(FEMALE = 1, MALE = 2, OTHER = 3)
-age | number
-
-
+| field    | type                                    |
+| -------- | --------------------------------------- |
+| username | string                                  |
+| email    | string                                  |
+| phone    | string                                  |
+| gender   | number(FEMALE = 1, MALE = 2, OTHER = 3) |
+| age      | number                                  |
 
 ```
 //uploadUserInfo to extraAttribute
@@ -332,8 +379,8 @@ Appflow.shared.uploadUserInfo(userId: "app_user_idxxxxx", extraAttribute: extraA
 }
 ```
 
-
 ## 4. Event tracking
+
 You can send statistics events to Appflow backend in the following ways
 
 ```Swift
@@ -355,13 +402,16 @@ Appflow.shared.uploadBigDataWithType(eventName: "test_event", params: params)
 ```
 
 > If you want to check whether an event was reported successfully, you can open AnalyticsLogs with the following code:
+>
 >> Appflow.shared.setAnalyticsLogs(enabled: true)
-
-
+>>
 
 ## 5. Push notification
+
 ### a. Capabilities
+
 Please enable the Capabilities->Push Notifications option of Application Target
+
 ### b. Request PushNotifications Permissions in AppDelegate
 
 ```
@@ -375,6 +425,7 @@ private func requestPushNotificationsPermissions() {
     }
 }
 ```
+
 ### c. Permission request completed, get notification settings
 
 ```
@@ -388,7 +439,9 @@ private func getNotificationSettings() {
     }
 }
 ```
+
 ### d. Successfully register APNs and report DeviceToken
+
 ```
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let deviceToken = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
@@ -398,6 +451,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 ```
 
 ## 6. Paywall
+
 The SDK provides a shortcut for displaying paid products. After setting the style in Appflow plaltform, you can display it by call method:
 
 ```
@@ -409,11 +463,12 @@ Appflow.shared.loadPaywallToPurachase {[weak self] result, msg in
 }
 ```
 
-
-
 ## 7. Attribution
+
 Appflow supports Appsflyer, Adjust, Branch, Apple search ads, FacebookAds and custom attribution data upload，you have to call method:
+
 ### Appsflyer
+
 To upload Appsflyer attribution data, the developer accesses the appsflyer SDK and reports the data in the AppsFlyerLibDelegate method, refer to the example below,which **networkUserId **cannot be empty
 
 ```
@@ -421,15 +476,17 @@ extension AppDelegate: AppsFlyerLibDelegate {
     func onConversionDataFail(_ error: Error) {
         //appsflyer is fail
     }
-    
+  
     func onConversionDataSuccess(_ installData: [AnyHashable : Any]) {
         // It's important to include the network user ID
         Appflow.shared.updateAttribution(installData, source: .appsflyer, networkUserId: AppsFlyerLib.shared().getAppsFlyerUID())
-        
+      
     }
 }
 ```
+
 ### Adjust
+
 To upload Adjust attribution data, the developer accesses the Adjust SDK and reports the data in the AdjustDelegate method, refer to the example below
 
 ```
@@ -441,7 +498,7 @@ extension AppDelegate: AdjustDelegate {
             Appflow.shared.updateAttribution(attribution, source: .adjust)
         }
     }
-    
+  
 }
 ```
 
@@ -456,6 +513,7 @@ Adjust.adid { adid in
 ```
 
 ### Branch
+
 To upload Branch attribution data, the developer accesses the Branch SDK and reports the data in the initSession block, refer to the example below
 
 ```
@@ -472,15 +530,17 @@ func branchInit(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
 
 }
 ```
+
 ### FacebookAds
+
 To upload FacebookAds attribution data, refer to the following example, which **networkUserId **cannot be empty
 
 ```
 Appflow.shared.updateAttribution([:], source: .facebook,networkUserId:FBSDKCoreKit.AppEvents.shared.anonymousID)
 ```
 
-
 ### Apple Search ads
+
 To upload Apple Search ads attribution data, refer to the following example,
 
 For the AdServices Framework
@@ -504,6 +564,7 @@ ADClient.shared().requestAttributionDetails({ (attributionDetails, error) in
 ```
 
 ### Custom
+
 attribution_source = *custom* ，Update attribution data, There are 2 ways.
 
 Way 1:   The developer must pass it in according to the format set by this parameter, otherwise an error will be reported
@@ -564,9 +625,8 @@ func loadLaunchScreenView() {
 }
 
 ```
+
 > It may take time to load welcome page for the first time. The default loading waiting time is 30s. Users can set **waitingTime** according to their needs.
-
-
 
 ## 9. In App Message
 
@@ -574,7 +634,7 @@ func loadLaunchScreenView() {
 
 ### a.  Automatically set the pop-up In App Message
 
-> If the user accesses the push function and wants to automatically manage and display the In App Message when it is received, you can call the following method to enable this function. The In App Message function is disabled by default. **Example:** 
+> If the user accesses the push function and wants to automatically manage and display the In App Message when it is received, you can call the following method to enable this function. The In App Message function is disabled by default. **Example:**
 
 ```
  //In App Message
@@ -585,8 +645,7 @@ func loadLaunchScreenView() {
 
 If you set 'setInAppMesssageAutoShow = True', developers can set the delay time of In App Mesesage as needed, the default delay time is 1.5s
 
-> Explanation： When the App is in the background, click on the content of the push message to enter the App. The In App Message cannot be displayed immediately. It needs to wait for the App to start up before displaying the content. In this setting process, there needs to be a delay time for loading buffers. The default loading buffer delay time is 1.5s, which can be set according to the effect of your own project. **Example:** 
->
+> Explanation： When the App is in the background, click on the content of the push message to enter the App. The In App Message cannot be displayed immediately. It needs to wait for the App to start up before displaying the content. In this setting process, there needs to be a delay time for loading buffers. The default loading buffer delay time is 1.5s, which can be set according to the effect of your own project. **Example:**
 
 ```
  //Set the delay time for message display
@@ -606,22 +665,20 @@ If the project itself is connected to the message push function, if you want to 
 Appflow.shared.sendUserNotificationCenterMessage(userInfo: userInfo)
 ```
 
-
-
 ## 10. Post-notification behavior statistics
 
 > This function is mainly used to collect statistics and display data on user click notification behavior on our platform.
 >
 > There are two ways for developers to access this function, method a: automatic management; method b: manual reporting of user behavior data;
 
-a. Automatic management. **Example:** 
+a. Automatic management. **Example:**
 
 ```
 //Automatic management, development does not need to access the notification class for management.
 Appflow.shared.setAutoUserNotificationBehaviorDataReporting()
 ```
 
-a. Report data manually. **Example:** 
+a. Report data manually. **Example:**
 
 ```
 //UserInfo: Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
@@ -629,8 +686,6 @@ a. Report data manually. **Example:**
 //userInfo ：notification.request.content.userInfo
 Appflow.shared.sendNotificationUserInfoToBehaviorDataReporting(userInfo: userInfo)
 ```
-
-
 
 ## 11. Promote configuration for in-app purchases
 
@@ -646,7 +701,7 @@ Appflow.shared.sendNotificationUserInfoToBehaviorDataReporting(userInfo: userInf
 @objc public func setInAppPurchasePromotingStatus(_ status: IMPromotingInAppPurchaseStatus, addObserver: IMPromotingObserverProtocol) {}
 ```
 
-**Example:** 
+**Example:**
 
 ```
 // Set the behavior when promoting in-store purchases to continue transactions
@@ -659,22 +714,24 @@ Appflow.shared.setInAppPurchasePromotingStatus(.IM_DEFER_PAYMENT, addObserver: s
 Appflow.shared.setInAppPurchasePromotingStatus(.IM_CANCEL_PAYMENT, addObserver: self)
 ```
 
-
-
 ## 12. Get Currency Rate
 
 ### Description
+
 This API retrieves the currency exchange rate for a given currency code asynchronously.
 
 ### Parameters
+
 - **currencyCode**: A `String` parameter specifying the currency code for which the exchange rate is to be fetched. (e.g., "USD", "EUR", "JPY").
 
 ### Completion Handler
+
 The completion handler provides the result of the currency rate retrieval.
+
 - **rate**: An `NSNumber` object representing the currency exchange rate. This value will be `nil` if the retrieval fails.
 - **error**: An `Error` object containing details if an error occurred during the retrieval process. If retrieval is successful, this value will be `nil`.
 
-**Example:** 
+**Example:**
 
 ```swift
   let currencyCode = "USD"
@@ -689,5 +746,4 @@ The completion handler provides the result of the currency rate retrieval.
   }
 
 ```
-
 

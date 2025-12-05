@@ -448,6 +448,18 @@ SWIFT_CLASS("_TtC10AppflowSDK11IMAnalytics")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+SWIFT_CLASS("_TtC10AppflowSDK14IMBillingIssue")
+@interface IMBillingIssue : NSObject
+/// Error code, 0 means no failure
+@property (nonatomic, readonly) int32_t code;
+/// Time when payment failed (millisecond)
+@property (nonatomic, readonly) int64_t failAt;
+/// Error message/reason
+@property (nonatomic, readonly, copy) NSString * _Nonnull reason;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 SWIFT_CLASS("_TtC10AppflowSDK19IMDeviceInfoManager")
 @interface IMDeviceInfoManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -563,6 +575,21 @@ SWIFT_CLASS("_TtC10AppflowSDK16IMRequestManager")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(int32_t, IMStoreType, open) {
+/// iOS App Store
+  IMStoreTypeIM_APPSTORE = 0,
+/// Google Play Store
+  IMStoreTypeIM_GOOGLEPLAY = 1,
+/// Stripe
+  IMStoreTypeIM_STRIPE = 2,
+/// AppFlow Shop
+  IMStoreTypeIM_APPFLOWSHOP = 3,
+/// Rebilly
+  IMStoreTypeIM_REBILLY = 4,
+/// Paycly
+  IMStoreTypeIM_PAYCLY = 5,
+};
+
 @class IMSubscription;
 SWIFT_CLASS("_TtC10AppflowSDK12IMSubscriber")
 @interface IMSubscriber : NSObject
@@ -634,6 +661,8 @@ typedef SWIFT_ENUM(int32_t, IMSubscriberSubStatus, open) {
 @class IMSubscriptionOriginalTransaction;
 SWIFT_CLASS("_TtC10AppflowSDK14IMSubscription")
 @interface IMSubscription : NSObject
+/// Store type (App Store, Google Play, etc.)
+@property (nonatomic, readonly) enum IMStoreType store;
 /// product Id
 @property (nonatomic, readonly, copy) NSString * _Nonnull productId;
 /// SubscriptionState_State
@@ -646,10 +675,22 @@ SWIFT_CLASS("_TtC10AppflowSDK14IMSubscription")
 @property (nonatomic, readonly) int64_t expireAt;
 /// Time to unsubscribe (millisecond)
 @property (nonatomic, readonly) int64_t cancelAt;
+/// Total number of renewals
+@property (nonatomic, readonly) int32_t totalRenewals;
+/// Whether trial has been consumed
+@property (nonatomic, readonly) BOOL trialConsumed;
+/// Product group ID
+@property (nonatomic, readonly, copy) NSString * _Nonnull groupId;
 /// The next subscription ID to switch: Product ID
 @property (nonatomic, readonly, copy) NSString * _Nonnull willRenewTo;
+/// Promotional offer ID that is in effect
+@property (nonatomic, readonly, copy) NSString * _Nonnull promotionalOfferId;
+/// Consumed promotional offers (dictionary of offer ID to consumed count)
+@property (nonatomic, copy) NSDictionary<NSString *, NSNumber *> * _Nonnull consumedPromoOffers;
 /// Original transactions
 @property (nonatomic, copy) NSArray<IMSubscriptionOriginalTransaction *> * _Nonnull originalTransactions;
+/// Billing issue information
+@property (nonatomic, strong) IMBillingIssue * _Nullable billingIssue;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
