@@ -28,6 +28,7 @@
 @class ReceiptRequest;
 @class Subscriber;
 @class SubscriberRequest;
+@class UpdateUserConsentRequest;
 @class UploadUserInfoRequest;
 
 #if !defined(GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO) || !GPB_GRPC_FORWARD_DECLARE_MESSAGE_PROTO
@@ -88,6 +89,14 @@ NS_ASSUME_NONNULL_BEGIN
  * USD base currency rate
  */
 - (GRPCUnaryProtoCall *)getCurrencyRateWithMessage:(GetCurrencyRateRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
+
+#pragma mark UpdateUserConsent(UpdateUserConsentRequest) returns (Empty)
+
+/**
+ * Update user's authorization consent status
+ * Purpose: After the server receives the CONSUMPTION_REQUEST pushed by Apple, trigger the Send Consumption Information interface for authorized users
+ */
+- (GRPCUnaryProtoCall *)updateUserConsentWithMessage:(UpdateUserConsentRequest *)message responseHandler:(id<GRPCProtoResponseHandler>)handler callOptions:(GRPCCallOptions *_Nullable)callOptions;
 
 #pragma mark GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse)
 
@@ -187,6 +196,25 @@ NS_ASSUME_NONNULL_BEGIN
  * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
  */
 - (GRPCProtoCall *)RPCToGetCurrencyRateWithRequest:(GetCurrencyRateRequest *)request handler:(void(^)(CurrencyRate *_Nullable response, NSError *_Nullable error))handler;
+
+
+#pragma mark UpdateUserConsent(UpdateUserConsentRequest) returns (Empty)
+
+/**
+ * Update user's authorization consent status
+ * Purpose: After the server receives the CONSUMPTION_REQUEST pushed by Apple, trigger the Send Consumption Information interface for authorized users
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (void)updateUserConsentWithRequest:(UpdateUserConsentRequest *)request handler:(void(^)(GPBEmpty *_Nullable response, NSError *_Nullable error))handler;
+
+/**
+ * Update user's authorization consent status
+ * Purpose: After the server receives the CONSUMPTION_REQUEST pushed by Apple, trigger the Send Consumption Information interface for authorized users
+ *
+ * This method belongs to a set of APIs that have been deprecated. Using the v2 API is recommended.
+ */
+- (GRPCProtoCall *)RPCToUpdateUserConsentWithRequest:(UpdateUserConsentRequest *)request handler:(void(^)(GPBEmpty *_Nullable response, NSError *_Nullable error))handler;
 
 
 #pragma mark GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse)

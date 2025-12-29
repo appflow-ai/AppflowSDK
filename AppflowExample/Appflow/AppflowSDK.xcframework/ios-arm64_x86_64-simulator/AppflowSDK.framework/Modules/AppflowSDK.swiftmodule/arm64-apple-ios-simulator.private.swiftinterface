@@ -265,6 +265,9 @@ extension AppflowSDK.Appflow {
   #if compiler(>=5.3) && $NonescapableTypes
   @objc dynamic public func getCurrencyRate(currencyCode: Swift.String, completion: @escaping (Foundation.NSNumber?, (any Swift.Error)?) -> Swift.Void)
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc dynamic public func updateUserConsent(consented: Swift.Bool, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
+  #endif
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class AppflowWelcomePage : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public var waitingTime: Swift.Double
