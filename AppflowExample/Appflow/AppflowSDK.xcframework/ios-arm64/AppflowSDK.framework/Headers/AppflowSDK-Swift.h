@@ -373,24 +373,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Appflow * _N
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSNumber;
-@interface Appflow (SWIFT_EXTENSION(AppflowSDK))
-/// This method is used to fetch the exchange rate for a specified currency code. It takes a currency code as input and asynchronously returns the exchange rate relative to a base currency (usually USD or another benchmark currency).
-/// \param currencyCode standard(ISO 4217) currency code(e.g., “USD”, “EUR”, “JPY”).
-///
-/// \param completion A closure that takes two parameters:
-/// <ul>
-///   <li>
-///     Double:  An <code>NSNumber</code> object representing the currency exchange rate. This value will be <code>nil</code> if the retrieval fails.
-///   </li>
-///   <li>
-///     Error?: An error object if the request fails; if the request is successful, this will be nil.
-///   </li>
-/// </ul>
-///
-- (void)getCurrencyRateWithCurrencyCode:(NSString * _Nonnull)currencyCode completion:(void (^ _Nonnull)(NSNumber * _Nullable, NSError * _Nullable))completion;
-@end
-
 enum IMPromotingInAppPurchaseStatus : int32_t;
 @protocol IMPromotingObserverProtocol;
 @interface Appflow (SWIFT_EXTENSION(AppflowSDK))
@@ -417,6 +399,38 @@ enum IMPromotingInAppPurchaseStatus : int32_t;
 - (void)createASignatureWithProductId:(NSString * _Nonnull)productId offerId:(NSString * _Nonnull)offerId userid:(NSString * _Nonnull)userid completion:(void (^ _Nonnull)(IMOfferSignatureDetail * _Nullable, NSError * _Nullable))completion;
 /// <code>paymentDiscount</code> was launched after iOS12.2. Only systems after iOS12.2 can use this interface.
 - (void)purchaseSKProductWithDiscount:(SKProduct * _Nonnull)product paymentDiscount:(SKPaymentDiscount * _Nonnull)paymentDiscount applicationUsername:(NSString * _Nullable)applicationUsername completion:(void (^ _Nonnull)(SKPaymentTransaction * _Nonnull, IMSubscriber * _Nonnull, NSError * _Nullable, BOOL))completion SWIFT_AVAILABILITY(ios,introduced=12.2);
+@end
+
+@class NSNumber;
+@interface Appflow (SWIFT_EXTENSION(AppflowSDK))
+/// This method is used to fetch the exchange rate for a specified currency code. It takes a currency code as input and asynchronously returns the exchange rate relative to a base currency (usually USD or another benchmark currency).
+/// \param currencyCode standard(ISO 4217) currency code(e.g., “USD”, “EUR”, “JPY”).
+///
+/// \param completion A closure that takes two parameters:
+/// <ul>
+///   <li>
+///     Double:  An <code>NSNumber</code> object representing the currency exchange rate. This value will be <code>nil</code> if the retrieval fails.
+///   </li>
+///   <li>
+///     Error?: An error object if the request fails; if the request is successful, this will be nil.
+///   </li>
+/// </ul>
+///
+- (void)getCurrencyRateWithCurrencyCode:(NSString * _Nonnull)currencyCode completion:(void (^ _Nonnull)(NSNumber * _Nullable, NSError * _Nullable))completion;
+/// Update user’s authorization consent status. After the server receives the CONSUMPTION_REQUEST pushed by Apple, trigger the Send Consumption Information interface for authorized users.
+/// \param consented Indicates whether the user has consented to authorization
+///
+/// \param completion A closure that takes two parameters:
+/// <ul>
+///   <li>
+///     Bool: Returns true if the update was successful
+///   </li>
+///   <li>
+///     Error?: An error object if the request fails; if the request is successful, this will be nil.
+///   </li>
+/// </ul>
+///
+- (void)updateUserConsentWithConsented:(BOOL)consented completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 @end
 
 @interface Appflow (SWIFT_EXTENSION(AppflowSDK))

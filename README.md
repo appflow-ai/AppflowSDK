@@ -1,7 +1,7 @@
 # AppflowSDK
 
 Platform：iOS
-Version：v1.0.18
+Version：v1.0.19
 Minimum iOS Version：15.0
 
 ## 1. SDK integration
@@ -15,7 +15,7 @@ Minimum iOS Version：15.0
 ```
 target 'MyApp' do
     use_frameworks!
-    pod 'AppflowSDK', '~> 1.0.18'
+    pod 'AppflowSDK', '~> 1.0.19'
 end
 ```
 
@@ -132,7 +132,7 @@ Appflow.shared.getSkuDetails(productIds: Set(productIDs)) { skuDetailInfo, error
 
 | Request parameter: data type | Tnstructions                                                       |
 | ---------------------------- | ------------------------------------------------------------------ |
-| productIds: Set`<String>`  | The parameter is the product ID configured in the Apple background |
+| productIds: Set `<String>` | The parameter is the product ID configured in the Apple background |
 
 | Returned parameter: data type     | Tnstructions                  |
 | --------------------------------- | ----------------------------- |
@@ -480,7 +480,7 @@ extension AppDelegate: AppsFlyerLibDelegate {
     func onConversionDataSuccess(_ installData: [AnyHashable : Any]) {
         // It's important to include the network user ID
         Appflow.shared.updateAttribution(installData, source: .appsflyer, networkUserId: AppsFlyerLib.shared().getAppsFlyerUID())
-      
+
     }
 }
 ```
@@ -740,6 +740,39 @@ The completion handler provides the result of the currency rate retrieval.
           debugPrint("Currency rate for \(currencyCode): \(rate)")
       } else if let error = error {
           debugPrint("Error fetching currency rate: \(error.localizedDescription)")
+      } else {
+          debugPrint("Unknown error occurred.")
+      }
+  }
+
+```
+
+## 13. Update User Consent
+
+### Description
+
+This API updates the user's authorization consent status. After the server receives the CONSUMPTION_REQUEST pushed by Apple, this will trigger the Send Consumption Information interface for authorized users.
+
+### Parameters
+
+- **consented**: A `Bool` parameter indicating whether the user has consented to authorization.
+
+### Completion Handler
+
+The completion handler provides the result of the consent update.
+
+- **success**: A `Bool` value indicating whether the update was successful.
+- **error**: An `Error` object containing details if an error occurred during the update process. If update is successful, this value will be `nil`.
+
+**Example:**
+
+```swift
+  let consented = true
+  Appflow.shared.updateUserConsent(consented: consented) { success, error in
+      if success {
+          debugPrint("User consent updated successfully")
+      } else if let error = error {
+          debugPrint("Error updating user consent: \(error.localizedDescription)")
       } else {
           debugPrint("Unknown error occurred.")
       }

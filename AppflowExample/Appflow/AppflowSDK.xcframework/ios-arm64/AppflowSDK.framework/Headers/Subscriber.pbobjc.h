@@ -778,6 +778,22 @@ GPB_FINAL @interface CurrencyRate : GPBMessage
 
 @end
 
+#pragma mark - UpdateUserConsentRequest
+
+typedef GPB_ENUM(UpdateUserConsentRequest_FieldNumber) {
+  UpdateUserConsentRequest_FieldNumber_AppUserId = 1,
+  UpdateUserConsentRequest_FieldNumber_Consented = 2,
+};
+
+GPB_FINAL @interface UpdateUserConsentRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *appUserId;
+
+/** Indicates whether the user has consented to authorization */
+@property(nonatomic, readwrite) BOOL consented;
+
+@end
+
 #pragma mark - GetSubscriptionRequest
 
 typedef GPB_ENUM(GetSubscriptionRequest_FieldNumber) {
